@@ -3552,10 +3552,6 @@ void esp32loop()
         flushExternQueue();
     }
 
-    #if defined(EXTERNAL_RADIO)
-    externalRadioLoop();
-    #endif
-
     if(bWEBSERVER || bEXTUDP || bGATEWAY || bNETCONSOLE)
     {
         if (web_timer == 0 || (iWlanWait > 0 && ((web_timer + 1000) < millis())) || ((web_timer + (HEARTBEAT_INTERVAL * 1000 * 10)) < millis()))   // repeat 5 minutes
@@ -3647,6 +3643,12 @@ void esp32loop()
             startExternUDP();
         }
     }
+
+    #if defined(EXTERNAL_RADIO)
+    // Non-blocking poll of the optional external-radio TCP transport, AFTER the
+    // normal Wi-Fi/network-readiness maintenance above. Self-gates on Wi-Fi state.
+    externalRadioLoop();
+    #endif
 
     #if defined(BOARD_T_DECK) || defined(BOARD_T_DECK_PLUS)
 
