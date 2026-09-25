@@ -244,6 +244,7 @@ extern s_meshcom_settings meshcom_settings;
 
 void save_settings(void);
 void save_position(void);
+void save_msgid(void);
 // Get LoRa parameter
 void init_flash(void);
 // LoRa parameter zurück setzen

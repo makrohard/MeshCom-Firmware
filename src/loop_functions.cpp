@@ -3338,7 +3338,7 @@ PingResult sendPing(char msg_call[10])
         meshcom_settings.node_msgid=0;
 
     // Flash rewrite
-    save_settings();
+    save_msgid();
 
     checkVia(aprsmsg);
 
@@ -3440,7 +3440,7 @@ void SendPong(String msg_call, unsigned int msg_id)
         meshcom_settings.node_msgid=0;
 
     // Flash rewrite
-    save_settings();
+    save_msgid();
 
     checkVia(aprsmsg);
 
@@ -4093,7 +4093,7 @@ int sendMessage(char *msg_text, int len, const char *src_override, unsigned int 
         meshcom_settings.node_msgid=0;
 
     // Flash rewrite
-    save_settings();
+    save_msgid();
 
     checkVia(aprsmsg);
 
@@ -4853,7 +4853,7 @@ void sendPosition(unsigned long uintervall, double lat, char lat_c, double lon, 
             meshcom_settings.node_msgid=0;
             
         // Flash rewrite
-        save_settings();
+        save_msgid();
 
         checkVia(aprsmsg);
 
@@ -4940,7 +4940,7 @@ void sendAPPPosition(double lat, char lat_c, double lon, char lon_c, float temp2
         meshcom_settings.node_msgid=0;
         
     // Flash rewrite
-    save_settings();
+    save_msgid();
 
     checkVia(aprsmsg);
 
@@ -5010,7 +5010,7 @@ unsigned int SendAckMessage(String dest_call, unsigned int iAckId, const char *s
         meshcom_settings.node_msgid=0;
 
     // Flash rewrite
-    save_settings();
+    save_msgid();
 
     uint8_t msg_buffer[MAX_MSG_LEN_PHONE];
     
@@ -5102,7 +5102,7 @@ void sendHey()
         meshcom_settings.node_msgid=0;
 
     // Flash rewrite
-    save_settings();
+    save_msgid();
 
     checkVia(aprsmsg);
 
@@ -5441,7 +5441,7 @@ void sendTelemetry(int ID)
             meshcom_settings.node_msgid=0;
 
         // Flash rewrite
-        save_settings();
+        save_msgid();
 
         checkVia(aprsmsg);
 
