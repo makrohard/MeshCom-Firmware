@@ -620,3 +620,24 @@ void save_settings(void)
 
     //Test only Serial.println("flash save...");
 }
+
+// Saves only what changes while the node runs: the message counter and the
+// position (GPS or phone app update it in RAM without saving). Called after
+// every transmission instead of save_settings(), which checks all keys.
+// Sensor values (temp, hum, press, ...) are not saved here: they are
+// measured again after a reboot.
+void save_msgid_position(void)
+{
+    preferences.begin("Credentials", false);
+
+    preferences.putInt("node_msgid", meshcom_settings.node_msgid);
+
+    preferences.putDouble("node_lat", meshcom_settings.node_lat);
+    preferences.putDouble("node_lon", meshcom_settings.node_lon);
+    preferences.putInt("node_alt", meshcom_settings.node_alt);
+
+    preferences.putChar("node_lat_c", meshcom_settings.node_lat_c);
+    preferences.putChar("node_lon_c", meshcom_settings.node_lon_c);
+
+    preferences.end();
+}
