@@ -1065,6 +1065,8 @@ static void keypad_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data)
                 if(!meshcom_settings.node_backlightlock)
                     tft_off();
 
+                save_settings();
+
                 bSPEC=true;
             }
 
@@ -1076,6 +1078,8 @@ static void keypad_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data)
                     tft_off();
                 else
                     tft_on();
+
+                save_settings();
 
                 bSPEC=true;
             }
