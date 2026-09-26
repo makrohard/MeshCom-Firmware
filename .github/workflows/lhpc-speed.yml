@@ -180,7 +180,8 @@ jobs:
           git push origin "candidate:$CARRY_BRANCH"
           echo "$CARRY_BRANCH fast-forwarded $OLD_HEAD -> $HEAD_SHA (icssw-org dev $BASE)"
       - name: Red -> issue, nothing pushed
-        if: needs.carry.outputs.state == 'conflict' || needs.build.result == 'failure' || needs.qemu-proof.result == 'failure' || needs.carry.result == 'failure'
+        # failure(): a failed step earlier in this job (e.g. the fast-forward push) is red too
+        if: failure() || needs.carry.outputs.state == 'conflict' || needs.build.result == 'failure' || needs.qemu-proof.result == 'failure' || needs.carry.result == 'failure'
         run: |
           gh label create lhpc-speed-red --color B60205 2>/dev/null || true
           if [ -z "$(gh issue list --label lhpc-speed-red --state open --json number --jq '.[].number')" ]; then
