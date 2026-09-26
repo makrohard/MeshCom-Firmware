@@ -3,7 +3,8 @@
 Three small, independent changes, one commit each. The first lets the net console start in Ethernet mode;
 the other two add build flags for ESP32 boards that have no battery divider or no usable BLE controller.
 No board sets the new flags, and boards without `HAS_ETHERNET` compile to the same code as before.
-Both flags are documented at their `#if` as `opt-out -D …`, the way `DISABLE_KISS_TCP` is.
+Each flag carries an `opt-out -D …` comment at its first `#if`, in the wording `DISABLE_KISS_TCP` uses in
+`configuration_global.h`.
 
 ### 1. fix(netconsole): start the net console in Ethernet mode
 
