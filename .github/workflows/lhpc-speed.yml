@@ -191,6 +191,7 @@ jobs:
             gh issue comment "$(gh issue list --label lhpc-speed-red --state open --json number --jq '.[0].number')" \
               --body "Still red ($STATE, upstream dev $BASE): $RUN_URL"
           fi
+          exit 1                                         # the run shows red too, not only the issue
       - name: Upstream contains the PRs -> RETIRE issue
         if: needs.carry.outputs.state == 'retire'
         run: |
