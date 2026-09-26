@@ -8,6 +8,10 @@ on:
   schedule:
     - cron: "17 3 * * 1"        # Mondays 03:17 UTC
   workflow_dispatch:
+    inputs:
+      carry_branch:
+        description: branch to carry (a scratch branch for tests)
+        default: lhpc-speed
 
 permissions:
   contents: write
@@ -18,7 +22,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  CARRY_BRANCH: lhpc-speed
+  CARRY_BRANCH: ${{ inputs.carry_branch || 'lhpc-speed' }}
+  # issues and labels go to THIS fork: gh would otherwise resolve a fork to its parent (icssw-org)
+  GH_REPO: ${{ github.repository }}
   # meshcom-qemu-raspi commit that provides the QEMU overlay, its scripts and the QEMU patches (patches/qemu)
   MQR_REPO: makrohard/meshcom-qemu-raspi
   MQR_REF: 113ff40b70168c62e4ca971a4f3b028d404cf6bb
@@ -176,8 +182,8 @@ jobs:
         run: |
           gh label create lhpc-speed-red --color B60205 2>/dev/null || true
           if [ -z "$(gh issue list --label lhpc-speed-red --state open --json number --jq '.[].number')" ]; then
-            gh issue create --label lhpc-speed-red --title "lhpc-speed carry: red ($STATE)" --body \
-              "The weekly carry run failed; lhpc-speed was NOT moved. State: $STATE, upstream dev $BASE. Run: $RUN_URL"
+            gh issue create --label lhpc-speed-red --title "$CARRY_BRANCH carry: red ($STATE)" --body \
+              "The weekly carry run failed; $CARRY_BRANCH was NOT moved. State: $STATE, upstream dev $BASE. Run: $RUN_URL"
           else
             gh issue comment "$(gh issue list --label lhpc-speed-red --state open --json number --jq '.[0].number')" \
               --body "Still red ($STATE, upstream dev $BASE): $RUN_URL"
