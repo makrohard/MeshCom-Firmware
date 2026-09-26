@@ -9,8 +9,8 @@ No board sets the new flags, and boards without `HAS_ETHERNET` compile to the sa
 `loopNetConsole()` (`src/net_console.cpp`) returns early while `WiFi.status() != WL_CONNECTED`,
 so that `::socket()` is not called before the lwIP stack is up. In Ethernet mode
 (`HAS_ETHERNET`, `node_netmode == 1`, e.g. T-ETH Elite and T-Connect Pro) WiFi never connects,
-so the net console never opened its listening socket and port 2323 never answers. The web server is
-not affected: it is not gated on the WiFi status.
+so the net console never opened its listening socket and port 2323 never answers. The web server
+already handles Ethernet mode (`startWebserver()` skips its WiFi IP check when `node_netmode == 1`).
 
 On boards with `HAS_ETHERNET`, the console now also starts when the node is in Ethernet mode
 and has an IP address (`node_hasIPaddress`, set by `EspETH::initethDHCP()` /
