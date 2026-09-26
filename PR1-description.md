@@ -58,6 +58,6 @@ The Heltec and T-Beam tests use this PR's code; the T-Deck tests ran on an earli
 patch (on `2a5dcdcd`), and the code they cover (counter save, `--aprsmc`, header buttons) is unchanged
 since.
 
-**Für die Release-Notes:** Einstellungen werden dort gespeichert, wo sie sich aendern (u. a. `--aprsmc`,
+**Fuer die Release-Notes:** Einstellungen werden dort gespeichert, wo sie sich aendern (u. a. `--aprsmc`,
 `{SET}`-Hoplimit, T-Deck- und T-Deck-Pro-Tasten, XML-UTC-Offset, GPS-Position); nach einer Aussendung
 schreibt ESP32 nur noch den Nachrichtenzaehler statt aller Einstellungen.

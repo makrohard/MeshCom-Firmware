@@ -37,5 +37,5 @@ Builds, QEMU runs and the Heltec/T-Beam tests use this PR's code on icssw-org de
 stock Espressif QEMU with the meshcom-qemu-raspi emulator overlay. The T-Deck test ran on the same patch
 one upstream revision earlier (`2a5dcdcd`).
 
-**Für die Release-Notes:** `--setcall` mit unveraendertem Rufzeichen und Kurznamen speichert nichts mehr und
+**Fuer die Release-Notes:** `--setcall` mit unveraendertem Rufzeichen und Kurznamen speichert nichts mehr und
 loest keinen Neustart aus.
