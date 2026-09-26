@@ -26,9 +26,9 @@ page is committed by its Save button.
 ### 2. perf(flash): on ESP32, after a transmission save only the message counter
 Previously, every transmission (HEY, position, message, ping, pong, ACK, telemetry, and a position
 injected by a KISS client) incremented `node_msgid` and then called `save_settings()`, which goes
-through all ~130 keys. A transmission changes nothing else, so on ESP32 `save_msgid()` now writes
-only `node_msgid`, at the eight `// Flash rewrite` sites and in `sendInjectedPosition()`
-(`src/loop_functions.cpp`). Runtime values (sensor readings, MCP23017 inputs, the smart-beaconing
+through all ~130 keys. On ESP32 `save_msgid()` now writes only `node_msgid` in all nine paths:
+the eight `// Flash rewrite` sites and `sendInjectedPosition()` (`src/loop_functions.cpp`).
+Runtime values (sensor readings, MCP23017 inputs, the smart-beaconing
 symbol) are measured or chosen again after a reboot. On nRF52 the settings file is written only when
 its content changed, so there `save_msgid()` is `save_settings()` and nRF52 behaves as before.
 `src/esp32/esp32_flash.h` now notes at the save functions that a transmission no longer persists other
@@ -38,9 +38,8 @@ an explicit Save.
 ### Tested
 - Builds: RAK4631, T-Beam (4 variants), T-Beam 1W, T-Deck, T-Deck Pro, Heltec V3, T-ETH Elite,
   T-Connect Pro.
-  RAK4631: +8…+16 bytes (three clean builds; the code added there is the `--aprsmc` save, 4 bytes, and
-  the `{SET}` save, 8 bytes; the rest is alignment). ESP32: +164…+340 bytes text; on the T-Deck 92 of
-  them are the compiler laying out `keypad_read()` differently after the SYM+L change, not new code.
+  RAK4631: +8…+16 bytes text in three clean builds. ESP32: +164…+340 bytes text
+  (T-Deck: +340 bytes).
 - T-Deck (real hardware): counter persists across a reset and keeps counting; `--aprsmc` survives a
   reset issued right after the command; tapping the eye / keyboard buttons stores the locks in flash
   immediately.
@@ -58,3 +57,7 @@ runs change only comments. QEMU uses stock Espressif QEMU with the meshcom-qemu-
 The Heltec and T-Beam tests use this PR's code; the T-Deck tests ran on an earlier revision of this
 patch (on `2a5dcdcd`), and the code they cover (counter save, `--aprsmc`, header buttons) is unchanged
 since.
+
+**Für die Release-Notes:** Einstellungen werden dort gespeichert, wo sie sich aendern (u. a. `--aprsmc`,
+`{SET}`-Hoplimit, T-Deck- und T-Deck-Pro-Tasten, XML-UTC-Offset, GPS-Position); nach einer Aussendung
+schreibt ESP32 nur noch den Nachrichtenzaehler statt aller Einstellungen.

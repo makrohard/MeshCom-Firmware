@@ -63,3 +63,6 @@ the stack. The bench-only `BENCH_BLE_ADV_LATE` start is skipped too.
 Builds and QEMU runs use this branch on icssw-org dev `6cc8b552`; QEMU uses stock Espressif QEMU with
 the meshcom-qemu-raspi emulator overlay. The Heltec and T-Beam tests use this branch's code; the
 T-Deck tests ran on the same three patches one upstream revision earlier (`2a5dcdcd`).
+
+**Für die Release-Notes:** Net-Console startet auch im Ethernet-Modus; neue Build-Flags `DISABLE_BATTERY` und
+`DISABLE_BLE` fuer ESP32-Boards ohne Akku-Messung bzw. ohne nutzbaren BLE-Controller.
