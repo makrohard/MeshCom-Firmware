@@ -1,0 +1,192 @@
+# lhpc-speed: weekly carry of the two MeshCom speed PRs for LHPC until icssw-org merges them.
+# Merge icssw-org dev into lhpc-speed (forward only, never rewritten: LHPC pins its commits) ->
+# build the boards -> QEMU proof -> only then fast-forward lhpc-speed.
+# Red: an issue, nothing pushed. Upstream contains the PRs: a RETIRE issue. See .github/lhpc-speed/README.md.
+name: lhpc-speed carry
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"        # Mondays 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: lhpc-speed
+  cancel-in-progress: false
+
+env:
+  CARRY_BRANCH: lhpc-speed
+  # meshcom-qemu-raspi commit that provides the QEMU overlay, its scripts and the QEMU patches (patches/qemu)
+  MQR_REPO: makrohard/meshcom-qemu-raspi
+  MQR_REF: 113ff40b70168c62e4ca971a4f3b028d404cf6bb
+  # patched QEMU: this Espressif tag + the patches above
+  QEMU_TAG: esp-develop-9.2.2-20260417
+
+jobs:
+  carry:
+    runs-on: ubuntu-latest
+    outputs:
+      state: ${{ steps.carry.outputs.state }}
+      head: ${{ steps.carry.outputs.head }}
+      base: ${{ steps.carry.outputs.base }}
+      old_head: ${{ steps.carry.outputs.old_head }}
+      carried: ${{ steps.carry.outputs.carried }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - id: carry
+        run: bash .github/lhpc-speed/carry.sh
+      - name: Save the candidate
+        if: steps.carry.outputs.state == 'merged' || steps.carry.outputs.state == 'unchanged'
+        run: git bundle create candidate.bundle upstream/dev..candidate candidate
+      - uses: actions/upload-artifact@v4
+        if: steps.carry.outputs.state == 'merged' || steps.carry.outputs.state == 'unchanged'
+        with: { name: candidate, path: candidate.bundle, retention-days: 7 }
+
+  build:
+    needs: carry
+    if: needs.carry.outputs.state == 'merged' || needs.carry.outputs.state == 'unchanged'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        env: [wiscore_rak4631, ttgo_tbeam, ttgo_tbeam_SX1262, ttgo_tbeam_SX1268, ttgo_tbeam_supreme,
+              LilyGo_T-Beam-1W, t_deck, t_deck_pro, heltec_wifi_lora_32_V3, T-ETH-ELITE_1262, LilyGo_T_Connect_Pro]
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/download-artifact@v4
+        with: { name: candidate }
+      - run: |
+          git remote add upstream https://github.com/icssw-org/MeshCom-Firmware.git
+          git fetch -q upstream dev
+          git fetch -q candidate.bundle candidate:candidate && git checkout -q candidate
+          test "$(git rev-parse HEAD)" = "${{ needs.carry.outputs.head }}"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-${{ matrix.env }}-${{ hashFiles('platformio.ini', 'variants/*/platformio.ini') }}
+          restore-keys: pio-${{ matrix.env }}-
+      - run: pip install -q platformio
+      - run: pio run -e "${{ matrix.env }}"
+
+  qemu-proof:
+    needs: carry
+    if: needs.carry.outputs.state == 'merged' || needs.carry.outputs.state == 'unchanged'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/download-artifact@v4
+        with: { name: candidate }
+      - name: Candidate tree
+        run: |
+          git remote add upstream https://github.com/icssw-org/MeshCom-Firmware.git
+          git fetch -q upstream dev
+          git fetch -q candidate.bundle candidate:candidate
+          git worktree add -q "$RUNNER_TEMP/fw" candidate
+      - name: meshcom-qemu-raspi (overlay + scripts) and the QEMU patches
+        run: |
+          git clone -q "https://github.com/$MQR_REPO.git" "$RUNNER_TEMP/mqr"
+          git -C "$RUNNER_TEMP/mqr" checkout -q "$MQR_REF"
+          mkdir -p "$RUNNER_TEMP/qemu-patches"
+          git -C "$RUNNER_TEMP/mqr" archive "$MQR_REF" patches/qemu | tar -x -C "$RUNNER_TEMP/qemu-patches"
+          ls "$RUNNER_TEMP/qemu-patches/patches/qemu"
+          echo "QEMU_PATCH_HASH=$(cat "$RUNNER_TEMP"/qemu-patches/patches/qemu/*.patch | sha256sum | cut -c1-16)" >> "$GITHUB_ENV"
+      - uses: actions/cache@v4
+        id: qemu-cache
+        with:
+          path: ~/qemu-inst
+          key: qemu-inst-${{ env.QEMU_TAG }}-${{ env.QEMU_PATCH_HASH }}-x86
+      - name: Build the patched QEMU (x86, headless, user network)
+        if: steps.qemu-cache.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q ninja-build libglib2.0-dev libpixman-1-dev libslirp-dev libgcrypt20-dev
+          git clone -q --depth 1 --branch "$QEMU_TAG" https://github.com/espressif/qemu.git "$RUNNER_TEMP/qemu"
+          for p in "$RUNNER_TEMP"/qemu-patches/patches/qemu/*.patch; do git -C "$RUNNER_TEMP/qemu" apply "$p"; done
+          mkdir -p "$RUNNER_TEMP/qemu/build" && cd "$RUNNER_TEMP/qemu/build"
+          # installed (not copied out of the build dir): the esp32 machine loads its ROM from <prefix>/share/qemu
+          ../configure --prefix="$HOME/qemu-inst" --target-list=xtensa-softmmu --enable-slirp --enable-gcrypt --disable-sdl --disable-gtk \
+                       --disable-vnc --disable-opengl --disable-docs --disable-werror --disable-tools
+          make -j"$(nproc)" install
+          test -f ~/qemu-inst/share/qemu/esp32-v3-rom.bin
+      - run: sudo apt-get install -y -q libslirp0 libgcrypt20 || true
+      - uses: actions/cache@v4
+        with:
+          path: ~/.platformio
+          key: pio-qemu-${{ hashFiles('platformio.ini') }}
+          restore-keys: pio-qemu-
+      - run: pip install -q platformio
+      - name: Build the two QEMU images (plain, and with the test-only custom-shortname step)
+        env: { XR_HOST: 10.0.2.2, XR_PORT: "7000", XR_PASSWORD: "" }
+        run: |
+          set -e
+          for v in plain short; do
+            R="$RUNNER_TEMP/img-$v"; rm -rf "$R"; cp -a "$RUNNER_TEMP/mqr" "$R"
+            git clone -q "$RUNNER_TEMP/fw" "$R/.work/MeshCom-Firmware"
+            (cd "$R" && PIO=pio scripts/apply-overlay.sh && PIO=pio scripts/prepare-openeth.sh)
+            [ "$v" = short ] && python3 .github/lhpc-speed/testhack-short.py "$R/.work/MeshCom-Firmware"
+            (cd "$R" && PIO=pio scripts/build.sh --env qemu-headless-extradio-gpsd)
+            cp "$R/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin" "$RUNNER_TEMP/flash-$v.bin"
+          done
+      - name: QEMU proof
+        env:
+          QEMU: /home/runner/qemu-inst/bin/qemu-system-xtensa
+          RELAY: ${{ runner.temp }}/mqr/scripts/gps-relay.py
+          FIX: ${{ runner.temp }}/mqr/fixtures/gps/valid_fix.nmea
+          WORK: ${{ runner.temp }}/proof
+        run: |
+          python3 .github/lhpc-speed/proof.py p1 "$RUNNER_TEMP/flash-plain.bin"
+          python3 .github/lhpc-speed/proof.py setcall "$RUNNER_TEMP/flash-short.bin"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: proof-logs, path: "${{ runner.temp }}/proof", retention-days: 14 }
+
+  publish:
+    needs: [carry, build, qemu-proof]
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      STATE: ${{ needs.carry.outputs.state }}
+      HEAD_SHA: ${{ needs.carry.outputs.head }}
+      OLD_HEAD: ${{ needs.carry.outputs.old_head }}
+      BASE: ${{ needs.carry.outputs.base }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/download-artifact@v4
+        if: needs.carry.outputs.state == 'merged' && needs.build.result == 'success' && needs.qemu-proof.result == 'success'
+        with: { name: candidate }
+      - name: Green -> fast-forward lhpc-speed (never forced)
+        if: needs.carry.outputs.state == 'merged' && needs.build.result == 'success' && needs.qemu-proof.result == 'success'
+        run: |
+          git fetch -q candidate.bundle candidate:candidate
+          test "$(git rev-parse candidate)" = "$HEAD_SHA"
+          git merge-base --is-ancestor "$OLD_HEAD" candidate
+          git push origin "candidate:$CARRY_BRANCH"
+          echo "$CARRY_BRANCH fast-forwarded $OLD_HEAD -> $HEAD_SHA (icssw-org dev $BASE)"
+      - name: Red -> issue, nothing pushed
+        if: needs.carry.outputs.state == 'conflict' || needs.build.result == 'failure' || needs.qemu-proof.result == 'failure' || needs.carry.result == 'failure'
+        run: |
+          gh label create lhpc-speed-red --color B60205 2>/dev/null || true
+          if [ -z "$(gh issue list --label lhpc-speed-red --state open --json number --jq '.[].number')" ]; then
+            gh issue create --label lhpc-speed-red --title "lhpc-speed carry: red ($STATE)" --body \
+              "The weekly carry run failed; lhpc-speed was NOT moved. State: $STATE, upstream dev $BASE. Run: $RUN_URL"
+          else
+            gh issue comment "$(gh issue list --label lhpc-speed-red --state open --json number --jq '.[0].number')" \
+              --body "Still red ($STATE, upstream dev $BASE): $RUN_URL"
+          fi
+      - name: Upstream contains the PRs -> RETIRE issue
+        if: needs.carry.outputs.state == 'retire'
+        run: |
+          gh label create lhpc-speed-retire --color 0E8A16 2>/dev/null || true
+          n="$(gh issue list --label lhpc-speed-retire --state open --json number --jq '.[0].number')"
+          msg="icssw-org dev $BASE contains everything carried on lhpc-speed (after merging it, the trees are equal). Time to retire, in the order listed in this issue. Run: $RUN_URL"
+          if [ -n "$n" ]; then gh issue comment "$n" --body "$msg"
+          else gh issue create --label lhpc-speed-retire --title "RETIRE lhpc-speed: icssw-org dev contains the speed PRs" --body "$msg"; fi
