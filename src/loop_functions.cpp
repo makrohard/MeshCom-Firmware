@@ -2334,8 +2334,11 @@ void sendDisplayText(struct aprsMessage &aprsmsg, int16_t rssi, int8_t snr)
 
         int iParsed = sscanf(cset+5, "%d;%d;", &iHopText, &iHopPos);
 
-        if(iParsed >= 1 && iHopText >= 0 && iHopText <= MAX_HOP_LIMIT)
+        if(iParsed >= 1 && iHopText >= 0 && iHopText <= MAX_HOP_LIMIT && iHopText != meshcom_settings.max_hop_text)
+        {
             meshcom_settings.max_hop_text = iHopText;
+            save_settings();    // max_hop_text is persistent (max_hop_pos is not)
+        }
 
         if(iParsed >= 2 && iHopPos >= 0 && iHopPos <= MAX_HOP_LIMIT)
             meshcom_settings.max_hop_pos = iHopPos;
@@ -4278,7 +4281,7 @@ unsigned int sendInjectedPosition(const char *srcCall, const char *posData)
     if(meshcom_settings.node_msgid > 999)
         meshcom_settings.node_msgid = 0;
 
-    save_settings();
+    save_msgid();
 
     insertOwnTx(aprsmsg.msg_id);
     if(bGATEWAY && meshcom_settings.node_hasIPaddress)
