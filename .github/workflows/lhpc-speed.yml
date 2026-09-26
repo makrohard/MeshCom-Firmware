@@ -172,6 +172,8 @@ jobs:
       - name: Green -> fast-forward lhpc-speed (never forced)
         if: needs.carry.outputs.state == 'merged' && needs.build.result == 'success' && needs.qemu-proof.result == 'success'
         run: |
+          git remote add upstream https://github.com/icssw-org/MeshCom-Firmware.git
+          git fetch -q upstream dev                      # the bundle's prerequisites
           git fetch -q candidate.bundle candidate:candidate
           test "$(git rev-parse candidate)" = "$HEAD_SHA"
           git merge-base --is-ancestor "$OLD_HEAD" candidate
