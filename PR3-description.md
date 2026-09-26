@@ -1,4 +1,4 @@
-## ESP32 boards without WiFi, battery divider or BLE: Ethernet net console, DISABLE_BATTERY, DISABLE_BLE
+## ESP32: Ethernet net console, DISABLE_BATTERY and DISABLE_BLE
 
 Three small, independent changes, one commit each. The first lets the net console start in Ethernet mode;
 the other two add build flags for ESP32 boards that have no battery divider or no usable BLE controller.
@@ -9,8 +9,8 @@ No board sets the new flags, and boards without `HAS_ETHERNET` compile to the sa
 `loopNetConsole()` (`src/net_console.cpp`) returns early while `WiFi.status() != WL_CONNECTED`,
 so that `::socket()` is not called before the lwIP stack is up. In Ethernet mode
 (`HAS_ETHERNET`, `node_netmode == 1`, e.g. T-ETH Elite and T-Connect Pro) WiFi never connects,
-so the net console never opened its listening socket: with a network cable the web UI works (it
-already checks Ethernet mode), but the net console on port 2323 never answers.
+so the net console never opened its listening socket and port 2323 never answers. The web server is
+not affected: it is not gated on the WiFi status.
 
 On boards with `HAS_ETHERNET`, the console now also starts when the node is in Ethernet mode
 and has an IP address (`node_hasIPaddress`, set by `EspETH::initethDHCP()` /

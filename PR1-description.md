@@ -1,4 +1,4 @@
-## Save settings where they change; after a transmission save only the counter
+## Save settings where they change; on ESP32 save only the counter after a transmission
 
 Two commits.
 
@@ -13,17 +13,17 @@ before its next HEY or message:
   and mute (`src/t-deck-pro/peri_keypad.cpp`).
 - A UTC offset received via the soft-serial XML is saved when it changes (`src/tinyxml_functions.cpp`).
 - ESP32: a new GPS fix is saved with the new `save_position()` (five keys, at most every 15 min,
-  `src/gps_functions.cpp`). Without a fix the node sends the stored position, so the last fix has to
+  `src/gps_functions.cpp`). Without a fix the node sends the stored position, so a recent fix has to
   survive a reboot.
 
 Unchanged by design: phone settings are committed by 0xF0 "Save Settings" or the 0x0A save flag, and
 periodic phone positions are not saved (as documented in `src/phone_commands.cpp`); the T-Deck setup
 page is committed by its Save button.
 
-### 2. perf(flash): after a transmission save only the message counter
+### 2. perf(flash): on ESP32, after a transmission save only the message counter
 Every transmission (HEY, position, message, ping, pong, ACK, telemetry) increments `node_msgid` and
 then called `save_settings()`, which goes through all ~130 keys. A transmission changes nothing else,
-so `save_msgid()` now writes only `node_msgid` at the eight `// Flash rewrite` sites
+so on ESP32 `save_msgid()` now writes only `node_msgid` at the eight `// Flash rewrite` sites
 (`src/loop_functions.cpp`). Runtime values (sensor readings, MCP23017 inputs, the smart-beaconing
 symbol) are measured or chosen again after a reboot. On nRF52 the settings file is written only when
 its content changed, so there `save_msgid()` is `save_settings()` and nRF52 behaves as before.
