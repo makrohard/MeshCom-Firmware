@@ -33,4 +33,8 @@ server CONF path does); it is never part of the firmware.
    release-bot policy), release, with a changelog note that releases pinned to this fork must update
    before a MeshCom source rebuild.
 2. Remove this directory and the workflow.
-3. Delete the `lhpc-speed` branch and the fork.
+3. Delete the `lhpc-speed` branch.
+4. Delete the fork only when no other fork-only branch or PR is still needed (the PR branches until
+   icssw-org has merged or declined them). Releases pinned to the fork are covered by step 1's note.
+
+A RETIRE comment starts step 1; it is not by itself permission to delete the fork.
