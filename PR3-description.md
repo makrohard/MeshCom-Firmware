@@ -3,6 +3,7 @@
 Three small, independent changes, one commit each. The first lets the net console start in Ethernet mode;
 the other two add build flags for ESP32 boards that have no battery divider or no usable BLE controller.
 No board sets the new flags, and boards without `HAS_ETHERNET` compile to the same code as before.
+Both flags are documented at their `#if` as `opt-out -D …`, the way `DISABLE_KISS_TCP` is.
 
 ### 1. fix(netconsole): start the net console in Ethernet mode
 
@@ -53,7 +54,11 @@ the stack. The bench-only `BENCH_BLE_ADV_LATE` start is skipped too.
   flag `esp_bt_controller_init` asserts and the node reboots in a loop; with it the node runs.
 - All three together under QEMU (both flags, Ethernet mode simulated): one boot, network up, console
   answers, no panic.
+- Heltec LoRa32 V3 and T-Beam (real hardware): without the flags the battery is read (divider on the
+  Heltec, PMU on the T-Beam) and BLE advertises; with `DISABLE_BATTERY` `--info` shows `BATT 0.00 V`
+  on both, also on the T-Beam's `MODUL_FW_TBEAM` path; with `DISABLE_BLE` the boot log shows
+  "disabled (DISABLE_BLE)" and a BLE scan no longer sees the node.
 
 Builds and QEMU runs use this branch on icssw-org dev `6cc8b552`; QEMU uses stock Espressif QEMU with
-the meshcom-qemu-raspi emulator overlay. The T-Deck tests ran on the same three patches one upstream
-revision earlier (`2a5dcdcd`); the patches are unchanged since.
+the meshcom-qemu-raspi emulator overlay. The Heltec and T-Beam tests use this branch's code; the
+T-Deck tests ran on the same three patches one upstream revision earlier (`2a5dcdcd`).

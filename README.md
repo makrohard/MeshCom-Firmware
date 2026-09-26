@@ -5,6 +5,6 @@ the body is the rest of the file. Nothing here is part of any firmware branch; t
 
 | PR | head branch @ commit (on icssw-org dev 6cc8b552) | file |
 |---|---|---|
-| 1 | pr1-persist @ c4f508b3 | PR1-description.md |
-| 2 | pr2-setcall-unchanged @ 8be85300 | PR2-description.md |
-| 3 | pr3 @ 69515060 (three commits: ae23006c, 1629c774, 69515060) | PR3-description.md |
+| 1 | pr1-persist @ eea80ff5 (two commits: f1e6664f, eea80ff5) | PR1-description.md |
+| 2 | pr2-setcall-unchanged @ aceedddb | PR2-description.md |
+| 3 | pr3 @ 20fcb14f (three commits: ae23006c, 37d534f0, 20fcb14f) | PR3-description.md |
