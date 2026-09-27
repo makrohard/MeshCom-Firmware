@@ -1,0 +1,7 @@
+#!/bin/bash
+# start pr3-fble and base-fboth once the deterministic rebuilds are done (keeps the --cpus sum <= 24)
+cd ~/claude/agent5-allenvs/ci
+while [ $(podman ps --format '{{.Names}}' | grep -c '^a5-det-') -gt 0 ] || ! grep -q 'merge done' det-all.out; do sleep 30; done
+LBL=app30 ./run-pio.sh pr3-fble "-D DISABLE_BLE" 4 E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker heltec_t114 vision-master-e290 vision-master-e213 wireless-paper T-ETH-ELITE_1262 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268 ttgo_tbeam_supreme t_deck t_deck_plus t_deck_pro t_echo wiscore_rak4631 esp32-loraprs-e22 esp32-loraprs-ra01  &
+sleep 5; LBL=app30 ./run-pio.sh base-fboth "-D DISABLE_BATTERY -D DISABLE_BLE" 4 E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker heltec_t114 vision-master-e290 vision-master-e213 wireless-paper T-ETH-ELITE_1262 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268 ttgo_tbeam_supreme t_deck t_deck_plus t_deck_pro t_echo wiscore_rak4631 esp32-loraprs-e22 esp32-loraprs-ra01  &
+wait

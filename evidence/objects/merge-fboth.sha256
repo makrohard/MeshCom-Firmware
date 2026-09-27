@@ -1,0 +1,54 @@
+a4c10fc30f7d873ea92aea62439ed76820fd6173f39b0fa0d0432a3aef89cb49  E22-DevKitC/src/esp32/esp32_main.cpp.o
+bdac318c2e810e6ebf0369443e35283ddbfa3af38cfabee6ac5dac5c22ec4c49  E22-DevKitC/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+055389b8d0be187d7355ba02e09c5efecab626fb8d50772217a5168e92efac9c  E22_1262-DevKitC/src/esp32/esp32_main.cpp.o
+9ba895075a1a63246bea0882096f9911d9bc37e063a4f968c4eb533a30388b43  E22_1262-DevKitC/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+00a6ec76765f25855c2a59fb671ab9d2666c0bcac7f5a526220ada24f7e337b0  E22_1262_S3-DevKitC-1-N16R8/src/esp32/esp32_main.cpp.o
+bac9cfdb3cc0cbba9a04d99fd6a8193254ef77a6df7e3b097cd81a949466550b  E22_1262_S3-DevKitC-1-N16R8/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+ffbaa8427b26f2a2073f5ee521f9055689b71e3239d9fec7f09e2ea9bb2cfbd6  E22_1268_S3-DevKitC-1-N16R8/src/esp32/esp32_main.cpp.o
+946c13f0c92b97a83b88ed5e45d1095829757e6694020d6121794e7b8c29fe23  E22_1268_S3-DevKitC-1-N16R8/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+31b885a95ab64ee97ea2c488b139304570fcbf7c196f857653d467edb4b77fd6  E22_XML-DevKitC/src/esp32/esp32_main.cpp.o
+1b7ab2c1eb86642b53aabb717846cf52439910cfbdfc85a6732cd2cbf1f699c2  E22_XML-DevKitC/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+51f5def332c9ffe5034b97356d6562d96393bce21470fedb13807d004ad11c7f  LilyGo_T-Beam-1W/src/esp32/esp32_main.cpp.o
+e60d5f41ad9a954b9631a0731b9c4463a928df6089ecb38dc25c8a10801129e4  LilyGo_T-Beam-1W/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+2d1b0b0bcf8efb68cf80402be740c1fb1ecad20517e3ff6907039fdffd38eaf2  LilyGo_T3_S3_V1_3/src/esp32/esp32_main.cpp.o
+48b63905f39a5c246fd026d1fe438e1fdadd7d8d77295a7b2936e59ed9734b24  LilyGo_T3_S3_V1_3/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+11ac943d448d19321c9add02bbf613811cc49d60dee727db6aa6f6094205589a  LilyGo_T_Connect_Pro/src/esp32/esp32_main.cpp.o
+91e706ec5a1f3aaac75577e38801261669d1acebb5f77024294537f72f878530  LilyGo_T_Connect_Pro/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+2f7ce72cb4e3e2b06c7f8ec9b2743d12ebff4e3559908ab76b1a7d64fb03c430  T-ETH-ELITE_1262/src/esp32/esp32_main.cpp.o
+22b4bdf5a430f95e6deb100262a07fcce135d10633121a4cad2dd975b2156cf9  T-ETH-ELITE_1262/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+a7f34acdf885f4ff185f49fb05155497bbd47a51df7ca5207600ed1f33f35675  esp32-loraprs-e22/src/esp32/esp32_main.cpp.o
+ab55c3345bcda0d808aa1a2ba0e98921ced633be5316fa65da15fe852579f554  esp32-loraprs-e22/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+fb113efca5ba6f2eda78012efbccb2f298aa19d8e9f3b34fa993b8ad6953b7e3  esp32-loraprs-ra01/src/esp32/esp32_main.cpp.o
+e1d8b2472d4dff2a1f1d7954b5ce117cd74204b3dbd2b9092679e9050fe14ed1  esp32-loraprs-ra01/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+22261fa080b64de038a6ec79813e07f9b24c7821d32841da2b09625a8776dca8  heltec_wifi_lora_32_V2/src/esp32/esp32_main.cpp.o
+8c36b74b5cfe364c70e746baa38d21643acb4723b1d5625b22d40f616da9ae6a  heltec_wifi_lora_32_V2/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+29ce5e0de48b4108b11e0a5a3d6579589b1a3bcc6139a69f0bd8dbefc31e45df  heltec_wifi_lora_32_V3/src/esp32/esp32_main.cpp.o
+773f2912b0c6e4a3a34aa5ad84037a4d4454d1729d5610e1a816ab025fdfc95e  heltec_wifi_lora_32_V3/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+9b826c30657c067f3bf5b56b160625299e64a5751c1417c1f8863f36a02fa219  heltec_wifi_lora_32_V4/src/esp32/esp32_main.cpp.o
+9c764402f634194bf9943a93dbfdf6419c989b2da365a4c1665a3e62e906ec47  heltec_wifi_lora_32_V4/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+49f0f0355895269e92954e4ed04f3ddc8289cda34bc6984405f63253babd1680  heltec_wireless_stick/src/esp32/esp32_main.cpp.o
+234a1de8c18911cb799dfda43b99b6619c7992d308b237643f30619d98b88b60  heltec_wireless_stick/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+605e8c92dc77d32425eb987df1d49bd3454c02615939cd98772294fef2c8b405  heltec_wireless_tracker/src/esp32/esp32_main.cpp.o
+73205bb0ea8b96edb3d7f02e274a4d5096c705decda65c7d2fba2d03a9c3d70f  heltec_wireless_tracker/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+872110caebc456ea4fab2daff4178ddb3c2be9334531c4500b85a6a7bc50f5e7  t_deck/src/esp32/esp32_main.cpp.o
+97586aa66c5a2ecafbb081c6e6c64a3230939f7f5cc42fddc900780f8015e806  t_deck/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+a4e473b2441df9511192b4a3735a28bf4e0836f7f3fa31830d8b10b0d25d7e1c  t_deck_plus/src/esp32/esp32_main.cpp.o
+e8eb74bc8ec54a8d71bd40081cd757a789335f9e73d7d94717ddb3aedae3deed  t_deck_plus/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+8950d18582980b5ca53d544385f491867749f3a24cb6c7005b7c0b2ee99c7653  t_deck_pro/src/esp32/esp32_main.cpp.o
+aadef3aa3a1092b05ab7475e53883f33c386d6d716a28db1c10edc355129afc5  t_deck_pro/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+7a6a737bb83a30520f5fb96fb55aa41c2d60c80a1f5c2969a4e5e7bda2bf2574  ttgo-lora32-v21/src/esp32/esp32_main.cpp.o
+0b6f1d0bfc2b0422266c51626ac951ea0db9bc849530d34204b0b73619004c32  ttgo-lora32-v21/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+ec9e0d3c57114a19f9e208ef30b0369e54f6f5c0ccd913fecad7fdb55208add3  ttgo_tbeam/src/esp32/esp32_main.cpp.o
+e36a5e27b9d4a93b24164865846037c7a83e1f9dc54aeb003fda8dc76de3954d  ttgo_tbeam/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+7328d97e533d57ec3744ed9c0425cc118e2feb78fa8e6a96a71792eab2f1b25e  ttgo_tbeam_SX1262/src/esp32/esp32_main.cpp.o
+a1438feae5cbd49d477ccee776d5a4e846c55cad33db5f2178d9bcff7729f8d2  ttgo_tbeam_SX1262/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+b3f65224eff8c5486db5301ca592282333fbb8551875773553a97f369e514bb6  ttgo_tbeam_SX1268/src/esp32/esp32_main.cpp.o
+b532bef198e5b1a6eab6ba9a8e7ddced412e4e31d7f224943bf2e5bff6a7f73e  ttgo_tbeam_SX1268/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+0abe62cbf7e2a10763f93d84a104a87a1f65d20418a87f3987bc8cc10189f121  ttgo_tbeam_supreme/src/esp32/esp32_main.cpp.o
+4ee2f8a31e4eb799d47d496bdbad0efb339b611cfc8f201fc2d490ffa5f844df  ttgo_tbeam_supreme/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+02c797fee12834c9389308531568aef561928f105ceff7cdfef4dc81d02bc467  vision-master-e213/src/esp32/esp32_main.cpp.o
+4b955e67b95ccc163be14856c1961485b937677fd845d9f850392cb220d3d901  vision-master-e213/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+f90b16e72498d8321acfd3365454b56d9b55fd71822170cf3913507d62bb10e2  vision-master-e290/src/esp32/esp32_main.cpp.o
+3b44d00f03272ba7a4d257fb9af09422c1b50e5f7b2e55be8f2f34085543d37b  vision-master-e290/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)
+9a0d95ffc0769a868500ef64a93bbe1be5bc47ab642c2ecdfa237296997c792f  wireless-paper/src/esp32/esp32_main.cpp.o
+7c4f5d78e25ca005a6a87ca748466d6a8aec9f64107fdb0b69707fe513d172b9  wireless-paper/ALL-OBJECTS-DIGEST (1 objects: sha256 of the sorted "sha256  relpath" list)

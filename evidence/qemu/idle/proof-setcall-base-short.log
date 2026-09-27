@@ -1,0 +1,10 @@
+01:41:53 boot 1: console up after 24 s
+01:41:53 PASS boot 1 console answers
+01:42:38 PASS new callsign: saved and reboot scheduled
+01:43:02 boot 2: console up after 24 s
+01:43:02 PASS boot 2 console answers
+01:43:02 PASS test step left a custom short in flash
+01:43:47 PASS same callsign, custom short in flash: saved and reboot scheduled
+01:44:33 FAIL same callsign again (no-op): no reboot
+01:44:33 PASS derived short saved
+01:44:33 RESULT setcall: FAIL (1 failed)

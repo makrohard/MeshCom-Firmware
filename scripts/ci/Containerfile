@@ -1,0 +1,15 @@
+# Reproduces icssw-org/MeshCom-Firmware .github/workflows/meshcom-ci.yml (dev cf215b5d) up to "Build all Projects".
+FROM docker.io/library/ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -q && apt-get install -y -q software-properties-common git wget curl ca-certificates \
+ && add-apt-repository -y ppa:deadsnakes/ppa && apt-get update -q \
+ && apt-get install -y -q python3.11 python3.11-venv python3.11-dev \
+ && python3.11 -m venv /opt/py && rm -rf /var/lib/apt/lists/*
+# setup-python puts 3.11 first on PATH as python/python3/pip
+ENV PATH=/opt/py/bin:$PATH
+RUN pip install --upgrade pip && pip install --upgrade platformio && pip install --upgrade intelhex
+RUN pio platform install nordicnrf52
+RUN pio platform install espressif32
+RUN mkdir -p ~/.platformio/platforms/espressif32/boards && wget -q -O ~/.platformio/platforms/espressif32/boards/t-beams3-supreme.json https://raw.githubusercontent.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/master/boards/t-beams3-supreme.json && cat ~/.platformio/platforms/espressif32/boards/t-beams3-supreme.json | head -5
+RUN python --version && pio --version && pip list 2>/dev/null | grep -i -E 'platformio|intelhex' && pio platform list
+WORKDIR /ws

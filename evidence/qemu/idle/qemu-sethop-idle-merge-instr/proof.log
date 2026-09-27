@@ -1,0 +1,14 @@
+01:37:40 PHASE A: {SET} then hard power-off, no transmission in between
+01:38:01   console up after 21 s
+01:38:49   initial text hop limit: 4
+01:39:01   after {SET}44 (out of range): 4
+01:39:12   after {SET}4 (unchanged): 4
+01:39:23   after {SET}2: 2
+01:39:28   NVS after hard power-off: {'max_hop_text': '2', 'node_msgid': '2'}
+01:39:50   console up after 21 s
+01:39:54   after reboot: text hop limit ?
+01:39:54 PHASE B: {SET}, one text transmission, hard power-off
+01:40:15   console up after 21 s
+01:41:10   after {SET}2: 2
+01:41:29   NVS after TX + hard power-off: {'max_hop_text': '2', 'node_msgid': '3'} (msgid before the text: 1)
+01:41:29 RESULT idle-merge-instr: A ram=2 nvs=2 reboot=? | B nvs=2

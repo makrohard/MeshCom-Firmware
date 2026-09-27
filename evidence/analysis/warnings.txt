@@ -1,0 +1,192 @@
+## esp32-safeboot: base has 1 warning lines (1 distinct)
+  pr1: 1 lines, NEW 0, GONE 0
+  pr2: 1 lines, NEW 0, GONE 0
+  pr3: 1 lines, NEW 0, GONE 0
+  pr12: 1 lines, NEW 0, GONE 0
+  merge: 1 lines, NEW 0, GONE 0
+## esp32-S3-safeboot: base has 3 warning lines (2 distinct)
+  pr1: 3 lines, NEW 0, GONE 0
+  pr2: 3 lines, NEW 0, GONE 0
+  pr3: 3 lines, NEW 0, GONE 0
+  pr12: 3 lines, NEW 0, GONE 0
+  merge: 3 lines, NEW 0, GONE 0
+## E22-DevKitC: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## E22_1262-DevKitC: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## E22_1262_S3-DevKitC-1-N16R8: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## E22_1268_S3-DevKitC-1-N16R8: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## E22_XML-DevKitC: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## LilyGo_T-Beam-1W: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## LilyGo_T3_S3_V1_3: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## LilyGo_T_Connect_Pro: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## T-ETH-ELITE_1262: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## esp32-loraprs-e22: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## esp32-loraprs-ra01: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## heltec_t114: base has 6 warning lines (6 distinct)
+  pr1: 6 lines, NEW 0, GONE 0
+  pr2: 6 lines, NEW 0, GONE 0
+  pr3: 6 lines, NEW 0, GONE 0
+  pr12: 6 lines, NEW 0, GONE 0
+  merge: 6 lines, NEW 0, GONE 0
+## heltec_wifi_lora_32_V2: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## heltec_wifi_lora_32_V3: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## heltec_wifi_lora_32_V4: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## heltec_wireless_stick: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## heltec_wireless_tracker: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## t_deck: base has 3 warning lines (3 distinct)
+  pr1: 3 lines, NEW 0, GONE 0
+  pr2: 3 lines, NEW 0, GONE 0
+  pr3: 3 lines, NEW 0, GONE 0
+  pr12: 3 lines, NEW 0, GONE 0
+  merge: 3 lines, NEW 0, GONE 0
+## t_deck_plus: base has 3 warning lines (3 distinct)
+  pr1: 3 lines, NEW 0, GONE 0
+  pr2: 3 lines, NEW 0, GONE 0
+  pr3: 3 lines, NEW 0, GONE 0
+  pr12: 3 lines, NEW 0, GONE 0
+  merge: 3 lines, NEW 0, GONE 0
+## t_deck_pro: base has 3 warning lines (3 distinct)
+  pr1: 3 lines, NEW 0, GONE 0
+  pr2: 3 lines, NEW 0, GONE 0
+  pr3: 3 lines, NEW 0, GONE 0
+  pr12: 3 lines, NEW 0, GONE 0
+  merge: 3 lines, NEW 0, GONE 0
+## t_echo: base has 6 warning lines (6 distinct)
+  pr1: 6 lines, NEW 0, GONE 0
+  pr2: 6 lines, NEW 0, GONE 0
+  pr3: 6 lines, NEW 0, GONE 0
+  pr12: 6 lines, NEW 0, GONE 0
+  merge: 6 lines, NEW 0, GONE 0
+## ttgo-lora32-v21: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## ttgo_tbeam: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## ttgo_tbeam_SX1262: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## ttgo_tbeam_SX1268: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## ttgo_tbeam_supreme: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## vision-master-e213: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## vision-master-e290: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## wireless-paper: base has 2 warning lines (2 distinct)
+  pr1: 2 lines, NEW 0, GONE 0
+  pr2: 2 lines, NEW 0, GONE 0
+  pr3: 2 lines, NEW 0, GONE 0
+  pr12: 2 lines, NEW 0, GONE 0
+  merge: 2 lines, NEW 0, GONE 0
+## wiscore_rak4631: base has 6 warning lines (6 distinct)
+  pr1: 6 lines, NEW 0, GONE 0
+  pr2: 6 lines, NEW 0, GONE 0
+  pr3: 6 lines, NEW 0, GONE 0
+  pr12: 6 lines, NEW 0, GONE 0
+  merge: 6 lines, NEW 0, GONE 0

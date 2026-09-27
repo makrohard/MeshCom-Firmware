@@ -1,0 +1,10 @@
+=== idle-base-nobatt-flag
+setup finished: True
+network up: False
+console answered: NO
+GPS lines: ['[GPS ]...QEMU virtual GPS on UART1 (synthetic RX=16 TX=17 @ 9600 baud; no hardwa', '[GPS ]...QEMU NMEA presence: 236 chars -> detected']
+position via --pos: 
+panic/assert: []
+reboots (rst:): 1
+last lines: ['[QEMU]...dhcpc_start -> 0x5004 (0=started, 0x5004=already-running)', '[GPS ]...QEMU virtual GPS on UART1 (synthetic RX=16 TX=17 @ 9600 baud; no hardware)', '[GPS ]...QEMU NMEA presence: 236 chars -> detected', '[QEMU]...OpenETH GOT_IP ip=10.0.2.15 mask=255.255.255.0 gw=10.0.2.5']
+

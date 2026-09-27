@@ -1,0 +1,26 @@
+01:37:45 [    0.0] image ../flash-pr1-instr.bin sha256 acd983691d83dbb6d6b1b4bb72f5d40f059b876b26c874a094f8294d61a1567e
+01:37:45 [    0.0] sites ['message', 'position', 'ping', 'pong', 'ack', 'hey', 'injpos', 'apppos']; ports console 22341 bridge 22342 kiss 22343; load (5.19921875, 4.65185546875, 7.20654296875)
+01:38:03 [   18.3] console up after 18 s
+01:38:15 [   29.9] bridge operational: True
+01:38:17 [   32.0] GPS fix in RAM: 48.0 ; NVS {'node_lat': '48.0', 'node_msgid': '0'}
+01:40:47 [  182.0] boot TX so far: 
+01:41:05 [  200.3] frame tail from own TX: ((39, 136, 35, 167, 116), 4)
+01:41:05 [  200.3] SITE message
+01:41:26 [  220.7]   message: {"site": "message", "trigger": "console '::sites text N' (sendMessage)", "lat_set": 48.0011, "nvs_before": {"node_lat": "48.0", "node_msgid": "1"}, "nvs_after": {"node_lat": "48.0", "node_msgid": "2"}, "frames": ["':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]"], "gaps": [], "load": [7.1, 5.5, 7.0], "window_s": 11.3, "ctr_in_frame": 1, "msgid_expected": 2, "a_persisted": true, "flushed": false, "pre_clean": true, "retransmissions": [], "only_frame": true, "max_gap_ms": 0, "status": "fired"}
+01:41:26 [  220.7] SITE position
+01:41:46 [  241.2]   position: {"site": "position", "trigger": "console '--sendpos' (sendPosition 0x9999)", "lat_set": 48.0022, "nvs_before": {"node_lat": "48.0", "node_msgid": "2"}, "nvs_after": {"node_lat": "48.0", "node_msgid": "3"}, "frames": ["'!' id 00000002 ctr 2 hop 0x42 [TE5T-1>*!4800.13N/01200.00E#/B=085/A=001772]"], "gaps": [], "load": [5.6, 5.3, 6.9], "window_s": 11.2, "ctr_in_frame": 2, "msgid_expected": 3, "a_persisted": true, "flushed": false, "pre_clean": true, "retransmissions": [], "only_frame": true, "max_gap_ms": 0, "status": "fired"}
+01:41:46 [  241.2] SITE ping
+01:41:53 [  247.7]   first ping (after --ping start): [PING]...send Ping to DL1PEE-1 <5>
+01:42:31 [  286.2]   ping: {"site": "ping", "trigger": "--pingcall/--pingtime 30/--ping start, measuring the 2nd scheduled ping (esp32_main -> sendPing)", "lat_set": 48.0033, "nvs_before": {"node_lat": "48.0022", "node_msgid": "4"}, "nvs_after": {"node_lat": "48.0022", "node_msgid": "5"}, "frames": ["':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]", "':' id 00000004 ctr 4 hop 0x04 [TE5T-1>DL1PEE-1:{ping}]"], "gaps": [], "load": [5.5, 5.3, 6.8], "window_s": 29.0, "ctr_in_frame": 4, "msgid_expected": 5, "a_persisted": true, "flushed": false, "pre_clean": true, "retransmissions": ["':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]"], "only_frame": true, "max_gap_ms": 0, "status": "fired"}
+01:42:34 [  289.3] SITE pong
+01:42:55 [  310.1]   pong: {"site": "pong", "trigger": "bridge RX_PACKET: text DL1PEE-1>TE5T-1 '{ping}' (lora_functions OnRxDone -> SendPong)", "lat_set": 48.0044, "nvs_before": {"node_lat": "48.0022", "node_msgid": "5"}, "nvs_after": {"node_lat": "48.0022", "node_msgid": "6"}, "frames": ["':' id 00000005 ctr 5 hop 0x04 [TE5T-1>DL1PEE-1:{pong}{1487604803}]", "':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]"], "gaps": [], "load": [4.6, 5.1, 6.7], "window_s": 8.5, "ctr_in_frame": 5, "msgid_expected": 6, "a_persisted": true, "flushed": false, "pre_clean": true, "retransmissions": ["':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]"], "only_frame": true, "max_gap_ms": 0, "status": "fired"}
+01:42:55 [  310.1] SITE ack
+01:43:16 [  330.9]   ack: {"site": "ack", "trigger": "bridge RX_PACKET: DM DL1PEE-1>TE5T-1 'sites dm{497' (OnRxDone -> SendAckMessage)", "lat_set": 48.0055, "nvs_before": {"node_lat": "48.0022", "node_msgid": "6"}, "nvs_after": {"node_lat": "48.0022", "node_msgid": "7"}, "frames": ["':' id 00000006 ctr 6 hop 0x04 [TE5T-1>DL1PEE-1:DL1PEE-1 :ack497]"], "gaps": [], "load": [4.2, 4.9, 6.6], "window_s": 8.6, "ctr_in_frame": 6, "msgid_expected": 7, "a_persisted": true, "flushed": false, "pre_clean": true, "retransmissions": [], "only_frame": true, "max_gap_ms": 0, "status": "fired"}
+01:43:16 [  330.9] SITE hey
+01:43:40 [  354.7]   hey: {"site": "hey", "trigger": "console '--sendhey' (sendHeyShot -> sendHey)", "lat_set": 48.0066, "nvs_before": {"node_lat": "48.0055", "node_msgid": "7"}, "nvs_after": {"node_lat": "48.0055", "node_msgid": "8"}, "frames": ["'@' id 00000007 ctr 7 hop 0x04 [TE5T-1>H@R1;]"], "gaps": [], "load": [4.2, 4.9, 6.5], "window_s": 11.2, "ctr_in_frame": 7, "msgid_expected": 8, "a_persisted": true, "flushed": false, "pre_clean": true, "retransmissions": [], "only_frame": true, "max_gap_ms": 0, "status": "fired"}
+01:43:40 [  354.7] SITE injpos
+01:44:34 [  409.1]   injpos: KISS server started line in UART: False; host connect ok, reply b"ConnectionResetError(104, 'Connection reset by peer')"
+01:44:34 [  409.1] SITE apppos
+01:44:34 [  409.1]   apppos: dead code, skipped
+01:44:34 [  409.1] HARD POWER-OFF: NVS after kill {'node_msgid': '8', 'node_lat': '48.0066'}; counter after the last own TX 8
+01:44:34 [  409.1] done

@@ -1,0 +1,13 @@
+[base-nobatt] tree at cf215b5d Merge pull request #1167 from icssw-org/oe1kbc_4.35t
+dropped src/batt_function_old.cpp: '+#ifdef QEMU_HEADLESS\n+\t// QEMU has no analog/ADC peripheral: adc1_get_raw() busy-waits fo'
+dropped (whole file src/batt_function_old.cpp)
+dropped src/esp32/esp32_main.cpp: '+    #ifndef QEMU_HEADLESS\n+    #endif'
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+ 6 files changed, 249 insertions(+), 4 deletions(-)
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-base-nobatt/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+55af962203410f23dff276c0ec44d7132b2c05f58ac3204b887a1a31b58b1179  /home/makro/claude/agent5-allenvs/qemu/repo-base-nobatt/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+50b45801c697a97e9e35d9f733284cb0ec01dd1c6ce987b2a2531a7f6c60b88f  /home/makro/claude/agent5-allenvs/qemu/repo-base-nobatt/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+50b45801c697a97e9e35d9f733284cb0ec01dd1c6ce987b2a2531a7f6c60b88f  /home/makro/claude/agent5-allenvs/qemu/flash-base-nobatt.bin
+[base-nobatt] BUILD DONE

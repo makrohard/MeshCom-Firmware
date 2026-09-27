@@ -1,0 +1,90 @@
+=== merge-fbatt vs merge (esp32_main.cpp.o)
+  [27 envs] E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker vision-master-e290 vision-master-e213 wireless-paper T-ETH-ELITE_1262 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268 ttgo_tbeam_supreme t_deck t_deck_plus t_deck_pro esp32-loraprs-e22 esp32-loraprs-ra01
+      CHANGED esp32setup()
+      CHANGED esp32loop()
+=== merge-fble vs merge (esp32_main.cpp.o)
+  [17 envs] E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker vision-master-e290 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 esp32-loraprs-e22 esp32-loraprs-ra01
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$40
+  [3 envs] vision-master-e213 wireless-paper T-ETH-ELITE_1262
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$34
+  [3 envs] ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$42
+  [2 envs] t_deck t_deck_plus
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      CHANGED esp32loop()
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+  [1 envs] ttgo_tbeam_supreme
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      CHANGED esp32loop()
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$42
+  [1 envs] t_deck_pro
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+=== merge-fboth vs merge (esp32_main.cpp.o)
+  [21 envs] E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker vision-master-e290 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268 ttgo_tbeam_supreme esp32-loraprs-e22 esp32-loraprs-ra01
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      CHANGED esp32loop()
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$40
+  [3 envs] vision-master-e213 wireless-paper T-ETH-ELITE_1262
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      CHANGED esp32loop()
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$34
+  [3 envs] t_deck t_deck_plus t_deck_pro
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      CHANGED esp32loop()
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+=== pr3-fbatt vs pr3 (esp32_main.cpp.o)
+  [27 envs] E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker vision-master-e290 vision-master-e213 wireless-paper T-ETH-ELITE_1262 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268 ttgo_tbeam_supreme t_deck t_deck_plus t_deck_pro esp32-loraprs-e22 esp32-loraprs-ra01
+      CHANGED esp32setup()
+      CHANGED esp32loop()
+=== pr3-fble vs pr3 (esp32_main.cpp.o)
+  [17 envs] E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker vision-master-e290 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 esp32-loraprs-e22 esp32-loraprs-ra01
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$40
+  [3 envs] vision-master-e213 wireless-paper T-ETH-ELITE_1262
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$34
+  [3 envs] ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$42
+  [2 envs] t_deck t_deck_plus
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      CHANGED esp32loop()
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+  [1 envs] ttgo_tbeam_supreme
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      CHANGED esp32loop()
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+      NEW _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_$isra$42
+  [1 envs] t_deck_pro
+      CHANGED esp32setup()
+      CHANGED esp32_write_ble(unsigned char*, unsigned char)
+      GONE void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)
+=== base-fboth vs base (esp32_main.cpp.o)
+  [27 envs] E22_1262-DevKitC E22-DevKitC E22_XML-DevKitC E22_1268_S3-DevKitC-1-N16R8 E22_1262_S3-DevKitC-1-N16R8 heltec_wifi_lora_32_V2 heltec_wifi_lora_32_V3 heltec_wifi_lora_32_V4 heltec_wireless_stick heltec_wireless_tracker vision-master-e290 vision-master-e213 wireless-paper T-ETH-ELITE_1262 LilyGo_T-Beam-1W LilyGo_T3_S3_V1_3 LilyGo_T_Connect_Pro ttgo-lora32-v21 ttgo_tbeam ttgo_tbeam_SX1262 ttgo_tbeam_SX1268 ttgo_tbeam_supreme t_deck t_deck_plus t_deck_pro esp32-loraprs-e22 esp32-loraprs-ra01

@@ -1,0 +1,14 @@
+03:08:35 PHASE A: {SET} then hard power-off, no transmission in between
+03:08:53   console up after 18 s
+03:09:42   initial text hop limit: 4
+03:09:53   after {SET}44 (out of range): 4
+03:10:04   after {SET}4 (unchanged): 4
+03:10:15   after {SET}2: 2
+03:10:21   NVS after hard power-off: {'max_hop_text': '2', 'node_msgid': '2'}
+03:10:42   console up after 21 s
+03:10:46   after reboot: text hop limit ?
+03:10:46 PHASE B: {SET}, one text transmission, hard power-off
+03:11:04   console up after 18 s
+03:11:59   after {SET}2: 2
+03:12:19   NVS after TX + hard power-off: {'max_hop_text': '2', 'node_msgid': '3'} (msgid before the text: 1)
+03:12:19 RESULT idle-oldpr1-instr: A ram=2 nvs=2 reboot=? | B nvs=2

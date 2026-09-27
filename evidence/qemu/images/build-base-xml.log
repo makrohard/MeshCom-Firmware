@@ -1,0 +1,10 @@
+[base-xml] tree at cf215b5d Merge pull request #1167 from icssw-org/oe1kbc_4.35t
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+ 9 files changed, 328 insertions(+), 4 deletions(-)
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-base-xml/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+ebac03675760ddd1cdebd8bb725e266fe1ee3638fa6a11c3459c0680490e64d1  /home/makro/claude/agent5-allenvs/qemu/repo-base-xml/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+79ceb76b9b6555792de8d71f70f6d20130ea22f67256e4cf2b6278fc0bf753db  /home/makro/claude/agent5-allenvs/qemu/repo-base-xml/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+79ceb76b9b6555792de8d71f70f6d20130ea22f67256e4cf2b6278fc0bf753db  /home/makro/claude/agent5-allenvs/qemu/flash-base-xml.bin
+[base-xml] BUILD DONE

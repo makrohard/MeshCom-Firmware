@@ -1,0 +1,5 @@
+01:29:03 idle-merge-plain: qemu pid 3178172, image flash-merge-plain.bin
+01:29:19 network up: True after 16 s; console init line: True
+01:29:23 console --info answered: yes after 4 s
+01:29:23 panic/assert lines in UART: 0 []
+01:29:23 qemu pid 3178172 stopped

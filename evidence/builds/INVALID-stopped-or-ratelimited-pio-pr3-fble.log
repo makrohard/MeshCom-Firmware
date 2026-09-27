@@ -1,0 +1,45 @@
+# pio run on pr3-fble: HEAD eacd07b374e586ea9f3f87454f7880be88a454cf tree f8294acd10aaa416097d1e0746282038afe4a0f8 PLATFORMIO_BUILD_FLAGS='-D DISABLE_BLE' image ac01fffefb30 cpus=4 start 2026-09-26T22:01:42Z
+Python 3.11.16
+PlatformIO Core, version 6.2.0
+Processing esp32-safeboot (board: esp32dev; framework: arduino; platform: https://github.com/tasmota/platform-espressif32/releases/download/2026.02.30/platform-espressif32.zip)
+--------------------------------------------------------------------------------
+Platform Manager: Installing https://github.com/tasmota/platform-espressif32/releases/download/2026.02.30/platform-espressif32.zip
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Platform Manager: espressif32@2026.2.30 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/esp_install/releases/download/v5.3.4/esp_install-v5.3.4.zip
+Downloading 0% 10% 20% 30% 40% 50% 60% 70%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: tool-esp_install@5.3.4 has been installed!
+Created pioarduino Python virtual environment: /root/.platformio/penv
+Tool Manager: Installing https://github.com/tasmota/arduino-esp32/releases/download/v3.1.10/framework-arduinoespressif32.tar.xz
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: framework-arduinoespressif32@3.3.7+sha.b3b492ff has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/xtensa-esp-elf-15.1.0_20250607.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: toolchain-xtensa-esp-elf@15.1.0+20250607 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/xtensa-esp-gdb-16.3_20250913.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: tool-xtensa-esp-elf-gdb@16.3.0+20250913 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/esptoolpy-v5.1.2.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: tool-esptoolpy@5.1.2 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/contrib-piohome-3.4.4.tar.gz
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: contrib-piohome@3.4.4 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/openocd-v0.12.0-esp32-20251215.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: tool-openocd-esp32@2.1200.20251215 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/esp-rom-elfs-20241011.zip
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: tool-esp-rom-elfs@2024.10.11 has been installed!
+Tool Manager: Installing platformio/tool-scons @ ~4.41101.0
+UserSideException: Download limit exceeded. Try again in 24 hours. If this persists, contact <contact@platformio.org>
+# exit 1 end 2026-09-26T22:02:29Z

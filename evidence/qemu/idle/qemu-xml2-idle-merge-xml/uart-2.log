@@ -1,0 +1,631 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1184
+load:0x40078000,len:13232
+load:0x40080400,len:3028
+entry 0x400805e4
+
+
+============
+CLIENT SETUP
+============
+[BOOT] RESET_REASON=1 POWERON
+[HEAP] 00:00:00 158576 156336 110580 (init)
+[PSRM] 00:00:00 0
+[EFUS]...Two Point: NOT supported
+[EFUS]...Vref: NOT supported
+[INIT]...initMheard
+[INIT]...init_flash
+[INIT]...build Sep 26 2026 / 23:12:40
+[INIT]...FLASH layout 20260724 ok, build 20260909
+[TIME]...Loaded time persistence: saved_time=0, mheard_time=0, msg_time=0
+[INIT]...WIFIAP starting...
+[INIT]...WEBServer starting...
+[QEMU]...headless defaults: web+console ON, wifiAP/gateway/extudp OFF
+[QEMU]...virtual GPS enabled (bGPSON=true); NMEA expected on UART1
+[INIT].._GW_ID: 00000000
+[INIT]...Initialize clock: ok
+[LoRa]...SX1268 chip Initializing ... success
+[EXTRADIO] enabled, bridge 10.0.2.2:7000, auth=password
+[LoRa]...All settings successfully changed
+[BLE ]...Device started with BLE-Name <MC-0000-XX0XXX-00>
+[BLE ]...disabled (DISABLE_BLE)
+==============
+CLIENT STARTED
+==============
+[QEMU]...starting OpenETH (esp_eth_start)
+[WIFI]...no connection possible
+[QEMU]...OpenETH driver started
+[QEMU]...OpenETH link connected
+[GPS ]...QEMU virtual GPS on UART1 (synthetic RX=16 TX=17 @ 9600 baud; no hardware)
+[QEMU]...dhcpc_start -> 0x5004 (0=started, 0x5004=already-running)
+[QEMU]...OpenETH GOT_IP ip=10.0.2.15 mask=255.255.255.0 gw=10.0.2.5
+[GPS ]...QEMU NMEA presence: 0 chars -> no data yet
+[QEMU]...OpenETH connect OK
+[WIFI];link;down;sta;0;status;255;down_s;0;last_reason;0;got_ip_n;0;ip;1;ms;14016
+[CON ]...HMAC console init.
+[CON ]...Console started on port 2323
+[BOOT];ready;ms;14031;ip;1
+TimeClient no update possible --> CPU-Mode
+[ 14032][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14042][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14050][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14055][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14060][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14066][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14072][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14077][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14082][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14087][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14092][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14097][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14103][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14109][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14115][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14121][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14127][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14133][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14139][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14145][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14151][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14157][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14163][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14169][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14175][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14181][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14187][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14193][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14199][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14206][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14214][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14222][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14229][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14236][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14243][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14249][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14256][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14262][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14268][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14275][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14282][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14288][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14295][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14302][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14308][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14314][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14320][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14326][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14332][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14338][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14344][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14350][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14357][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14363][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14369][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14377][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14384][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14392][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[CON ]...accept() fd=50 free=124148
+[ 14403][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[CON ]...Client authenticated on port 2323. free heap=120528
+-[ 14417][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+-[ 14425][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+i[ 14432][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+n[ 14441][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+f[ 14449][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+o[ 14457][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14463][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+
+--MeshCom 4.35t (build: Sep 26 2026 / 23:12:40)
+...UPDATE: 
+...Call: <XX0XXX-00> ...ID 00000000 ...NODE 39 <EBYTE_E22> ...UTC-OFF 3.500000 [CPU]
+...BATT 0.00 V ...BATT 0 % ...MAXV 4.200 V
+...TIME 14483 ms
+...Flash-Version 20260724
+...NOMSGALL off ...MESH off ...BUTTON (12) off ...SOFTSER off ... SOFTSERREAD off
+...PASSWD <>
+...DEBUG man ...DEBUG en
+...DEBUG off ...LORADEBUG off ...GPSDEBUG off/0 ...SOFTSERDEBUG off
+...WXDEBUG off ...BLEDEBUG off
+...DisplayInfo off ...DisplayCont off ...DisplyLog off ...contrast 255 ...ackinfo off
+...EXTUDP off ...EXT IP none ...NOPMOTHER off
+...BTCODE 000000
+...APRSMC: APRSMC
+...ATXT: 
+...NAME: 
+...BLE : short
+...DISPLAY on
+...CTRY EU8
+...FREQ 433.1750 MHz TXPWR 17 dBm RXBOOST off
+...MAXHOP text 4 / pos 2
+
+...Webserver  on / Webpwd <> / Gateway off 
+...NETConsole on (port 2323)
+...KISS/TCP   off / TX off / RxMeta off / Auth off
+...WIFI-AP    off
+...SSID <none> / PASSWORD <***>
+...NETWORK Mode:ETH
+...hasIpAddress: yes
+...IP address   : 10.0.2.15
+...SUBNET-MASK  : 255.255.255.0
+...GW address   : 10.0.2.5
+...DNS address  : 
+...UDP-HBeat : 14498
+[ 14499][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14504][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14509][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14514][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14519][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14525][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14531][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14537][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14543][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14549][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14555][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14561][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14567][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14573][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14579][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14585][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14591][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14598][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14605][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14612][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14619][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14625][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14631][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14637][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14644][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14651][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14657][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14663][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14670][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14676][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14682][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14688][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14694][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14701][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14708][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14714][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14720][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14726][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14732][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14738][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14745][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14752][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14758][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14764][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14770][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14776][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14783][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14790][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14796][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14802][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14808][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14815][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14821][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14827][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14833][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14841][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14848][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14854][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14863][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14871][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14879][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14887][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14893][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14900][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14907][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14914][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14922][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14930][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14937][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14943][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14951][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14959][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14966][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14973][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14979][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14984][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14989][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14994][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 14999][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15004][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15010][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15015][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15021][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15027][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15035][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15041][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15059][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15071][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15080][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15087][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15094][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15100][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15106][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15113][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15119][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15125][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15131][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15137][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15143][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15149][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15155][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15161][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15167][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15173][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15179][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15185][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15191][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15197][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15203][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15210][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15216][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15223][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15229][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15235][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15241][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15247][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15253][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15259][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15265][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15271][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15277][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15283][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15290][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15297][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15304][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15310][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15316][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15323][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15330][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15337][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15343][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15349][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15356][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15363][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15369][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15375][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15381][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15387][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15394][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15401][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15408][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15415][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15421][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15427][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15434][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15440][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15446][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15452][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15459][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15466][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15473][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15479][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15485][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15491][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15496][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15502][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15507][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15512][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15518][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15524][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15530][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15537][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15543][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15549][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15556][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15562][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15568][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15575][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15581][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15587][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15593][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15599][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15606][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15612][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15619][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15626][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15632][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15639][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15646][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15652][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15659][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15665][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15671][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15678][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15684][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15690][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15696][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15702][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15708][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15714][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15720][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15726][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15733][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15740][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15746][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15752][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15758][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15764][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15770][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15776][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15782][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15788][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15794][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15800][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15806][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15812][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15818][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15824][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15830][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15837][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15844][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15850][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15856][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15863][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15870][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15877][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15884][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15890][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15896][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15902][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15908][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15914][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15920][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15926][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15932][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15938][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15944][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15950][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15956][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15962][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15968][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15975][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15981][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15988][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 15995][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16002][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16009][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16016][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16023][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16029][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16036][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16044][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16050][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16056][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16063][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16070][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16076][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16082][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16088][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16094][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16100][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16106][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16112][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16119][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16126][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16132][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16138][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16144][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16150][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16156][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16162][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16168][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16174][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16179][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16184][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16189][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16195][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16201][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16207][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16213][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16219][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16226][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16232][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16238][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16244][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16251][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16258][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16264][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16270][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16276][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16282][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16288][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16294][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16301][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16307][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16314][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16321][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16328][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16335][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16341][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16348][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16354][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16360][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16366][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16373][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16379][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16385][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16392][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16398][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16404][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16411][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16417][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16423][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16429][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16435][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16442][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16448][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16454][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16460][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16466][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16473][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16479][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16485][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16491][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16497][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16503][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16510][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16516][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16523][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16530][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16536][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16543][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16549][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16555][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16561][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16567][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16573][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16579][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16585][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16591][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16597][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16603][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16609][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16615][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16621][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16628][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16634][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16640][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16646][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16652][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16658][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16664][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16670][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16676][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16682][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16688][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16694][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16700][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16706][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16712][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16718][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16724][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16730][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16736][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16742][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16748][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16754][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16761][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16768][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16774][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16780][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16786][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16792][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16799][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16805][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16812][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16818][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16824][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16830][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16836][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16842][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16848][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16854][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16860][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16867][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16874][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16880][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16886][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16892][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16898][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16904][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16910][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16916][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16922][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16929][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16936][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16942][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16948][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16954][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16960][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16966][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16972][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16978][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16984][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16990][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 16996][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17003][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17009][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17015][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17021][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17027][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17034][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17040][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17046][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17052][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17058][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17065][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17072][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17091][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17101][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17109][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17115][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17121][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17127][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17133][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17140][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17147][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17154][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17162][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17169][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17175][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17180][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17186][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17191][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17197][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17203][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17209][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17215][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17222][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17229][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17235][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17241][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17247][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17253][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17259][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17265][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17271][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17278][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17284][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17290][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17296][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17303][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17309][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17315][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17321][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17327][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17333][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17339][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17345][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17351][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17357][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17363][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17369][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17374][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17380][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17385][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17391][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17397][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17403][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17410][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17417][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17424][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17431][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17438][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17444][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17450][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17457][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17463][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17470][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17476][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17482][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17488][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17493][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9
+[ 17498][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9

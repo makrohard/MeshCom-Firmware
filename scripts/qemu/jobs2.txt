@@ -1,0 +1,12 @@
+base all
+pr3 all
+pr3 drop3
+pr3 drop3-batt
+pr3 drop3-ble
+merge plain
+merge instr
+merge xml
+merge short
+merge drop3
+merge drop3-batt
+merge drop3-ble

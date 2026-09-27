@@ -1,0 +1,100 @@
+commit 7ba919cb29adc6a8c82b5b980553e871e43e6e57
+Author: test <test@test>
+Date:   Sat Sep 26 01:49:15 2026 +0200
+
+    TEST ONLY: xmltz console command + testTinyXML stub (never a PR)
+
+diff --git a/src/command_functions.cpp b/src/command_functions.cpp
+index e1a720cc..dc6f3f78 100644
+--- a/src/command_functions.cpp
++++ b/src/command_functions.cpp
+@@ -1,5 +1,6 @@
+ //2025-09-16 23:036
+ #include "command_functions.h"
++#include <tinyxml_functions.h>   // TEST ONLY
+ #include "capture_functions.h"
+ #include "loop_functions.h"
+ #include "loop_functions_extern.h"
+@@ -3613,6 +3614,70 @@ void commandAction(char *umsg_text, bool ble)
+         return;
+     }
+     else
++    // ---- TEST ONLY (never part of a PR): feed a station XML with the given timezone into the real decoder
++    if(commandCheck(msg_text+2, (char*)"xmltz ") == 0)
++    {
++        String tz = String(msg_text+8); tz.trim();
++        String d = "<StationDataList><StationData stationId=\"0077234567\" name=\"DemoStationNetDL500\" timezone=\"+01:00\"> \
++<StationInfo time=\"2025-04-22T13:04:19\" firmware=\"V3080\" configtime=\"2025-04-09T05:49:48\" paramtime=\"2025-04-09T05:49:48\" batteryVoltage=\"13.34\" temperature=\"28.62\" deviceType=\"OTT netDL 500\" providerName=\"none\" gsmSignal=\"0\" ipAddress=\"0.0.0.0\" transmissionCycle=\"360\" transmissionOffset=\"0\" configuredTransmissionCycle=\"360\" /> \
++<ChannelData channelId=\"0060\" name=\"Wasserstand\" unit=\"cm\" samplingInterval=\"300\" storageInterval=\"300\" configuredSamplingInterval=\"300\" configuredStorageInterval=\"300\"  > \
++<Values> \
++<VT t=\"2025-04-22T12:00:00\">28.3</VT> \
++<VT t=\"2025-04-22T12:05:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:10:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:15:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:20:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:25:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:30:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:35:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:40:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:45:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:50:00\">28.4</VT> \
++<VT t=\"2025-04-22T12:55:00\">28.5</VT> \
++<VT t=\"2025-04-22T13:00:00\">30.1</VT> \
++</Values> \
++</ChannelData> \
++<ChannelData channelId=\"0065\" name=\"Wassertemperatur\" unit=\"&#176;C\" samplingInterval=\"300\" storageInterval=\"300\" configuredSamplingInterval=\"300\" configuredStorageInterval=\"300\"  > \
++<Values> \
++<VT t=\"2025-04-22T12:05:00\">22.0</VT> \
++<VT t=\"2025-04-22T12:10:00\">25.0</VT> \
++<VT t=\"2025-04-22T12:15:00\">24.0</VT> \
++<VT t=\"2025-04-22T12:20:00\">23.0</VT> \
++<VT t=\"2025-04-22T12:25:00\">27.0</VT> \
++<VT t=\"2025-04-22T12:30:00\">27.0</VT> \
++<VT t=\"2025-04-22T12:35:00\">27.0</VT> \
++<VT t=\"2025-04-22T12:40:00\">26.0</VT> \
++<VT t=\"2025-04-22T12:45:00\">25.0</VT> \
++<VT t=\"2025-04-22T12:50:00\">25.0</VT> \
++<VT t=\"2025-04-22T12:55:00\">22.0</VT> \
++<VT t=\"2025-04-22T13:00:00\">22.7</VT> \
++</Values> \
++</ChannelData> \
++<ChannelData channelId=\"0050\" name=\"Batteriespannung\" unit=\"V\" samplingInterval=\"300\" storageInterval=\"300\" configuredSamplingInterval=\"300\" configuredStorageInterval=\"300\"  > \
++<Values> \
++<VT t=\"2025-04-22T12:00:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:05:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:10:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:15:00\">13.3</VT> \
++<VT t=\"2025-04-22T12:20:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:25:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:30:00\">13.3</VT> \
++<VT t=\"2025-04-22T12:35:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:40:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:45:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:50:00\">13.2</VT> \
++<VT t=\"2025-04-22T12:55:00\">13.4</VT> \
++<VT t=\"2025-04-22T13:00:00\">12.9</VT> \
++</Values> \
++</ChannelData> \
++</StationData> \
++</StationDataList>";
++        d.replace("timezone=\"+01:00\"", "timezone=\"" + tz + "\"");
++        decodeTinyXML(d);
++        printfdeb("[TEST] xml timezone %s -> node_utcoff %.2f\n", tz.c_str(), meshcom_settings.node_utcoff);
++        return;
++    }
++    else
+     if(commandCheck(msg_text+2, (char*)"setcall ") == 0)
+     {
+         snprintf(_owner_c, sizeof(_owner_c), "%s", msg_text+10);
+diff --git a/src/tinyxml_functions.cpp b/src/tinyxml_functions.cpp
+index fdb72085..8d7bf5f4 100644
+--- a/src/tinyxml_functions.cpp
++++ b/src/tinyxml_functions.cpp
+@@ -16,6 +16,7 @@ using namespace tinyxml2;
+ 
+ XMLDocument xmlDocument;
+ 
++void testTinyXML() {}   // TEST ONLY stub (the real test body is commented out upstream)
+ /* only for tresting
+ void testTinyXML()
+ {

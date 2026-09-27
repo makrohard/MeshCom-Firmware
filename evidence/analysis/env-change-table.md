@@ -1,0 +1,32 @@
+| env | PR1 9 TX sites | PR1 {SET} save | PR1 --aprsmc / PR2 setcall (commandAction) | PR1 save_msgid+save_position | PR1 GPS save | PR1 XML utcoff | PR1 T-Deck UI | PR1 T-Deck Pro keys | PR3a net console | PR3c/d flags (esp32setup/loop/write_ble, when set) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| E22_1262-DevKitC | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| E22-DevKitC | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| E22_XML-DevKitC | Y (9/9) | Y | Y/Y | Y | Y | Y | – | – | ≡ | Y |
+| E22_1268_S3-DevKitC-1-N16R8 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| E22_1262_S3-DevKitC-1-N16R8 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| heltec_wifi_lora_32_V2 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| heltec_wifi_lora_32_V3 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| heltec_wifi_lora_32_V4 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| heltec_wireless_stick | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| heltec_wireless_tracker | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| heltec_t114 | ≡ macro | Y | Y/Y | – | – | – | – | – | – | – |
+| vision-master-e290 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| vision-master-e213 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| wireless-paper | Y (9/9) | Y | Y/Y | Y | – | – | – | – | ≡ | Y |
+| T-ETH-ELITE_1262 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | Y | Y |
+| LilyGo_T-Beam-1W | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| LilyGo_T3_S3_V1_3 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| LilyGo_T_Connect_Pro | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | Y | Y |
+| ttgo-lora32-v21 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| ttgo_tbeam | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| ttgo_tbeam_SX1262 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| ttgo_tbeam_SX1268 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| ttgo_tbeam_supreme | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| t_deck | Y (9/9) | Y | Y/Y | Y | Y | – | Y | – | ≡ | Y |
+| t_deck_plus | Y (9/9) | Y | Y/Y | Y | Y | – | Y | – | ≡ | Y |
+| t_deck_pro | Y (9/9) | Y | Y/Y | Y | Y | – | – | Y | ≡ | Y |
+| t_echo | ≡ macro | Y | Y/Y | – | – | – | – | – | – | – |
+| wiscore_rak4631 | ≡ macro | Y | Y/Y | – | – | – | – | – | – | – |
+| esp32-loraprs-e22 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |
+| esp32-loraprs-ra01 | Y (9/9) | Y | Y/Y | Y | Y | – | – | – | ≡ | Y |

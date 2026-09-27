@@ -1,0 +1,5 @@
+01:18:30 idle-base-eth: qemu pid 3141473, image flash-base-eth.bin
+01:18:45 network up: True after 15 s; console init line: True
+01:21:45 console --info answered: NO within 180 s
+01:21:45 panic/assert lines in UART: 0 []
+01:21:45 qemu pid 3141473 stopped

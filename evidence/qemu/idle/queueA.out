@@ -1,0 +1,16 @@
+23:21:32 proof p1 base-plain rc=0 load=3.36
+23:24:34 proof p1 pr1-plain rc=0 load=2.67
+23:27:39 proof p1 merge-plain rc=0 load=6.02
+23:28:34 qemu-xml.py base-xml rc=0 load=5.46
+23:29:22 qemu-xml.py pr1-xml rc=0 load=3.78
+23:30:08 qemu-xml.py merge-xml rc=0 load=3.46
+23:33:54 qemu-sethop.py base-instr rc=0 load=4.63
+23:37:40 qemu-sethop.py pr1-instr rc=0 load=5.39
+23:41:29 qemu-sethop.py merge-instr rc=0 load=5.88
+23:44:33 proof setcall base-short rc=0 load=5.56
+23:47:42 proof setcall pr2-short rc=0 load=7.59
+23:50:46 proof setcall merge-short rc=0 load=4.60
+23:53:35 qemu-p1.py base-instr rc=0 load=3.37
+23:56:20 qemu-p1.py pr1-instr rc=0 load=2.87
+23:59:05 qemu-p1.py merge-instr rc=0 load=3.30
+00:20:01 IDLE-RUN-DONE

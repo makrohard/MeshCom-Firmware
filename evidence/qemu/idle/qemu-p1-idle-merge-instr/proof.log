@@ -1,0 +1,11 @@
+01:56:37 boot 1 (gps=True): console up after 15 s
+01:57:07 GPS fix in RAM: ...LAT: 48.0000 N
+01:57:12 NVS right after the fix (before any text): node_lat=48.0 node_msgid=1
+01:57:32 text 1: largest loop gap after it: 0 ms
+01:57:53 text 2: largest loop gap after it: 0 ms
+01:58:13 text 3: largest loop gap after it: 0 ms
+01:58:19 NVS after hard power-off (aprsmc set 3 s before): node_msgid=5 node_lat=48.0 node_lon=12.0 node_aprsmc=DL0ABC
+01:58:40 boot 2 (gps=False): console up after 21 s
+01:58:45 boot 2 start position (no GPS): 
+01:59:05 NVS after boot 2: node_msgid=7 node_lat=48.0 node_aprsmc=DL0ABC
+01:59:05 done

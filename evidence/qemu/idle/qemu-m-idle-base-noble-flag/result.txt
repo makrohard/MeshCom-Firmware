@@ -1,0 +1,8 @@
+setup finished: False
+network up: False
+console answered: NO
+GPS lines: []
+position via --pos: 
+panic/assert: ['assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)', 'Backtrace: 0x4008401d:0x3ffd92a0 0x4009752d:0x3ffd92c0 0x4009cd95:0x3ffd92e0 0x4015e07c:0x', 'assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)']
+reboots (rst:): 7
+last lines: ['[EFUS]...Two Point: NOT supported', '[EFUS]...Vref: NOT supported', '[INIT]...initMheard', '[INIT]...init_flash']

@@ -1,0 +1,5 @@
+01:28:45 idle-pr3-all: qemu pid 3177770, image flash-pr3-all.bin
+01:28:59 network up: True after 14 s; console init line: True
+01:29:03 console --info answered: yes after 4 s
+01:29:03 panic/assert lines in UART: 0 []
+01:29:03 qemu pid 3177770 stopped

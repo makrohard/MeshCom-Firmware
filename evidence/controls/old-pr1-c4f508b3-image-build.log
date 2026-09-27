@@ -1,0 +1,10 @@
+[r6-pr1-instr] tree at c4f508b3 perf(flash): after a transmission save only the message counter
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+ 7 files changed, 258 insertions(+), 4 deletions(-)
+[build] OK -> /home/makro/claude/qemu-images-pr12/repo-r6-pr1-instr/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+4a822048011ff85d1b666d9ae1cd110b065a16f0a0e3b48e986df682f619e070  /home/makro/claude/qemu-images-pr12/repo-r6-pr1-instr/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+c909c3a6b77c7245bdbe63b2750c51bec1422ccdf7f12c871b34d234d91a766c  /home/makro/claude/qemu-images-pr12/repo-r6-pr1-instr/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+c909c3a6b77c7245bdbe63b2750c51bec1422ccdf7f12c871b34d234d91a766c  /home/makro/claude/qemu-images-pr12/flash-r6-pr1-instr.bin
+[r6-pr1-instr] BUILD DONE

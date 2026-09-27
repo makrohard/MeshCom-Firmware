@@ -1,0 +1,60 @@
+## E22_1262-DevKitC (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## E22-DevKitC (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## E22_XML-DevKitC (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## E22_1268_S3-DevKitC-1-N16R8 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## E22_1262_S3-DevKitC-1-N16R8 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## heltec_wifi_lora_32_V2 (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## heltec_wifi_lora_32_V3 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## heltec_wifi_lora_32_V4 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## heltec_wireless_stick (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## heltec_wireless_tracker (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## heltec_t114 (arm-none-eabi-objdump)
+  base-fboth: 0 code sections differ from base
+## vision-master-e290 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## vision-master-e213 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## wireless-paper (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## T-ETH-ELITE_1262 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## LilyGo_T-Beam-1W (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## LilyGo_T3_S3_V1_3 (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## LilyGo_T_Connect_Pro (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## ttgo-lora32-v21 (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## ttgo_tbeam (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## ttgo_tbeam_SX1262 (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## ttgo_tbeam_SX1268 (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## ttgo_tbeam_supreme (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## t_deck (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## t_deck_plus (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## t_deck_pro (xtensa-esp32s3-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## t_echo (arm-none-eabi-objdump)
+  base-fboth: 0 code sections differ from base
+## wiscore_rak4631 (arm-none-eabi-objdump)
+  base-fboth: 0 code sections differ from base
+## esp32-loraprs-e22 (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base
+## esp32-loraprs-ra01 (xtensa-esp32-elf-objdump)
+  base-fboth: 0 code sections differ from base

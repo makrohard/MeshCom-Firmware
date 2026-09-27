@@ -1,0 +1,5 @@
+01:21:45 idle-base-all: qemu pid 3143308, image flash-base-all.bin
+01:25:45 network up: False after 240 s; console init line: False
+01:28:45 console --info answered: NO within 180 s
+01:28:45 panic/assert lines in UART: 9 ['assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)', 'assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)']
+01:28:45 qemu pid 3143308 stopped

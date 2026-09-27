@@ -1,0 +1,5 @@
+01:29:23 idle-pr3-drop3: qemu pid 3178511, image flash-pr3-drop3.bin
+01:33:23 network up: False after 240 s; console init line: False
+01:36:24 console --info answered: NO within 180 s
+01:36:24 panic/assert lines in UART: 16 ['assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)', 'assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)']
+01:36:24 qemu pid 3178511 stopped

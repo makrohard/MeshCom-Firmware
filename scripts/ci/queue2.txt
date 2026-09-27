@@ -1,0 +1,13 @@
+merge - t5_epaper
+base - t5_epaper
+pr1 - t5_epaper
+pr3 - t5_epaper
+pr12 - t5_epaper
+merge-fbatt -D_DISABLE_BATTERY
+merge-fble -D_DISABLE_BLE
+pr3-fbatt -D_DISABLE_BATTERY
+pr3-fble -D_DISABLE_BLE
+base-fboth -D_DISABLE_BATTERY_-D_DISABLE_BLE
+merge-fboth -D_DISABLE_BATTERY_-D_DISABLE_BLE t5_epaper
+merge-fbatt -D_DISABLE_BATTERY t5_epaper
+merge-fble -D_DISABLE_BLE t5_epaper

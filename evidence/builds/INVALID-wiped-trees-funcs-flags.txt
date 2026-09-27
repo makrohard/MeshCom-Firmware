@@ -1,0 +1,312 @@
+## E22_1262-DevKitC (xtensa-esp32-elf-objdump)
+  merge-fbatt: 64 code sections differ from base
+    src/Regexp.cpp.o: (object only in base)
+    src/adc_functions.cpp.o: (object only in base)
+    src/aht20.cpp.o: (object only in base)
+    src/alt_fusion.cpp.o: (object only in base)
+    src/aprs_functions.cpp.o: (object only in base)
+    src/batt_function_old.cpp.o: (object only in base)
+    src/batt_functions.cpp.o: (object only in base)
+    src/bme680.cpp.o: (object only in base)
+    src/bmp390.cpp.o: (object only in base)
+    src/bmx280.cpp.o: (object only in base)
+    src/byte_fifo.cpp.o: (object only in base)
+    src/capture_functions.cpp.o: (object only in base)
+    src/charset_filter.cpp.o: (object only in base)
+    src/clock.cpp.o: (object only in base)
+    src/conf_frame.cpp.o: (object only in base)
+    src/config_json.cpp.o: (object only in base)
+    src/dedup_functions.cpp.o: (object only in base)
+    src/esp32/esp32_audio.cpp.o: (object only in base)
+    src/esp32/esp32_eth.cpp.o: (object only in base)
+    src/esp32/esp32_flash.cpp.o: (object only in base)
+    src/esp32/esp32_functions.cpp.o: (object only in base)
+    src/esp32/esp32_main.cpp.o: (object only in base)
+    src/esp32/esp32_pmu.cpp.o: (object only in base)
+    src/esp32/esp32_sleep.cpp.o: (object only in base)
+    src/esp32/external_radio_glue.cpp.o: (object only in base)
+    src/esp32/pa_control.cpp.o: (object only in base)
+    src/extudp_functions.cpp.o: (object only in base)
+    src/gps_filter.cpp.o: (object only in base)
+    src/gps_functions.cpp.o: (object only in base)
+    src/i2c_scanner.cpp.o: (object only in base)
+    src/ina226_functions.cpp.o: (object only in base)
+    src/instrument.cpp.o: (object only in base)
+    src/io_functions.cpp.o: (object only in base)
+    src/kiss_functions.cpp.o: (object only in base)
+    src/loop_functions.cpp.o: (object only in base)
+    src/lora_functions.cpp.o: (object only in base)
+    src/lora_setchip.cpp.o: (object only in base)
+    src/main.cpp.o: (object only in base)
+    src/mcu811.cpp.o: (object only in base)
+    src/mheard_functions.cpp.o: (object only in base)
+    src/net_console.cpp.o: (object only in base)
+    src/ntp_async.cpp.o: (object only in base)
+    src/onebutton_functions.cpp.o: (object only in base)
+    src/onewire_functions.cpp.o: (object only in base)
+    src/phone_commands.cpp.o: (object only in base)
+    src/printfdeb_functions.cpp.o: (object only in base)
+    src/regex_functions.cpp.o: (object only in base)
+    src/rtc_functions.cpp.o: (object only in base)
+    src/setlog_lines.cpp.o: (object only in base)
+    src/settings_sanitize.cpp.o: (object only in base)
+    src/sht21.cpp.o: (object only in base)
+    src/softser_functions.cpp.o: (object only in base)
+    src/spectral_scan.cpp.o: (object only in base)
+    src/test_inject.cpp.o: (object only in base)
+    src/tft_display_functions.cpp.o: (object only in base)
+    src/time_functions.cpp.o: (object only in base)
+    src/tinyxml_functions.cpp.o: (object only in base)
+    src/txring_functions.cpp.o: (object only in base)
+    src/udp_functions.cpp.o: (object only in base)
+    src/via_functions.cpp.o: (object only in base)
+    src/web_functions/webUIComponents.cpp.o: (object only in base)
+    src/web_functions/web_functions.cpp.o: (object only in base)
+    src/web_functions/web_nodefunctioncalls.cpp.o: (object only in base)
+    src/web_functions/web_setup.cpp.o: (object only in base)
+  merge-fble: 64 code sections differ from base
+    src/Regexp.cpp.o: (object only in base)
+    src/adc_functions.cpp.o: (object only in base)
+    src/aht20.cpp.o: (object only in base)
+    src/alt_fusion.cpp.o: (object only in base)
+    src/aprs_functions.cpp.o: (object only in base)
+    src/batt_function_old.cpp.o: (object only in base)
+    src/batt_functions.cpp.o: (object only in base)
+    src/bme680.cpp.o: (object only in base)
+    src/bmp390.cpp.o: (object only in base)
+    src/bmx280.cpp.o: (object only in base)
+    src/byte_fifo.cpp.o: (object only in base)
+    src/capture_functions.cpp.o: (object only in base)
+    src/charset_filter.cpp.o: (object only in base)
+    src/clock.cpp.o: (object only in base)
+    src/conf_frame.cpp.o: (object only in base)
+    src/config_json.cpp.o: (object only in base)
+    src/dedup_functions.cpp.o: (object only in base)
+    src/esp32/esp32_audio.cpp.o: (object only in base)
+    src/esp32/esp32_eth.cpp.o: (object only in base)
+    src/esp32/esp32_flash.cpp.o: (object only in base)
+    src/esp32/esp32_functions.cpp.o: (object only in base)
+    src/esp32/esp32_main.cpp.o: (object only in base)
+    src/esp32/esp32_pmu.cpp.o: (object only in base)
+    src/esp32/esp32_sleep.cpp.o: (object only in base)
+    src/esp32/external_radio_glue.cpp.o: (object only in base)
+    src/esp32/pa_control.cpp.o: (object only in base)
+    src/extudp_functions.cpp.o: (object only in base)
+    src/gps_filter.cpp.o: (object only in base)
+    src/gps_functions.cpp.o: (object only in base)
+    src/i2c_scanner.cpp.o: (object only in base)
+    src/ina226_functions.cpp.o: (object only in base)
+    src/instrument.cpp.o: (object only in base)
+    src/io_functions.cpp.o: (object only in base)
+    src/kiss_functions.cpp.o: (object only in base)
+    src/loop_functions.cpp.o: (object only in base)
+    src/lora_functions.cpp.o: (object only in base)
+    src/lora_setchip.cpp.o: (object only in base)
+    src/main.cpp.o: (object only in base)
+    src/mcu811.cpp.o: (object only in base)
+    src/mheard_functions.cpp.o: (object only in base)
+    src/net_console.cpp.o: (object only in base)
+    src/ntp_async.cpp.o: (object only in base)
+    src/onebutton_functions.cpp.o: (object only in base)
+    src/onewire_functions.cpp.o: (object only in base)
+    src/phone_commands.cpp.o: (object only in base)
+    src/printfdeb_functions.cpp.o: (object only in base)
+    src/regex_functions.cpp.o: (object only in base)
+    src/rtc_functions.cpp.o: (object only in base)
+    src/setlog_lines.cpp.o: (object only in base)
+    src/settings_sanitize.cpp.o: (object only in base)
+    src/sht21.cpp.o: (object only in base)
+    src/softser_functions.cpp.o: (object only in base)
+    src/spectral_scan.cpp.o: (object only in base)
+    src/test_inject.cpp.o: (object only in base)
+    src/tft_display_functions.cpp.o: (object only in base)
+    src/time_functions.cpp.o: (object only in base)
+    src/tinyxml_functions.cpp.o: (object only in base)
+    src/txring_functions.cpp.o: (object only in base)
+    src/udp_functions.cpp.o: (object only in base)
+    src/via_functions.cpp.o: (object only in base)
+    src/web_functions/webUIComponents.cpp.o: (object only in base)
+    src/web_functions/web_functions.cpp.o: (object only in base)
+    src/web_functions/web_nodefunctioncalls.cpp.o: (object only in base)
+    src/web_functions/web_setup.cpp.o: (object only in base)
+  merge-fboth: 64 code sections differ from base
+    src/Regexp.cpp.o: (object only in base)
+    src/adc_functions.cpp.o: (object only in base)
+    src/aht20.cpp.o: (object only in base)
+    src/alt_fusion.cpp.o: (object only in base)
+    src/aprs_functions.cpp.o: (object only in base)
+    src/batt_function_old.cpp.o: (object only in base)
+    src/batt_functions.cpp.o: (object only in base)
+    src/bme680.cpp.o: (object only in base)
+    src/bmp390.cpp.o: (object only in base)
+    src/bmx280.cpp.o: (object only in base)
+    src/byte_fifo.cpp.o: (object only in base)
+    src/capture_functions.cpp.o: (object only in base)
+    src/charset_filter.cpp.o: (object only in base)
+    src/clock.cpp.o: (object only in base)
+    src/conf_frame.cpp.o: (object only in base)
+    src/config_json.cpp.o: (object only in base)
+    src/dedup_functions.cpp.o: (object only in base)
+    src/esp32/esp32_audio.cpp.o: (object only in base)
+    src/esp32/esp32_eth.cpp.o: (object only in base)
+    src/esp32/esp32_flash.cpp.o: (object only in base)
+    src/esp32/esp32_functions.cpp.o: (object only in base)
+    src/esp32/esp32_main.cpp.o: (object only in base)
+    src/esp32/esp32_pmu.cpp.o: (object only in base)
+    src/esp32/esp32_sleep.cpp.o: (object only in base)
+    src/esp32/external_radio_glue.cpp.o: (object only in base)
+    src/esp32/pa_control.cpp.o: (object only in base)
+    src/extudp_functions.cpp.o: (object only in base)
+    src/gps_filter.cpp.o: (object only in base)
+    src/gps_functions.cpp.o: (object only in base)
+    src/i2c_scanner.cpp.o: (object only in base)
+    src/ina226_functions.cpp.o: (object only in base)
+    src/instrument.cpp.o: (object only in base)
+    src/io_functions.cpp.o: (object only in base)
+    src/kiss_functions.cpp.o: (object only in base)
+    src/loop_functions.cpp.o: (object only in base)
+    src/lora_functions.cpp.o: (object only in base)
+    src/lora_setchip.cpp.o: (object only in base)
+    src/main.cpp.o: (object only in base)
+    src/mcu811.cpp.o: (object only in base)
+    src/mheard_functions.cpp.o: (object only in base)
+    src/net_console.cpp.o: (object only in base)
+    src/ntp_async.cpp.o: (object only in base)
+    src/onebutton_functions.cpp.o: (object only in base)
+    src/onewire_functions.cpp.o: (object only in base)
+    src/phone_commands.cpp.o: (object only in base)
+    src/printfdeb_functions.cpp.o: (object only in base)
+    src/regex_functions.cpp.o: (object only in base)
+    src/rtc_functions.cpp.o: (object only in base)
+    src/setlog_lines.cpp.o: (object only in base)
+    src/settings_sanitize.cpp.o: (object only in base)
+    src/sht21.cpp.o: (object only in base)
+    src/softser_functions.cpp.o: (object only in base)
+    src/spectral_scan.cpp.o: (object only in base)
+    src/test_inject.cpp.o: (object only in base)
+    src/tft_display_functions.cpp.o: (object only in base)
+    src/time_functions.cpp.o: (object only in base)
+    src/tinyxml_functions.cpp.o: (object only in base)
+    src/txring_functions.cpp.o: (object only in base)
+    src/udp_functions.cpp.o: (object only in base)
+    src/via_functions.cpp.o: (object only in base)
+    src/web_functions/webUIComponents.cpp.o: (object only in base)
+    src/web_functions/web_functions.cpp.o: (object only in base)
+    src/web_functions/web_nodefunctioncalls.cpp.o: (object only in base)
+    src/web_functions/web_setup.cpp.o: (object only in base)
+## E22-DevKitC (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## E22_XML-DevKitC (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## E22_1268_S3-DevKitC-1-N16R8 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## E22_1262_S3-DevKitC-1-N16R8 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## heltec_wifi_lora_32_V2 (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## heltec_wifi_lora_32_V3 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## heltec_wifi_lora_32_V4 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## heltec_wireless_stick (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## heltec_wireless_tracker (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## heltec_t114 (arm-none-eabi-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## vision-master-e290 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## vision-master-e213 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## wireless-paper (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## T-ETH-ELITE_1262 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## LilyGo_T-Beam-1W (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## LilyGo_T3_S3_V1_3 (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## LilyGo_T_Connect_Pro (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## ttgo-lora32-v21 (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## ttgo_tbeam (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## ttgo_tbeam_SX1262 (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## ttgo_tbeam_SX1268 (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## ttgo_tbeam_supreme (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## t_deck (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## t_deck_plus (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## t_deck_pro (xtensa-esp32s3-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## t_echo (arm-none-eabi-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## wiscore_rak4631 (arm-none-eabi-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## esp32-loraprs-e22 (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build
+## esp32-loraprs-ra01 (xtensa-esp32-elf-objdump)
+  merge-fbatt: no build
+  merge-fble: no build
+  merge-fboth: no build

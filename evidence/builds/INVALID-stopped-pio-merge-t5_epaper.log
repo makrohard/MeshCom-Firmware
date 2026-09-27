@@ -1,0 +1,15 @@
+# pio run -e t5_epaper on merge: HEAD a7957f7a53541303b4cd50d0b0a9c4985545a4f0 tree 58d99cd975d16b7b4445edc5483ab51303d600f7 PLATFORMIO_BUILD_FLAGS='' image ac01fffefb30 cpus=4 start 2026-09-26T21:35:36Z
+Python 3.11.16
+PlatformIO Core, version 6.2.0
+Processing t5_epaper (platform: espressif32@6.5.0; board: T5-ePaper-S3; framework: arduino)
+--------------------------------------------------------------------------------
+Platform Manager: Installing espressif32 @ 6.5.0
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Platform Manager: espressif32@6.5.0 has been installed!
+Tool Manager: Installing espressif/toolchain-xtensa-esp32s3 @ 8.4.0+2021r2-patch5
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: toolchain-xtensa-esp32s3@8.4.0+2021r2-patch5 has been installed!
+Tool Manager: Installing espressif/toolchain-riscv32-esp @ 8.4.0+2021r2-patch5
+# exit 137 end 2026-09-26T21:35:57Z

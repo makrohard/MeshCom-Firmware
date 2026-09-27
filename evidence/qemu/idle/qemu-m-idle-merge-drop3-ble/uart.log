@@ -1,0 +1,120 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x12 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:1184
+load:0x40078000,len:13232
+load:0x40080400,len:3028
+entry 0x400805e4
+
+
+============
+CLIENT SETUP
+============
+[BOOT] RESET_REASON=1 POWERON
+[HEAP] 00:00:00 168040 165816 110580 (init)
+[PSRM] 00:00:00 0
+[EFUS]...Two Point: NOT supported
+[EFUS]...Vref: NOT supported
+[INIT]...initMheard
+[INIT]...init_flash
+[  2454][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_call NOT_FOUND
+[  2456][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_short NOT_FOUND
+[  2457][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_lat NOT_FOUND
+[  2457][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_lon NOT_FOUND
+[  2457][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_temp NOT_FOUND
+[  2458][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_hum NOT_FOUND
+[  2458][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_press NOT_FOUND
+[  2458][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_ssid NOT_FOUND
+[  2458][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_pwd NOT_FOUND
+[  2458][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_maxv NOT_FOUND
+[  2459][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_extern NOT_FOUND
+[  2459][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_freq NOT_FOUND
+[  2459][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_bw NOT_FOUND
+[  2459][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_atxt NOT_FOUND
+[  2460][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_temp2 NOT_FOUND
+[  2460][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_utcof NOT_FOUND
+[  2460][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_gas NOT_FOUND
+[  2460][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_co2 NOT_FOUND
+[  2461][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp170 NOT_FOUND
+[  2461][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp171 NOT_FOUND
+[  2461][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp172 NOT_FOUND
+[  2462][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp173 NOT_FOUND
+[  2462][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp174 NOT_FOUND
+[  2462][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp175 NOT_FOUND
+[  2462][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp176 NOT_FOUND
+[  2463][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp177 NOT_FOUND
+[  2463][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp178 NOT_FOUND
+[  2463][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp179 NOT_FOUND
+[  2463][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp1710 NOT_FOUND
+[  2464][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp1711 NOT_FOUND
+[  2464][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp1712 NOT_FOUND
+[  2464][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp1713 NOT_FOUND
+[  2464][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp1714 NOT_FOUND
+[  2465][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_mcp1715 NOT_FOUND
+[  2467][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_track NOT_FOUND
+[  2471][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_passwd NOT_FOUND
+[  2472][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_ownip NOT_FOUND
+[  2472][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_owngw NOT_FOUND
+[  2473][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_ownms NOT_FOUND
+[  2473][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_name NOT_FOUND
+[  2473][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_webpwd NOT_FOUND
+[  2473][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_lssid NOT_FOUND
+[  2474][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_lpwd NOT_FOUND
+[  2474][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_afakt NOT_FOUND
+[  2474][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_parm NOT_FOUND
+[  2474][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_unit NOT_FOUND
+[  2475][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_format NOT_FOUND
+[  2475][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_eqns NOT_FOUND
+[  2475][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_values NOT_FOUND
+[  2475][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_spstart NOT_FOUND
+[  2476][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_spend NOT_FOUND
+[  2476][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_spstep NOT_FOUND
+[  2476][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_bfakt NOT_FOUND
+[  2476][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_ucall NOT_FOUND
+[  2477][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_aak NOT_FOUND
+[  2477][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_aslo NOT_FOUND
+[  2477][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_aoff NOT_FOUND
+[  2477][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_atten NOT_FOUND
+[  2477][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_gwsrv NOT_FOUND
+[  2478][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_tmpiof NOT_FOUND
+[  2478][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_tmpoof NOT_FOUND
+[  2478][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_shunt NOT_FOUND
+[  2478][E][Preferences.cpp:503] getBytesLength(): nvs_get_blob len fail: node_imax NOT_FOUND
+[  2479][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_owndns NOT_FOUND
+[  2479][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_ownntp NOT_FOUND
+[  2479][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_fwversion NOT_FOUND
+[  2480][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_via NOT_FOUND
+[  2480][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_aprsmc NOT_FOUND
+[  2480][E][Preferences.cpp:483] getString(): nvs_get_str len fail: node_pingcall NOT_FOUND
+[INIT]...build Sep 26 2026 / 23:17:06
+[INIT]...FLASH cleared, Settings-Layout 0 -> 20260724
+[INIT]...FLASH #entries 628 bevor clear
+[INIT]...FLASH #entries 628 after clear
+[TIME]...Loaded time persistence: saved_time=0, mheard_time=0, msg_time=0
+[INIT]...WIFIAP starting...
+[INIT]...WEBServer starting...
+[QEMU]...headless defaults: web+console ON, wifiAP/gateway/extudp OFF
+[QEMU]...virtual GPS enabled (bGPSON=true); NMEA expected on UART1
+[INIT]...init_batt
+[ADC ]...Characterized using Default Vref
+[INIT].._GW_ID: 00000000
+[INIT]...Initialize clock: ok
+[LoRa]...SX1268 chip Initializing ... success
+[EXTRADIO] enabled, bridge 10.0.2.2:7000, auth=password
+[LoRa]...All settings successfully changed
+[BLE ]...Device started with BLE-Name <MC-0000-XX0XXX-00>
+[BLE ]...disabled (DISABLE_BLE)
+==============
+CLIENT STARTED
+==============
+[QEMU]...starting OpenETH (esp_eth_start)
+[WIFI]...no connection possible
+[QEMU]...OpenETH driver started
+[QEMU]...OpenETH link connected
+[QEMU]...dhcpc_start -> 0x5004 (0=started, 0x5004=already-running)
+[GPS ]...QEMU virtual GPS on UART1 (synthetic RX=16 TX=17 @ 9600 baud; no hardware)
+[GPS ]...QEMU NMEA presence: 236 chars -> detected
+[QEMU]...OpenETH GOT_IP ip=10.0.2.15 mask=255.255.255.0 gw=10.0.2.5

@@ -1,0 +1,5 @@
+01:28:03 boot 1: console up after 24 s; UTC-OFF 1.000000
+01:28:09 xmltz reply: [TEST] xml timezone +03:30 -> node_utcoff 3.50
+01:28:12 NVS after hard power-off 3 s later: node_utcof=3.5 node_msgid=1
+01:28:34 boot 2: console up after 21 s; UTC-OFF 3.500000
+01:28:34 done

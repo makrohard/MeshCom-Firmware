@@ -1,0 +1,12 @@
+01:44:34 [    0.0] image ../flash-pr1-xml.bin sha256 283ff102901c0d64ce7c510bd75659ff557a4bf2d931093b8fbd4efc54b3a877
+01:44:34 [    0.0] sites ['telemetry']; ports console 22341 bridge 22342 kiss 22343; load (5.56494140625, 5.111328125, 6.51123046875)
+01:44:58 [   24.3] console up after 24 s
+01:45:12 [   37.4] bridge operational: True
+01:45:14 [   39.5] GPS fix in RAM: 48.0 ; NVS {'node_lat': '48.0', 'node_msgid': '1'}
+01:47:39 [  184.5] boot TX so far: '@' id 00000000 ctr 0 hop 0x04 [TE5T-1>H@R0;]
+01:47:39 [  184.5] frame tail from own TX: ((39, 136, 35, 167, 116), 4)
+01:47:39 [  184.5] SITE telemetry
+01:49:35 [  300.8]   telemetry: first (unmeasured) telemetry after --xmltz/--ptime: ["':' id 00000001 ctr 1 hop 0x04 [TE5T-1>100001:077234567:PARM.60 Wasserstand,65 Wassertemperatur,50 Batteriespannung]"]
+01:54:43 [  609.1]   telemetry: {"site": "telemetry", "trigger": "--xmltz +01:00 (TEST-ONLY hook -> decodeTinyXML sets node_parm_1) and --ptime 5; the esp32_main 5-min timer then calls sendTelemetry(1); the 2nd telemetry is measured", "lat_set": 48.0011, "nvs_before": {"node_lat": "48.0", "node_msgid": "2"}, "nvs_after": {"node_lat": "48.0", "node_msgid": "3"}, "frames": ["':' id 00000002 ctr 2 hop 0x04 [TE5T-1>100001:077234567:UNIT.cm,\u00c2\u00b0C,V]"], "gaps": [], "load": [3.5, 5.2, 6.2], "window_s": 299.1, "ctr_in_frame": 2, "msgid_expected": 3, "a_persisted": true, "flushed": false, "pre_clean": true, "retransmissions": [], "only_frame": true, "max_gap_ms": 0, "status": "fired"}
+01:54:43 [  609.2] HARD POWER-OFF: NVS after kill {'node_msgid': '3', 'node_lat': '48.0'}; counter after the last own TX 3
+01:54:43 [  609.2] done

@@ -1,0 +1,43 @@
+{
+ "telemetry": {
+  "site": "telemetry",
+  "trigger": "--xmltz +01:00 (TEST-ONLY hook -> decodeTinyXML sets node_parm_1) and --ptime 5; the esp32_main 5-min timer then calls sendTelemetry(1); the 2nd telemetry is measured",
+  "lat_set": 48.0011,
+  "nvs_before": {
+   "node_lat": "48.0",
+   "node_msgid": "2"
+  },
+  "nvs_after": {
+   "node_lat": "48.0",
+   "node_msgid": "3"
+  },
+  "frames": [
+   "':' id 00000002 ctr 2 hop 0x04 [TE5T-1>100001:077234567:UNIT.cm,\u00c2\u00b0C,V]"
+  ],
+  "gaps": [],
+  "load": [
+   3.5,
+   5.2,
+   6.2
+  ],
+  "window_s": 299.1,
+  "ctr_in_frame": 2,
+  "msgid_expected": 3,
+  "a_persisted": true,
+  "flushed": false,
+  "pre_clean": true,
+  "retransmissions": [],
+  "only_frame": true,
+  "max_gap_ms": 0,
+  "status": "fired",
+  "attempts": 1
+ },
+ "_final": {
+  "nvs_after_kill": {
+   "node_msgid": "3",
+   "node_lat": "48.0"
+  },
+  "counter_after_last_tx": 3,
+  "match": true
+ }
+}

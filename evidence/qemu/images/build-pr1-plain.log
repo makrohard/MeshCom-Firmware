@@ -1,0 +1,9 @@
+[pr1-plain] tree at e6e8c95d merge 3f936a63
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-pr1-plain/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+627cf03b15f136459a5ba45b203e66ae755e7eac73c90e1d824ce8a20add7986  /home/makro/claude/agent5-allenvs/qemu/repo-pr1-plain/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+f5882c9659bc6d5cdf6568e691f30ef48475bc752bc8888223e1e111e44e83c4  /home/makro/claude/agent5-allenvs/qemu/repo-pr1-plain/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+f5882c9659bc6d5cdf6568e691f30ef48475bc752bc8888223e1e111e44e83c4  /home/makro/claude/agent5-allenvs/qemu/flash-pr1-plain.bin
+[pr1-plain] BUILD DONE

@@ -1,0 +1,12 @@
+[base-eth] tree at cf215b5d Merge pull request #1167 from icssw-org/oe1kbc_4.35t
+file src/net_console.cpp
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+TEST-ONLY Ethernet hack applied to .work/MeshCom-Firmware/src/net_console.cpp
+ 7 files changed, 254 insertions(+), 4 deletions(-)
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-base-eth/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+e0d2d4231a16357fd217ca8f4c1d5ae4cfb1c8130a2d3a93da6e3d250aa1c87a  /home/makro/claude/agent5-allenvs/qemu/repo-base-eth/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+5f49049ae4b8edaf0fc1db2f6278203c706054ee912309490a68c596025a4563  /home/makro/claude/agent5-allenvs/qemu/repo-base-eth/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+5f49049ae4b8edaf0fc1db2f6278203c706054ee912309490a68c596025a4563  /home/makro/claude/agent5-allenvs/qemu/flash-base-eth.bin
+[base-eth] BUILD DONE

@@ -1,0 +1,19 @@
+[base-all] tree at cf215b5d Merge pull request #1167 from icssw-org/oe1kbc_4.35t
+file src/net_console.cpp
+dropped src/batt_function_old.cpp: '+#ifdef QEMU_HEADLESS\n+\t// QEMU has no analog/ADC peripheral: adc1_get_raw() busy-waits fo'
+dropped (whole file src/batt_function_old.cpp)
+dropped src/esp32/esp32_main.cpp: '+    #ifndef QEMU_HEADLESS\n+    #endif'
+dropped src/esp32/esp32_main.cpp: '+#ifndef QEMU_HEADLESS'
+dropped src/esp32/esp32_main.cpp: '+#else\n+    printlndeb("[QEMU]...BLE/NimBLE disabled (no backend in QEMU); BLE init skippe'
+dropped src/esp32/esp32_main.cpp: '+#ifdef QEMU_HEADLESS\n+    // No BLE backend in QEMU; characteristic was never created.\n+ '
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+TEST-ONLY Ethernet hack applied to .work/MeshCom-Firmware/src/net_console.cpp
+[base-all] PLATFORMIO_BUILD_FLAGS='-D DISABLE_BATTERY -D DISABLE_BLE'
+ 6 files changed, 234 insertions(+), 3 deletions(-)
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-base-all/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+db06792773fab654486a16c21695bff0537d338b1efeb0786b98a4c7f5f82ab5  /home/makro/claude/agent5-allenvs/qemu/repo-base-all/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+7e8398fab47c688b0e5f6a3022bd66454e9e04e56a4ffe1ffdc4bee687f7a6d3  /home/makro/claude/agent5-allenvs/qemu/repo-base-all/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+7e8398fab47c688b0e5f6a3022bd66454e9e04e56a4ffe1ffdc4bee687f7a6d3  /home/makro/claude/agent5-allenvs/qemu/flash-base-all.bin
+[base-all] BUILD DONE

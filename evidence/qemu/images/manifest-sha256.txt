@@ -1,0 +1,27 @@
+# idle QEMU run 2026-09-26T23:18:29Z on cirrus
+QEMU /home/makro/claude/qemu-cache-pr/b-up/qemu-system-xtensa sha256 18afb66166c9830a QEMU emulator version 9.2.2 (v9.2.2-126-gfebae182e1)
+flash-base-all.bin 7e8398fab47c688b
+flash-base-eth.bin 5f49049ae4b8edaf
+flash-base-instr.bin 925bd135b1b150d5
+flash-base-nobatt.bin 50b45801c697a97e
+flash-base-nobatt-flag.bin e3d594dd3b5638f5
+flash-base-noble.bin 3e19fa7cd18e9790
+flash-base-noble-flag.bin b40072537107bba6
+flash-base-plain.bin 71e8d07040126c09
+flash-base-short.bin f3aa92f47f2e54bc
+flash-base-xml.bin 79ceb76b9b655579
+flash-merge-drop3-batt.bin 119575d71cd51390
+flash-merge-drop3.bin 5f9bd933da9d318e
+flash-merge-drop3-ble.bin eaafcd4c4afdfc6b
+flash-merge-instr.bin 080a3dabebeed406
+flash-merge-plain.bin f38fc5cb633461d6
+flash-merge-short.bin 80582e64085dbc4d
+flash-merge-xml.bin c3fc7a12e0abdf81
+flash-pr1-instr.bin acd983691d83dbb6
+flash-pr1-plain.bin f5882c9659bc6d5c
+flash-pr1-xml.bin 283ff102901c0d64
+flash-pr2-short.bin 961c4656d09618a5
+flash-pr3-all.bin 87463011c9805806
+flash-pr3-drop3-batt.bin 453b1ef122ef8f30
+flash-pr3-drop3.bin 5c9b28d8750b66ca
+flash-pr3-drop3-ble.bin 5f28972cb72c5ddf

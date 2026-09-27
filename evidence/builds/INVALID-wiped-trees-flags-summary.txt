@@ -1,0 +1,6 @@
+=== merge-fbatt vs merge
+  [1 envs] E22_1262-DevKitC
+=== merge-fble vs merge
+  [1 envs] E22_1262-DevKitC
+=== merge-fboth vs merge
+  [1 envs] E22_1262-DevKitC

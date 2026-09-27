@@ -1,0 +1,147 @@
+From c4f508b381d00a55616c2b678503101f1b662248 Mon Sep 17 00:00:00 2001
+From: makrohard
+Date: Sat, 26 Sep 2026 00:10:53 +0200
+Subject: [PATCH 2/2] perf(flash): after a transmission save only the message
+ counter
+
+Every transmission (HEY, position, message, ping, pong, ACK, telemetry)
+increments node_msgid and then called save_settings(), which goes through
+all ~130 keys of the "Credentials" namespace. A transmission changes
+nothing but the counter, so save_msgid() now writes only node_msgid.
+
+Settings are saved where they change (previous commit). Runtime values
+are not settings: sensor readings, MCP23017 inputs and the smart-beaconing
+symbol are measured or chosen again after a reboot. On nRF52 the settings
+file is written only when its content changed, so there save_msgid() is
+save_settings() and nRF52 behaves as before.
+---
+ src/esp32/esp32_flash.cpp |  9 +++++++++
+ src/esp32/esp32_flash.h   |  1 +
+ src/loop_functions.cpp    | 16 ++++++++--------
+ src/nrf52/WisBlock-API.h  |  2 ++
+ 4 files changed, 20 insertions(+), 8 deletions(-)
+
+diff --git a/src/esp32/esp32_flash.cpp b/src/esp32/esp32_flash.cpp
+index b49f9aa4..d9252452 100644
+--- a/src/esp32/esp32_flash.cpp
++++ b/src/esp32/esp32_flash.cpp
+@@ -621,6 +621,15 @@ void save_settings(void)
+     //Test only Serial.println("flash save...");
+ }
+ 
++// Saves only the message counter. Called after every transmission instead of
++// save_settings(): a transmission changes nothing else.
++void save_msgid(void)
++{
++    preferences.begin("Credentials", false);
++    preferences.putInt("node_msgid", meshcom_settings.node_msgid);
++    preferences.end();
++}
++
+ // Saves only the position (node_lat/lon/alt and the hemisphere letters).
+ void save_position(void)
+ {
+diff --git a/src/esp32/esp32_flash.h b/src/esp32/esp32_flash.h
+index 990bbff1..0e66b259 100644
+--- a/src/esp32/esp32_flash.h
++++ b/src/esp32/esp32_flash.h
+@@ -244,6 +244,7 @@ extern s_meshcom_settings meshcom_settings;
+ 
+ void save_settings(void);
+ void save_position(void);
++void save_msgid(void);
+ // Get LoRa parameter
+ void init_flash(void);
+ // LoRa parameter zurück setzen
+diff --git a/src/loop_functions.cpp b/src/loop_functions.cpp
+index f961e2ef..2755d29e 100644
+--- a/src/loop_functions.cpp
++++ b/src/loop_functions.cpp
+@@ -3338,7 +3338,7 @@ PingResult sendPing(char msg_call[10])
+         meshcom_settings.node_msgid=0;
+ 
+     // Flash rewrite
+-    save_settings();
++    save_msgid();
+ 
+     checkVia(aprsmsg);
+ 
+@@ -3440,7 +3440,7 @@ void SendPong(String msg_call, unsigned int msg_id)
+         meshcom_settings.node_msgid=0;
+ 
+     // Flash rewrite
+-    save_settings();
++    save_msgid();
+ 
+     checkVia(aprsmsg);
+ 
+@@ -4093,7 +4093,7 @@ int sendMessage(char *msg_text, int len, const char *src_override, unsigned int
+         meshcom_settings.node_msgid=0;
+ 
+     // Flash rewrite
+-    save_settings();
++    save_msgid();
+ 
+     checkVia(aprsmsg);
+ 
+@@ -4853,7 +4853,7 @@ void sendPosition(unsigned long uintervall, double lat, char lat_c, double lon,
+             meshcom_settings.node_msgid=0;
+             
+         // Flash rewrite
+-        save_settings();
++        save_msgid();
+ 
+         checkVia(aprsmsg);
+ 
+@@ -4940,7 +4940,7 @@ void sendAPPPosition(double lat, char lat_c, double lon, char lon_c, float temp2
+         meshcom_settings.node_msgid=0;
+         
+     // Flash rewrite
+-    save_settings();
++    save_msgid();
+ 
+     checkVia(aprsmsg);
+ 
+@@ -5010,7 +5010,7 @@ unsigned int SendAckMessage(String dest_call, unsigned int iAckId, const char *s
+         meshcom_settings.node_msgid=0;
+ 
+     // Flash rewrite
+-    save_settings();
++    save_msgid();
+ 
+     uint8_t msg_buffer[MAX_MSG_LEN_PHONE];
+     
+@@ -5102,7 +5102,7 @@ void sendHey()
+         meshcom_settings.node_msgid=0;
+ 
+     // Flash rewrite
+-    save_settings();
++    save_msgid();
+ 
+     checkVia(aprsmsg);
+ 
+@@ -5441,7 +5441,7 @@ void sendTelemetry(int ID)
+             meshcom_settings.node_msgid=0;
+ 
+         // Flash rewrite
+-        save_settings();
++        save_msgid();
+ 
+         checkVia(aprsmsg);
+ 
+diff --git a/src/nrf52/WisBlock-API.h b/src/nrf52/WisBlock-API.h
+index 91cd22eb..eb405e96 100644
+--- a/src/nrf52/WisBlock-API.h
++++ b/src/nrf52/WisBlock-API.h
+@@ -612,6 +612,8 @@ struct s_meshcomcompat_settings
+ // Flash
+ void init_flash(void);
+ bool save_settings(void);
++// nRF52 writes the settings file only if its content changed
++#define save_msgid() save_settings()
+ void log_settings(void);
+ void flash_reset(void);
+ extern bool init_flash_done;
+-- 
+2.55.0
+

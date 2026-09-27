@@ -1,0 +1,19 @@
+[merge-xml] tree at a7957f7a Merge commit '9d8cbdbbc7f887e5689d0b704f6dfd255846ce5b' into all
+file src/net_console.cpp
+dropped src/batt_function_old.cpp: '+#ifdef QEMU_HEADLESS\n+\t// QEMU has no analog/ADC peripheral: adc1_get_raw() busy-waits fo'
+dropped (whole file src/batt_function_old.cpp)
+dropped src/esp32/esp32_main.cpp: '+    #ifndef QEMU_HEADLESS\n+    #endif'
+dropped src/esp32/esp32_main.cpp: '+#ifndef QEMU_HEADLESS'
+dropped src/esp32/esp32_main.cpp: '+#else\n+    printlndeb("[QEMU]...BLE/NimBLE disabled (no backend in QEMU); BLE init skippe'
+dropped src/esp32/esp32_main.cpp: '+#ifdef QEMU_HEADLESS\n+    // No BLE backend in QEMU; characteristic was never created.\n+ '
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+TEST-ONLY Ethernet hack applied to .work/MeshCom-Firmware/src/net_console.cpp
+[merge-xml] PLATFORMIO_BUILD_FLAGS='-D ENABLE_XML -D DISABLE_BATTERY -D DISABLE_BLE'
+ 8 files changed, 304 insertions(+), 3 deletions(-)
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-merge-xml/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+c5259ce3db6c5580763439a14593f99ec48e3c15795b146dd8b10929c3c322d4  /home/makro/claude/agent5-allenvs/qemu/repo-merge-xml/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+c3fc7a12e0abdf81f108acfca4e5c017be8334364413cb795c8f5a90bb3792c9  /home/makro/claude/agent5-allenvs/qemu/repo-merge-xml/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+c3fc7a12e0abdf81f108acfca4e5c017be8334364413cb795c8f5a90bb3792c9  /home/makro/claude/agent5-allenvs/qemu/flash-merge-xml.bin
+[merge-xml] BUILD DONE

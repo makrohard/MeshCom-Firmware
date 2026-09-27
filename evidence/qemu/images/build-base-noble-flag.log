@@ -1,0 +1,13 @@
+[base-noble-flag] tree at cf215b5d Merge pull request #1167 from icssw-org/oe1kbc_4.35t
+dropped src/esp32/esp32_main.cpp: '+#ifndef QEMU_HEADLESS'
+dropped src/esp32/esp32_main.cpp: '+#else\n+    printlndeb("[QEMU]...BLE/NimBLE disabled (no backend in QEMU); BLE init skippe'
+dropped src/esp32/esp32_main.cpp: '+#ifdef QEMU_HEADLESS\n+    // No BLE backend in QEMU; characteristic was never created.\n+ '
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+ 7 files changed, 247 insertions(+), 3 deletions(-)
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-base-noble-flag/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+671d4c301da5d46ebeba47adeced8b2192ee882e16a168d3de69873ba1a9f26c  /home/makro/claude/agent5-allenvs/qemu/repo-base-noble-flag/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+b40072537107bba68044a7e9796068060ae1e914ad7481820c5b91e18df38bcb  /home/makro/claude/agent5-allenvs/qemu/repo-base-noble-flag/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+b40072537107bba68044a7e9796068060ae1e914ad7481820c5b91e18df38bcb  /home/makro/claude/agent5-allenvs/qemu/flash-base-noble-flag.bin
+[base-noble-flag] BUILD DONE

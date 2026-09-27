@@ -1,0 +1,424 @@
+# pio run on merge-fboth: HEAD a7957f7a53541303b4cd50d0b0a9c4985545a4f0 tree 58d99cd975d16b7b4445edc5483ab51303d600f7 PLATFORMIO_BUILD_FLAGS='-D DISABLE BATTERY -D DISABLE BLE' image ac01fffefb30 cpus=4 start 2026-09-26T21:32:47Z
+Python 3.11.16
+PlatformIO Core, version 6.2.0
+Processing esp32-safeboot (board: esp32dev; framework: arduino; platform: https://github.com/tasmota/platform-espressif32/releases/download/2026.02.30/platform-espressif32.zip)
+--------------------------------------------------------------------------------
+Platform Manager: Installing https://github.com/tasmota/platform-espressif32/releases/download/2026.02.30/platform-espressif32.zip
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Platform Manager: espressif32@2026.2.30 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/esp_install/releases/download/v5.3.4/esp_install-v5.3.4.zip
+Downloading 0% 10% 20% 30% 40% 50% 60% 70%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: tool-esp_install@5.3.4 has been installed!
+Created pioarduino Python virtual environment: /root/.platformio/penv
+Tool Manager: Installing https://github.com/tasmota/arduino-esp32/releases/download/v3.1.10/framework-arduinoespressif32.tar.xz
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: framework-arduinoespressif32@3.3.7+sha.b3b492ff has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/xtensa-esp-elf-15.1.0_20250607.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: toolchain-xtensa-esp-elf@15.1.0+20250607 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/xtensa-esp-gdb-16.3_20250913.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: tool-xtensa-esp-elf-gdb@16.3.0+20250913 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/esptoolpy-v5.1.2.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: tool-esptoolpy@5.1.2 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/contrib-piohome-3.4.4.tar.gz
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: contrib-piohome@3.4.4 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/openocd-v0.12.0-esp32-20251215.zip
+Downloading 0% 10%
+Unpacking 0% 10% 20%
+Tool Manager: tool-openocd-esp32@2.1200.20251215 has been installed!
+Tool Manager: Installing https://github.com/pioarduino/registry/releases/download/0.0.1/esp-rom-elfs-20241011.zip
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: tool-esp-rom-elfs@2024.10.11 has been installed!
+Tool Manager: Installing platformio/tool-scons @ ~4.41101.0
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Tool Manager: tool-scons@4.41101.0 has been installed!
+Tool Manager: Installing file:///root/.platformio/tools/tool-esptoolpy
+Tool Manager: tool-esptoolpy@5.1.2 has been installed!
+Tool Manager: Installing file:///root/.platformio/tools/toolchain-xtensa-esp-elf
+Tool Manager: toolchain-xtensa-esp-elf@15.1.0+20250607 has been installed!
+Tool Manager: Installing file:///root/.platformio/tools/tool-xtensa-esp-elf-gdb
+Tool Manager: tool-xtensa-esp-elf-gdb@16.3.0+20250913 has been installed!
+Tool Manager: Installing file:///root/.platformio/tools/tool-openocd-esp32
+Tool Manager: tool-openocd-esp32@2.1200.20251215 has been installed!
+Tool Manager: Installing file:///root/.platformio/tools/tool-esp-rom-elfs
+Tool Manager: tool-esp-rom-elfs@2024.10.11 has been installed!
+Library Manager: Installing mathieucarbou/AsyncTCP @ 3.2.14
+Downloading 0% 10% 20%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70%
+Library Manager: AsyncTCP@3.2.14 has been installed!
+Library Manager: Installing mathieucarbou/ESPAsyncWebServer @ 3.3.23
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: ESPAsyncWebServer@3.3.23 has been installed!
+Library Manager: Resolving dependencies...
+Library Manager: Installing throwtheswitch/Unity @ ^2.6.1
+Downloading 0% 10% 20% 30% 40% 50% 60% 70% 80% 90%
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: Unity@2.6.1 has been installed!
+Installed esptool from tl-install path: /root/.platformio/packages/tool-esptoolpy
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/esp32dev.html
+PLATFORM: Espressif 32 (2026.2.30) > Espressif ESP32 Dev Module
+HARDWARE: ESP32 240MHz, 320KB RAM, 4MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - contrib-piohome @ 3.4.4 
+ - framework-arduinoespressif32 @ 3.3.7+sha.b3b492ff 
+ - tool-esp-rom-elfs @ 2024.10.11 
+ - tool-esptoolpy @ 5.1.2 
+ - tool-openocd-esp32 @ 2.1200.20251215 (12.0) 
+ - tool-xtensa-esp-elf-gdb @ 16.3.0+20250913 
+ - toolchain-xtensa-esp-elf @ 15.1.0+20250607
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ strict
+Found 46 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- AsyncTCP @ 3.2.14
+|-- ESPAsyncWebServer @ 3.3.23
+|-- Preferences @ 3.3.7
+|-- ESPmDNS @ 3.3.7
+|-- WiFi @ 3.3.7
+|-- FS @ 3.3.7
+|-- LittleFS @ 3.3.7
+|-- Update @ 3.3.7
+|-- WebServer @ 3.3.7
+Building in release mode
+Compiling .pio/build/esp32-safeboot/src/esp32/esp32_flash.cpp.o
+Compiling .pio/build/esp32-safeboot/src/safeboot/ElegantOTA.cpp.o
+Compiling .pio/build/esp32-safeboot/src/safeboot/main.cpp.o
+Building .pio/build/esp32-safeboot/bootloader.bin
+Generating partitions .pio/build/esp32-safeboot/partitions.bin
+esptool v5.1.2
+Creating ESP32 image...
+Merged 2 ELF sections.
+Successfully created ESP32 image.
+Compiling .pio/build/esp32-safeboot/liba04/Network/NetworkClient.cpp.o
+Compiling .pio/build/esp32-safeboot/liba04/Network/NetworkEvents.cpp.o
+Compiling .pio/build/esp32-safeboot/liba04/Network/NetworkInterface.cpp.o
+Compiling .pio/build/esp32-safeboot/liba04/Network/NetworkManager.cpp.o
+Compiling .pio/build/esp32-safeboot/liba04/Network/NetworkServer.cpp.o
+Compiling .pio/build/esp32-safeboot/liba04/Network/NetworkUdp.cpp.o
+Compiling .pio/build/esp32-safeboot/lib907/AsyncTCP/AsyncTCP.cpp.o
+Compiling .pio/build/esp32-safeboot/lib819/Hash/PBKDF2_HMACBuilder.cpp.o
+Compiling .pio/build/esp32-safeboot/lib819/Hash/SHA1Builder.cpp.o
+Compiling .pio/build/esp32-safeboot/lib819/Hash/SHA2Builder.cpp.o
+Compiling .pio/build/esp32-safeboot/lib819/Hash/SHA3Builder.cpp.o
+Compiling .pio/build/esp32-safeboot/lib790/FS/FS.cpp.o
+Compiling .pio/build/esp32-safeboot/lib790/FS/vfs_api.cpp.o
+Compiling .pio/build/esp32-safeboot/lib5f9/WebServer/Parsing.cpp.o
+Compiling .pio/build/esp32-safeboot/lib5f9/WebServer/WebServer.cpp.o
+Compiling .pio/build/esp32-safeboot/lib5f9/WebServer/detail/mimetable.cpp.o
+Compiling .pio/build/esp32-safeboot/lib5f9/WebServer/middleware/AuthenticationMiddleware.cpp.o
+Compiling .pio/build/esp32-safeboot/lib5f9/WebServer/middleware/CorsMiddleware.cpp.o
+Compiling .pio/build/esp32-safeboot/lib5f9/WebServer/middleware/LoggingMiddleware.cpp.o
+Compiling .pio/build/esp32-safeboot/lib5f9/WebServer/middleware/MiddlewareChain.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/AP.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/STA.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/WiFi.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/WiFiAP.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/WiFiGeneric.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/WiFiMulti.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/WiFiSTA.cpp.o
+Compiling .pio/build/esp32-safeboot/lib789/WiFi/WiFiScan.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/AsyncEventSource.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/AsyncJson.cpp.o
+Archiving .pio/build/esp32-safeboot/lib819/libHash.a
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/AsyncMessagePack.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/AsyncWebHeader.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/AsyncWebSocket.cpp.o
+Archiving .pio/build/esp32-safeboot/lib907/libAsyncTCP.a
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/BackPort_SHA1Builder.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/ChunkPrint.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/Middleware.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/WebAuthentication.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/WebHandlers.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/WebRequest.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/WebResponses.cpp.o
+Compiling .pio/build/esp32-safeboot/libf76/ESPAsyncWebServer/WebServer.cpp.o
+Compiling .pio/build/esp32-safeboot/libf2c/Preferences/Preferences.cpp.o
+Compiling .pio/build/esp32-safeboot/libe94/ESPmDNS/ESPmDNS.cpp.o
+Archiving .pio/build/esp32-safeboot/liba04/libNetwork.a
+Compiling .pio/build/esp32-safeboot/lib241/LittleFS/LittleFS.cpp.o
+Compiling .pio/build/esp32-safeboot/liba61/Update/HttpsOTAUpdate.cpp.o
+Compiling .pio/build/esp32-safeboot/liba61/Update/Updater.cpp.o
+Compiling .pio/build/esp32-safeboot/liba61/Update/Updater_Signing.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/ColorFormat.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/Esp.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/FirmwareMSC.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/HEXBuilder.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/HWCDC.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/HashBuilder.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/MD5Builder.cpp.o
+Archiving .pio/build/esp32-safeboot/lib790/libFS.a
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/MacAddress.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/USB.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/USBCDC.cpp.o
+Archiving .pio/build/esp32-safeboot/libe94/libESPmDNS.a
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/USBMSC.cpp.o
+Archiving .pio/build/esp32-safeboot/lib5f9/libWebServer.a
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/base64.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/cbuf.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-bt.c.o
+Archiving .pio/build/esp32-safeboot/lib789/libWiFi.a
+Archiving .pio/build/esp32-safeboot/libf2c/libPreferences.a
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-gpio.c.o
+Archiving .pio/build/esp32-safeboot/liba61/libUpdate.a
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-hosted.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-i2c-ng.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-log-wrapper.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-periman.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-psram.c.o
+Archiving .pio/build/esp32-safeboot/lib241/libLittleFS.a
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-rmt.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-touch-ng.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/esp32-hal-uart.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/freertos_stats.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/idf_openthread_mpool_wrapper.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/libb64/cencode.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/main.cpp.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/wiring_pulse.c.o
+Compiling .pio/build/esp32-safeboot/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/esp32-safeboot/libf76/libESPAsyncWebServer.a
+Archiving .pio/build/esp32-safeboot/libFrameworkArduino.a
+Linking .pio/build/esp32-safeboot/safeboot.elf
+/root/.platformio/packages/toolchain-xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.1.0/../../../../xtensa-esp-elf/bin/ld: cannot find -l/ws/BATTERY: No such file or directory
+/root/.platformio/packages/toolchain-xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.1.0/../../../../xtensa-esp-elf/bin/ld: cannot find -l/ws/BLE: No such file or directory
+collect2: error: ld returned 1 exit status
+*** [.pio/build/esp32-safeboot/safeboot.elf] Error 1
+========================= [FAILED] Took 142.68 seconds =========================
+
+Processing esp32-S3-safeboot (board: heltec_wifi_lora_32_V3; framework: arduino; platform: https://github.com/tasmota/platform-espressif32/releases/download/2026.02.30/platform-espressif32.zip)
+--------------------------------------------------------------------------------
+Library Manager: Installing mathieucarbou/AsyncTCP @ 3.2.14
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70%
+Library Manager: AsyncTCP@3.2.14 has been installed!
+Library Manager: Installing mathieucarbou/ESPAsyncWebServer @ 3.3.23
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: ESPAsyncWebServer@3.3.23 has been installed!
+Library Manager: Resolving dependencies...
+Library Manager: Installing throwtheswitch/Unity @ ^2.6.1
+Unpacking 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Library Manager: Unity@2.6.1 has been installed!
+Verbose mode can be enabled via `-v, --verbose` option
+CONFIGURATION: https://docs.platformio.org/page/boards/espressif32/heltec_wifi_lora_32_V3.html
+PLATFORM: Espressif 32 (2026.2.30) > Heltec WiFi LoRa 32 (V3)
+HARDWARE: ESP32S3 240MHz, 320KB RAM, 8MB Flash
+DEBUG: Current (cmsis-dap) External (cmsis-dap, esp-bridge, esp-builtin, esp-prog, iot-bus-jtag, jlink, minimodule, olimex-arm-usb-ocd, olimex-arm-usb-ocd-h, olimex-arm-usb-tiny-h, olimex-jtag-tiny, tumpa)
+PACKAGES: 
+ - contrib-piohome @ 3.4.4 
+ - framework-arduinoespressif32 @ 3.3.7+sha.b3b492ff 
+ - tool-esp-rom-elfs @ 2024.10.11 
+ - tool-esptoolpy @ 5.1.2 
+ - tool-openocd-esp32 @ 2.1200.20251215 (12.0) 
+ - tool-xtensa-esp-elf-gdb @ 16.3.0+20250913 
+ - toolchain-xtensa-esp-elf @ 15.1.0+20250607
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ chain, Compatibility ~ strict
+Found 46 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- AsyncTCP @ 3.2.14
+|-- ESPAsyncWebServer @ 3.3.23
+|-- Preferences @ 3.3.7
+|-- ESPmDNS @ 3.3.7
+|-- WiFi @ 3.3.7
+|-- FS @ 3.3.7
+|-- LittleFS @ 3.3.7
+|-- Update @ 3.3.7
+|-- WebServer @ 3.3.7
+Building in release mode
+Compiling .pio/build/esp32-S3-safeboot/src/esp32/esp32_flash.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/src/safeboot/ElegantOTA.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/src/safeboot/main.cpp.o
+Building .pio/build/esp32-S3-safeboot/bootloader.bin
+Generating partitions .pio/build/esp32-S3-safeboot/partitions.bin
+esptool v5.1.2
+Creating ESP32S3 image...
+Merged 2 ELF sections.
+Successfully created ESP32S3 image.
+Compiling .pio/build/esp32-S3-safeboot/liba04/Network/NetworkClient.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba04/Network/NetworkEvents.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba04/Network/NetworkInterface.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba04/Network/NetworkManager.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba04/Network/NetworkServer.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba04/Network/NetworkUdp.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba0d/AsyncTCP/AsyncTCP.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib819/Hash/PBKDF2_HMACBuilder.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib819/Hash/SHA1Builder.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib819/Hash/SHA2Builder.cpp.o
+In file included from src/safeboot/ElegantOTA.cpp:5:
+src/safeboot/safeboot_log.h:48:9: warning: 'Serial' redefined
+   48 | #define Serial SafebootSerial
+      |         ^~~~~~
+In file included from /root/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:202,
+                 from src/safeboot/ElegantOTA.h:22,
+                 from src/safeboot/ElegantOTA.cpp:2:
+/root/.platformio/packages/framework-arduinoespressif32/cores/esp32/HardwareSerial.h:441:9: note: this is the location of the previous definition
+  441 | #define Serial Serial0
+      |         ^~~~~~
+Compiling .pio/build/esp32-S3-safeboot/lib819/Hash/SHA3Builder.cpp.o
+In file included from src/safeboot/main.cpp:25:
+src/safeboot/safeboot_log.h:48:9: warning: 'Serial' redefined
+   48 | #define Serial SafebootSerial
+      |         ^~~~~~
+In file included from /root/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h:202,
+                 from src/safeboot/ElegantOTA.h:22,
+                 from src/safeboot/main.cpp:6:
+/root/.platformio/packages/framework-arduinoespressif32/cores/esp32/HardwareSerial.h:441:9: note: this is the location of the previous definition
+  441 | #define Serial Serial0
+      |         ^~~~~~
+Compiling .pio/build/esp32-S3-safeboot/lib790/FS/FS.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib790/FS/vfs_api.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5f9/WebServer/Parsing.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5f9/WebServer/WebServer.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5f9/WebServer/detail/mimetable.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5f9/WebServer/middleware/AuthenticationMiddleware.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5f9/WebServer/middleware/CorsMiddleware.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5f9/WebServer/middleware/LoggingMiddleware.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5f9/WebServer/middleware/MiddlewareChain.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/AP.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/STA.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/WiFi.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/WiFiAP.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/WiFiGeneric.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/WiFiMulti.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/WiFiSTA.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib789/WiFi/WiFiScan.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/AsyncEventSource.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/AsyncJson.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/AsyncMessagePack.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/AsyncWebHeader.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/AsyncWebSocket.cpp.o
+Archiving .pio/build/esp32-S3-safeboot/liba0d/libAsyncTCP.a
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/BackPort_SHA1Builder.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/ChunkPrint.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/Middleware.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/WebAuthentication.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/WebHandlers.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/WebRequest.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/WebResponses.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib5b8/ESPAsyncWebServer/WebServer.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/libf2c/Preferences/Preferences.cpp.o
+Archiving .pio/build/esp32-S3-safeboot/liba04/libNetwork.a
+Archiving .pio/build/esp32-S3-safeboot/lib819/libHash.a
+Compiling .pio/build/esp32-S3-safeboot/libe94/ESPmDNS/ESPmDNS.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/lib241/LittleFS/LittleFS.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba61/Update/HttpsOTAUpdate.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba61/Update/Updater.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/liba61/Update/Updater_Signing.cpp.o
+Archiving .pio/build/esp32-S3-safeboot/lib790/libFS.a
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/ColorFormat.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/Esp.cpp.o
+Archiving .pio/build/esp32-S3-safeboot/libf2c/libPreferences.a
+Archiving .pio/build/esp32-S3-safeboot/lib789/libWiFi.a
+Archiving .pio/build/esp32-S3-safeboot/libe94/libESPmDNS.a
+Archiving .pio/build/esp32-S3-safeboot/lib5f9/libWebServer.a
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/FirmwareMSC.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/FunctionalInterrupt.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/HEXBuilder.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/HWCDC.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/HardwareSerial.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/HashBuilder.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/IPAddress.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/MD5Builder.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/MacAddress.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/Print.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/Stream.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/StreamString.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/Tone.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/USB.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/USBCDC.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/USBMSC.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/WMath.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/WString.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/base64.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/cbuf.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-adc.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-bt.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-cpu.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-dac.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-gpio.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-hosted.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-i2c-ng.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-i2c-slave.c.o
+Archiving .pio/build/esp32-S3-safeboot/liba61/libUpdate.a
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-i2c.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-ledc.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-log-wrapper.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-matrix.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-misc.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-periman.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-psram.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-rgb-led.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-rmt.c.o
+Archiving .pio/build/esp32-S3-safeboot/lib241/libLittleFS.a
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-sigmadelta.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-spi.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-time.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-timer.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-tinyusb.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-touch-ng.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-touch.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/esp32-hal-uart.c.o
+Archiving .pio/build/esp32-S3-safeboot/lib5b8/libESPAsyncWebServer.a
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/firmware_msc_fat.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/freertos_stats.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/idf_openthread_mpool_wrapper.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/libb64/cdecode.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/libb64/cencode.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/main.cpp.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/stdlib_noniso.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/wiring_pulse.c.o
+Compiling .pio/build/esp32-S3-safeboot/FrameworkArduino/wiring_shift.c.o
+Archiving .pio/build/esp32-S3-safeboot/libFrameworkArduino.a
+Linking .pio/build/esp32-S3-safeboot/safeboot-s3.elf
+/root/.platformio/packages/toolchain-xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.1.0/../../../../xtensa-esp-elf/bin/ld: cannot find -l/ws/BATTERY: No such file or directory
+/root/.platformio/packages/toolchain-xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/15.1.0/../../../../xtensa-esp-elf/bin/ld: cannot find -l/ws/BLE: No such file or directory
+collect2: error: ld returned 1 exit status
+*** [.pio/build/esp32-S3-safeboot/safeboot-s3.elf] Error 1
+========================= [FAILED] Took 37.49 seconds =========================
+
+Processing E22-DevKitC (board: az-delivery-devkit-v4; platform: espressif32@^6.13.0; framework: arduino)
+--------------------------------------------------------------------------------
+Platform Manager: Installing espressif32 @ ^6.13.0
+# exit 137 end 2026-09-26T21:35:51Z

@@ -1,0 +1,10 @@
+=== idle-base-all
+setup finished: False
+network up: False
+console answered: NO
+GPS lines: []
+position via --pos: 
+panic/assert: ['assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)', 'Backtrace: 0x4008401d:0x3ffd97d0 0x4009752d:0x3ffd97f0 0x4009cd95:0x3ffd9810 0x4015eecc:0x', 'assert failed: esp_bt_controller_init bt.c:1555 (select_src_ret && set_div_ret)']
+reboots (rst:): 7
+last lines: ['load:0x3fff0030,len:1184', 'load:0x40078000,len:13232', 'load:0x40080400,len:3028', 'entry 0x400805e4']
+

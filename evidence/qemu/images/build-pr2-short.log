@@ -1,0 +1,11 @@
+[pr2-short] tree at 97fa8df1 merge 84e6e308
+[overlay] copying new files (variants/qemu-headless, src/qemu)
+[overlay] applied meshcom-qemu-headless.patch (QEMU_HEADLESS-guarded changes).
+[openeth] lib/openeth_compat ready for ESP-IDF v4.4.7.
+TEST-ONLY custom-short hack applied
+ 7 files changed, 261 insertions(+), 4 deletions(-)
+[build] OK -> /home/makro/claude/agent5-allenvs/qemu/repo-pr2-short/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+e38a7c14e127cc0deef187924306596fff389e810ff50ba4371016b791c479a0  /home/makro/claude/agent5-allenvs/qemu/repo-pr2-short/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/firmware.bin
+961c4656d09618a5fec421a4926295fc868d6e58ddbf1aefbcdd3b7fdff0a563  /home/makro/claude/agent5-allenvs/qemu/repo-pr2-short/.work/MeshCom-Firmware/.pio/build/qemu-headless-extradio-gpsd/flash.bin
+961c4656d09618a5fec421a4926295fc868d6e58ddbf1aefbcdd3b7fdff0a563  /home/makro/claude/agent5-allenvs/qemu/flash-pr2-short.bin
+[pr2-short] BUILD DONE

@@ -1,0 +1,8 @@
+setup finished: True
+network up: True
+console answered: after 20 s
+GPS lines: ['[GPS ]...QEMU virtual GPS on UART1 (synthetic RX=16 TX=17 @ 9600 baud; no hardwa', '[GPS ]...QEMU NMEA presence: 236 chars -> detected']
+position via --pos: ...LAT: 48.0000 N
+panic/assert: []
+reboots (rst:): 1
+last lines: ['[153405][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9', '[153416][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9', '[153423][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9', '[153431][E][WiFiUdp.cpp:221] parsePacket(): could not receive data: 9']

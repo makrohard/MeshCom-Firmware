@@ -1,0 +1,10 @@
+01:24:51 boot 1: console up after 15 s
+01:24:51 PASS boot 1 console answers
+01:25:41 PASS GPS fix reaches RAM
+01:25:46 PASS GPS fix saved to flash before any transmission
+01:26:53 PASS --aprsmc survives a hard power-off right after the command
+01:27:14 boot 2: console up after 21 s
+01:27:14 PASS boot 2 console answers
+01:27:19 FAIL boot 2 (no GPS) starts from the saved fix
+01:27:39 PASS message counter persisted and keeps counting (5 -> 7)
+01:27:39 RESULT p1: FAIL (1 failed)

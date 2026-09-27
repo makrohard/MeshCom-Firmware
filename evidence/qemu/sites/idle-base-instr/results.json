@@ -1,0 +1,264 @@
+{
+ "message": {
+  "site": "message",
+  "trigger": "console '::sites text N' (sendMessage)",
+  "lat_set": 48.0011,
+  "nvs_before": {
+   "node_lat": "48.0",
+   "node_msgid": "1"
+  },
+  "nvs_after": {
+   "node_lat": "48.0011",
+   "node_msgid": "2"
+  },
+  "frames": [
+   "':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]"
+  ],
+  "gaps": [
+   [
+    3421,
+    "udp"
+   ]
+  ],
+  "load": [
+   3.0,
+   4.8,
+   10.8
+  ],
+  "window_s": 11.7,
+  "ctr_in_frame": 1,
+  "msgid_expected": 2,
+  "a_persisted": true,
+  "flushed": true,
+  "pre_clean": true,
+  "retransmissions": [],
+  "only_frame": true,
+  "max_gap_ms": 3421,
+  "status": "fired",
+  "attempts": 1
+ },
+ "position": {
+  "site": "position",
+  "trigger": "console '--sendpos' (sendPosition 0x9999)",
+  "lat_set": 48.0022,
+  "nvs_before": {
+   "node_lat": "48.0011",
+   "node_msgid": "2"
+  },
+  "nvs_after": {
+   "node_lat": "48.0022",
+   "node_msgid": "3"
+  },
+  "frames": [
+   "'!' id 00000002 ctr 2 hop 0x42 [TE5T-1>*!4800.13N/01200.00E#/B=085/A=001772]"
+  ],
+  "gaps": [
+   [
+    2789,
+    "udp"
+   ]
+  ],
+  "load": [
+   2.9,
+   4.6,
+   10.6
+  ],
+  "window_s": 11.1,
+  "ctr_in_frame": 2,
+  "msgid_expected": 3,
+  "a_persisted": true,
+  "flushed": true,
+  "pre_clean": true,
+  "retransmissions": [],
+  "only_frame": true,
+  "max_gap_ms": 2789,
+  "status": "fired",
+  "attempts": 1
+ },
+ "ping": {
+  "site": "ping",
+  "trigger": "--pingcall/--pingtime 30/--ping start, measuring the 2nd scheduled ping (esp32_main -> sendPing)",
+  "lat_set": 48.0033,
+  "nvs_before": {
+   "node_lat": "48.0022",
+   "node_msgid": "4"
+  },
+  "nvs_after": {
+   "node_lat": "48.0033",
+   "node_msgid": "5"
+  },
+  "frames": [
+   "':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]",
+   "':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]",
+   "':' id 00000004 ctr 4 hop 0x04 [TE5T-1>DL1PEE-1:{ping}]"
+  ],
+  "gaps": [
+   [
+    3151,
+    "udp"
+   ]
+  ],
+  "load": [
+   3.2,
+   4.5,
+   10.4
+  ],
+  "window_s": 29.1,
+  "ctr_in_frame": 4,
+  "msgid_expected": 5,
+  "a_persisted": true,
+  "flushed": true,
+  "pre_clean": true,
+  "retransmissions": [
+   "':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]",
+   "':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]"
+  ],
+  "only_frame": true,
+  "max_gap_ms": 3151,
+  "status": "fired",
+  "attempts": 1
+ },
+ "pong": {
+  "site": "pong",
+  "trigger": "bridge RX_PACKET: text DL1PEE-1>TE5T-1 '{ping}' (lora_functions OnRxDone -> SendPong)",
+  "lat_set": 48.0044,
+  "nvs_before": {
+   "node_lat": "48.0033",
+   "node_msgid": "5"
+  },
+  "nvs_after": {
+   "node_lat": "48.0044",
+   "node_msgid": "6"
+  },
+  "frames": [
+   "':' id 00000005 ctr 5 hop 0x04 [TE5T-1>DL1PEE-1:{pong}{1783879655}]",
+   "':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]"
+  ],
+  "gaps": [
+   [
+    2942,
+    "udp"
+   ]
+  ],
+  "load": [
+   3.0,
+   4.3,
+   10.1
+  ],
+  "window_s": 11.1,
+  "ctr_in_frame": 5,
+  "msgid_expected": 6,
+  "a_persisted": true,
+  "flushed": true,
+  "pre_clean": true,
+  "retransmissions": [
+   "':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]"
+  ],
+  "only_frame": true,
+  "max_gap_ms": 2942,
+  "status": "fired",
+  "attempts": 1
+ },
+ "ack": {
+  "site": "ack",
+  "trigger": "bridge RX_PACKET: DM DL1PEE-1>TE5T-1 'sites dm{485' (OnRxDone -> SendAckMessage)",
+  "lat_set": 48.0055,
+  "nvs_before": {
+   "node_lat": "48.0044",
+   "node_msgid": "6"
+  },
+  "nvs_after": {
+   "node_lat": "48.0055",
+   "node_msgid": "7"
+  },
+  "frames": [
+   "':' id 00000006 ctr 6 hop 0x04 [TE5T-1>DL1PEE-1:DL1PEE-1 :ack485]",
+   "':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]"
+  ],
+  "gaps": [
+   [
+    3049,
+    "display_rx"
+   ]
+  ],
+  "load": [
+   2.7,
+   4.2,
+   9.9
+  ],
+  "window_s": 11.6,
+  "ctr_in_frame": 6,
+  "msgid_expected": 7,
+  "a_persisted": true,
+  "flushed": true,
+  "pre_clean": true,
+  "retransmissions": [
+   "':' id 00000000 ctr 0 hop 0x04 [TE5T-1>*:sites tail probe]"
+  ],
+  "only_frame": true,
+  "max_gap_ms": 3049,
+  "status": "fired",
+  "attempts": 1
+ },
+ "hey": {
+  "site": "hey",
+  "trigger": "console '--sendhey' (sendHeyShot -> sendHey)",
+  "lat_set": 48.0066,
+  "nvs_before": {
+   "node_lat": "48.0055",
+   "node_msgid": "7"
+  },
+  "nvs_after": {
+   "node_lat": "48.0066",
+   "node_msgid": "8"
+  },
+  "frames": [
+   "'@' id 00000007 ctr 7 hop 0x04 [TE5T-1>H@R1;]",
+   "':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]"
+  ],
+  "gaps": [
+   [
+    3670,
+    "udp"
+   ]
+  ],
+  "load": [
+   2.6,
+   4.0,
+   9.7
+  ],
+  "window_s": 12.1,
+  "ctr_in_frame": 7,
+  "msgid_expected": 8,
+  "a_persisted": true,
+  "flushed": true,
+  "pre_clean": true,
+  "retransmissions": [
+   "':' id 00000001 ctr 1 hop 0x04 [TE5T-1>*:sites text 1]"
+  ],
+  "only_frame": true,
+  "max_gap_ms": 3670,
+  "status": "fired",
+  "attempts": 1
+ },
+ "injpos": {
+  "site": "injpos",
+  "kiss_server_started": false,
+  "connect": "host connect ok, reply b\"ConnectionResetError(104, 'Connection reset by peer')\"",
+  "status": "unreached",
+  "note": "kissLoop()/kissSetup() open the KISS/TCP listener only when WiFi.status() == WL_CONNECTED (kiss_functions.cpp); the QEMU node is on OpenETH, so the listener never opens and sendInjectedPosition() (only caller: kiss_functions.cpp:476) cannot be reached"
+ },
+ "apppos": {
+  "site": "apppos",
+  "status": "dead-code",
+  "note": "sendAPPPosition() has no caller in the tree (only its definition and the prototype in loop_functions.h)"
+ },
+ "_final": {
+  "nvs_after_kill": {
+   "node_msgid": "8",
+   "node_lat": "48.0066"
+  },
+  "counter_after_last_tx": 2,
+  "match": false
+ }
+}
