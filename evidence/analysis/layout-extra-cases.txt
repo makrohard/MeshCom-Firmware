@@ -1,0 +1,7 @@
+# tree env obj basetree section
+merge-fble t_deck src/esp32/esp32_main.cpp.o merge .text._Z9esp32loopv
+merge-fble t_deck_plus src/esp32/esp32_main.cpp.o merge .text._Z9esp32loopv
+merge-fble ttgo_tbeam_supreme src/esp32/esp32_main.cpp.o merge .text._Z9esp32loopv
+pr3-fble t_deck src/esp32/esp32_main.cpp.o pr3 .text._Z9esp32loopv
+pr3-fble t_deck_plus src/esp32/esp32_main.cpp.o pr3 .text._Z9esp32loopv
+pr3-fble ttgo_tbeam_supreme src/esp32/esp32_main.cpp.o pr3 .text._Z9esp32loopv

@@ -1,0 +1,23 @@
+# heltec_t114 size ledger (audit 5 v2, F2). Tools: arm-none-eabi-nm -S -C --defined-only, arm-none-eabi-size -A
+# pio "Flash" = .text + .data (+ other flash-resident sections); the report quotes pio: pr2 +432 B, merge +448 B
+
+## base vs pr2: every symbol whose size changed (bytes, symbol type, name)
+    +368  W  ArduinoJson::V743PB22::detail::StringNode* ArduinoJson::V743PB22::detail::StringPool::add<ArduinoJson::V743PB2
+    +124  T  commandAction(char*, bool)
+     -66  t  bool ArduinoJson::V743PB22::detail::VariantRefBase<ArduinoJson::V743PB22::detail::MemberProxy<ArduinoJson::V74
+  net symbol-size delta: +426 B
+## base vs pr2: section sizes that changed (size -A)
+    +432  .text  (589248 -> 589680)
+
+## base vs merge: every symbol whose size changed (bytes, symbol type, name)
+    +368  W  ArduinoJson::V743PB22::detail::StringNode* ArduinoJson::V743PB22::detail::StringPool::add<ArduinoJson::V743PB2
+    +120  T  commandAction(char*, bool)
+     -66  t  bool ArduinoJson::V743PB22::detail::VariantRefBase<ArduinoJson::V743PB22::detail::MemberProxy<ArduinoJson::V74
+     +16  t  CSWTCH.499
+     +16  t  CSWTCH.497
+     -16  t  CSWTCH.496
+     -16  t  CSWTCH.498
+     +12  T  sendDisplayText(aprsMessage&, short, signed char)
+  net symbol-size delta: +434 B
+## base vs merge: section sizes that changed (size -A)
+    +448  .text  (589248 -> 589696)

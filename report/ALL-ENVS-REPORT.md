@@ -29,11 +29,23 @@ You are a fresh, independent auditor. Your input is ONE file: this one. Audit on
   - They were posted after building only 11 of 32 default envs. This report is the build proof on ALL envs and the
     function proof in QEMU.
 
+## v3: answers to Audit Agent 5's v2 re-audit (RED on two evidence blockers; no code defect)
+
+| finding | status | where |
+|---|---|---|
+| F1 (blocker): LAYOUT-ONLY not verifiable | fixed: all 123 sections re-checked strictly, keeping branch-target identity and content-checking literals, strings and tables (with in-place addends) → 123/123 STRICT-EQUIVALENT; raw before/after objdump for every case; the checker is self-tested on 6 real changes (all flagged); the 6 flag-side `esp32loop` cases: 4 strictly equivalent, 2 a mechanically proven branch relaxation | item 5, item 6 |
+| F2: t114 size ledger incomplete | fixed: the full `nm -S` + `size -A` ledger (pr2 +426 B symbols / +432 B `.text`; merge +434 / +448, rest alignment); the wording narrowed to "main contributors" | item 4 |
+| F3 (blocker): safeboot claims without raw output | fixed: `safeboot-proof.txt` with hashes, full `cmp -l`, the section-table diff, a content comparison of every section, the symbol comparison, `nm`. It also corrected my own v2 sentence (five debug sections differ, not three) | item 7 |
+| F4: battery-control wording | fixed: "setup completes and OpenETH gets an IP, then the main loop stalls in the unguarded battery read" | item 9 |
+| F5: manifest path + prefixes | fixed: correct path; full-hash manifest added; all prefixes match | item 9 |
+| F6: stale header in results-idle.md | fixed: regenerated with the idle-run provenance | item 9 |
+| F7: queue `rc=` wrong | fixed in the scripts; the report states that queue rc values are not a gate | item 9 |
+
 ## v2: answers to Audit Agent 5 (verdict RED on the evidence package; no code defect found)
 
 | finding | status | where |
 |---|---|---|
-| F1: primary evidence not in the package | fixed: one pinned bundle with every script, log, table and manifest | "Pinned inputs" → this branch + path map |
+| F1: primary evidence not in the package | fixed: one pinned bundle with every script, log, table and manifest | "Pinned inputs" → bundle [`b5d74e5b`](https://github.com/makrohard/MeshCom-Firmware/tree/b5d74e5b8ed049e53233182accd3708bc0d48883) + path map |
 | F2: the LAYOUT-ONLY classifier cannot be reviewed | fixed: `scripts/ci/analyse.py` (the classifier is `_norm()`), `det-obj*.sh`, raw object hashes `evidence/objects/`, the raw diff `evidence/analysis/funcs-all.txt` | bundle |
 | F3: the stock flag control covered only `esp32_main.cpp.o` | fixed with data: an all-object comparison (framework + libraries + src), 0 code sections differ on 30/30 app envs; the wording narrowed where it concerns one object | item 6 |
 | F4: the `{SET}` old-PR1 control was outside this package | fixed: old PR1 `c4f508b3` re-run on the idle PC in this evidence set (value lost: NVS 4, reboot 4, after TX 4); patches, build log and image hash included | item 9 ②, `evidence/controls/` |
@@ -70,24 +82,30 @@ The audit input is now this report **plus** the pinned bundle it links. Both are
 - `upstream/dev` was re-checked at the start: `cf215b5d` (unchanged).
 - The trees are clean clones: `/home/makro/claude/agent5-allenvs/<tree>`.
 - **All evidence is in ONE pinned bundle** (v2, audit F1/F2/F5): the orphan branch `agent5-evidence` on
-  makrohard/MeshCom-Firmware at commit (this branch; the commit SHA is given in the copy of this report outside the bundle). It contains every
+  makrohard/MeshCom-Firmware at commit (this branch; the pinned commit SHA is given in the copy of this report outside the bundle). It contains every
   script, log, table, manifest and object hash this report names. There are no firmware images: they are pinned by
   sha256 in `evidence/qemu/images/manifest-sha256.txt`.
+- **Push record:** one plain push of this single orphan branch (the maintainer's word + the handler's file-list
+  check). `git ls-remote` before and after: `pr1-persist` 3f936a63, `pr2-setcall-unchanged` 84e6e308, `pr3` 9d8cbdbb,
+  `lhpc-speed` ba289816 and `pr-texts` 5565300a are unchanged; `agent5-evidence` = b5d74e5b. Nothing was sent to
+  icssw-org.
+- **Report inside the bundle:** [`report/ALL-ENVS-REPORT.md`](report/ALL-ENVS-REPORT.md) is this text minus
+  the pinned SHA, since a commit cannot name itself.
 - **Path map** (a path in this report → a path in the bundle):
 
   | in this report | in the bundle |
   |---|---|
-  | `ci-*.log`, `pio-*.log`, `det-*.log`, `flagobj-*.log`, `INVALID-*` | `evidence/builds/` |
-  | `funcs-*.txt`, `flagdiff.txt`, `sizes*`, `warnings.txt`, `env-change-table.md`, `NOTES.md`, `PLAN.md`, `envs*.txt` | `evidence/analysis/` |
-  | `../hunk-env-map.md` (agent 1's prediction) | `evidence/analysis/hunk-env-map-agent1-prediction.md` |
-  | `qemu/idle/…`, `qemu/qemu-*-idle-*/`, `qemu/qemu-m-idle-*/`, `qemu/qemu-nc-idle-*/` | `evidence/qemu/idle/` |
-  | `qemu/sites/idle-*/`, `sites/…` (logs) | `evidence/qemu/sites/` (per-site table: `results-idle.md`) |
-  | image build logs `qemu/build-*.log`, image hashes `manifest.txt` | `evidence/qemu/images/` |
-  | object hashes (F2) | `evidence/objects/<tree>.sha256` (every `src/**/*.o` + ELF/bin + one digest over ALL objects per env) |
-  | the old-PR1 control (F4) | `evidence/controls/` |
-  | scripts `ci/…` | `scripts/ci/` |
-  | scripts `qemu/*.sh`, `qemu/*.py`, the xml test hook | `scripts/qemu/` (`xml-testhook-7ba919cb.patch` = the TEST-ONLY `--xmltz` hook, never in a PR) |
-  | scripts `qemu/sites/*.py` | `scripts/qemu/sites/` |
+  | `ci-*.log`, `pio-*.log`, `det-*.log`, `flagobj-*.log`, `INVALID-*` | [`evidence/builds/`](evidence/builds) |
+  | `funcs-*.txt`, `flagdiff.txt`, `sizes*`, `warnings.txt`, `env-change-table.md`, `NOTES.md`, `PLAN.md`, `envs*.txt`, and v3: `layout-only-audit.txt`, `layout-only-raw-diffs.txt`, `layout-selftest*.txt`, `layout-extra-cases.txt`, `layout-relaxation-check.txt`, `safeboot-proof.txt`, `t114-size-ledger.txt` | [`evidence/analysis/`](evidence/analysis) |
+  | `../hunk-env-map.md` (agent 1's prediction) | [`evidence/analysis/hunk-env-map-agent1-prediction.md`](evidence/analysis/hunk-env-map-agent1-prediction.md) |
+  | `qemu/idle/…`, `qemu/qemu-*-idle-*/`, `qemu/qemu-m-idle-*/`, `qemu/qemu-nc-idle-*/` | [`evidence/qemu/idle/`](evidence/qemu/idle) |
+  | `qemu/sites/idle-*/`, `sites/…` (logs) | [`evidence/qemu/sites/`](evidence/qemu/sites) (per-site table: `results-idle.md`) |
+  | image build logs `qemu/build-*.log`, image hashes `manifest.txt` | [`evidence/qemu/images/`](evidence/qemu/images) |
+  | object hashes (F2) | [`evidence/objects/<tree>.sha256`](evidence/objects/<tree>.sha256) (every `src/**/*.o` + ELF/bin + one digest over ALL objects per env) |
+  | the old-PR1 control (F4) | [`evidence/controls/`](evidence/controls) |
+  | scripts `ci/…` | [`scripts/ci/`](scripts/ci) |
+  | scripts `qemu/*.sh`, `qemu/*.py`, the xml test hook | [`scripts/qemu/`](scripts/qemu) (`xml-testhook-7ba919cb.patch` = the TEST-ONLY `--xmltz` hook, never in a PR) |
+  | scripts `qemu/sites/*.py` | [`scripts/qemu/sites/`](scripts/qemu/sites) |
 - **Scripts:** `/home/makro/claude/agent5-allenvs/ci/` (run-ci.sh, ci-job.sh, run-pio.sh, det-obj.sh, flag-obj.sh,
   analyse.py, flagdiff.py) and `/home/makro/claude/agent5-allenvs/qemu/` (build-image-ci2.sh, build-one.sh,
   run-idle.sh, sites/qemu-sites.py).
@@ -166,12 +184,17 @@ The audit input is now this report **plus** the pinned bundle it links. Both are
   | heltec_t114 | 217992 B (26.74 %) | +448 B |
 
   Every other env has ≥ 47 % free. No env's headroom becomes critical.
-- **heltec_t114 +448 B, explained** (`nm -S` of the ELFs, base vs pr2):
-  - `commandAction()` is +124 B (the PR2 code).
-  - +368 B are an ArduinoJson template instance (a weak symbol, `StringPool::add<RamString>`) that the compiler
-    instantiates differently once `commandAction()` changes. This is a code-generation side effect in library
-    code, not new logic.
-  - RAK4631 and t_echo don't show it (commandAction +4 / +100 B).
+- **heltec_t114, the full ledger** (v3, audit F2; `t114-size-ledger.txt`: `arm-none-eabi-nm -S -C --defined-only` +
+  `size -A`, base vs tree):
+  - **pr2:** `commandAction` +124, ArduinoJson `StringPool::add<RamString>` instance +368 (a weak symbol), another
+    ArduinoJson helper −66, i.e. symbols **+426 B**. `.text` grows **+432 B**; the 6 B that no symbol accounts for
+    are inter-symbol alignment. pio's "Flash" +432 B is `.text`.
+  - **merge:** the same three (+368, commandAction +120, −66), `sendDisplayText` +12, and four compiler switch tables
+    `CSWTCH.*` ±16 each (net 0), i.e. symbols **+434 B**; `.text` **+448 B** (14 B alignment).
+  - The two main contributors are therefore commandAction (+120/+124 B) and the ArduinoJson template instance
+    (+368 B). The instance is emitted differently once commandAction changes; I did not establish the compiler's
+    reason.
+  - RAK4631 and t_echo don't show that instance (commandAction +4 / +100 B).
 - **Build-date noise:** trees without any code change on an env (e.g. pr3 on RAK4631, t_deck_plus) show ±16 B. CI
   builds are not deterministic, because `__DATE__`/`__TIME__` is compiled in (`command_functions.cpp:136-141` and
   five other files). Item 5's deterministic object diff is the authoritative "no code change" evidence.
@@ -187,6 +210,32 @@ The audit input is now this report **plus** the pinned bundle it links. Both are
 - It classifies each difference as NEW / GONE / CHANGED, or as LAYOUT-ONLY: branch offsets, alignment padding,
   narrow/wide Xtensa encodings, compiler-numbered labels such as `CSWTCH.N`, whitespace.
 - Scope: 30 app envs (the two safeboots are item 7). Full output: `funcs-all.txt`; grouped: `funcs-summary.txt`.
+- **Strict re-check of every LAYOUT-ONLY section** (v3, audit F1; `scripts/ci/layout_audit.py`):
+  - Why: `_norm()` drops branch-target identity, so it cannot prove equivalence by itself. Every one of the **123**
+    sections it classified LAYOUT-ONLY (in 10 functions) was re-checked strictly.
+  - Rules of the strict check:
+    - padding (`.byte 00`, `nop`) is dropped;
+    - every in-function branch/relocation target is compared as the ORDINAL of the target instruction;
+    - narrow/wide Xtensa forms are canonicalised;
+    - every other relocation must match by CONTENT: the string at the target (string sections), or the bytes and
+      relocations of compiler-numbered tables (`CSWTCH.N`), with in-place addends included (Xtensa `R_XTENSA_32`,
+      ARM `R_ARM_ABS32`);
+    - the function's literal pool must match the same way.
+  - Result: **123/123 STRICT-EQUIVALENT** (`layout-only-audit.txt`).
+  - Raw unnormalised `objdump -d -r -z --no-show-raw-insn` before/after of EVERY case: `layout-only-raw-diffs.txt`.
+  - Why they differed at all:
+    - nRF52 `sendGpsJson` / `sendAPRSset`: objdump's nearest-symbol annotation of an unrelocated branch (`<.LC508…>`
+      vs `<.LC507…>`), with the same encoding;
+    - `bpRoute`: switch tables renumbered (`CSWTCH.564` → `.565`) with identical contents;
+    - the ESP32 GPS functions: narrow/wide encodings and padding.
+  - **Self-test of the checker** (`layout-selftest.txt`): six sections that REALLY change (PR1 `sendMessage`,
+    `sendDisplayText` ×2, `keypad_read`; PR2 `commandAction`; PR3 `loopNetConsole`) are all reported STRICT-DIFF.
+    A missing or empty section aborts the run instead of comparing as equal; this guard was added after the first
+    self-test caught exactly that bug.
+  - **What this does NOT prove:**
+    - `analyse.py` compares CODE sections only. A change in a data section that no changed code references would not
+      be listed. The strict check covers the data REFERENCED by the re-checked sections (strings, tables, literals).
+    - Equivalence is shown per section at machine-code level, not by executing the code.
 
 | tree | what changes (non-layout) |
 |---|---|
@@ -194,6 +243,9 @@ The audit input is now this report **plus** the pinned bundle it links. Both are
 | **PR2** | `commandAction` only, on all 30. On heltec_t114 also the ArduinoJson template instance from item 4. |
 | **PR3** (no flags) | `loopNetConsole` only, and only on the two `HAS_ETHERNET` boards (T-ETH-ELITE_1262, LilyGo_T_Connect_Pro). On the other 28 app envs PR3 is **code-identical to base**, `esp32_main` included. |
 | **PR1+PR2**, **merge** | exactly the union of the above (checked env by env in `funcs-summary.txt`) |
+
+"Changes" in this table = code sections that differ other than LAYOUT-ONLY; all LAYOUT-ONLY sections were verified
+strictly (above).
 
 **Env × change table** (verified from the objects, merge vs base; `env-change-table.md`):
 - Y = the code changes in the binary.
@@ -264,8 +316,13 @@ The audit input is now this report **plus** the pinned bundle it links. Both are
   | both | `esp32setup` + `esp32_write_ble` + `esp32loop` on 27/27 |
   | **base + both (negative control)** | `esp32_main.cpp.o`: no code change on 27/27 |
 
-  With `DISABLE_BLE`, `esp32loop` also differs on t_deck/t_deck_plus (one padding `nop`) and on ttgo_tbeam_supreme
-  (a relaxed branch, `bnez`+`j` → `beqz`). Both are layout, described in `NOTES.md` (normalised diff: one `nop`; `bnez`+`j` vs `beqz`).
+  With `DISABLE_BLE`, `esp32loop` also differs on t_deck, t_deck_plus and ttgo_tbeam_supreme. Checked strictly
+  (v3):
+  - t_deck/t_deck_plus: **STRICT-EQUIVALENT**. One literal-pool slot points into a different string section, but
+    both resolve to the same (empty) string once the in-place addend is applied.
+  - ttgo_tbeam_supreme (merge and pr3): one Xtensa branch relaxation, `bnez a4, <next+1>` + `j L` ↔ `beqz a4, L`
+    (the same control flow). The other 3 483 instructions are identical after ordinal remap, and the literal pool is
+    identical. Checked mechanically: `scripts/ci/relax_check.py` → `layout-relaxation-check.txt`.
 - **All-object negative control (v2, audit F3):**
   - Stock with both flags vs stock without them, compared over **every object of the build**: the Arduino framework
     core, every library under `.pio/libdeps` and `src/`, about 580 objects per ESP32 env.
@@ -290,14 +347,20 @@ The audit input is now this report **plus** the pinned bundle it links. Both are
   `.pio/build/esp32-safeboot/src/esp32/esp32_flash.cpp.o`, `nm -C` shows `T save_msgid()` and `T save_position()`
   on pr1 / pr12 / merge, and only `T save_settings()` on base.
 - **None of the three reaches the linked ELF on any tree**, because safeboot calls none of them.
-- **The images are identical in code and data, but not byte-identical:**
-  - `safeboot.bin` / `safeboot-s3.bin` are byte-identical across base = pr2 = pr3, which shows the builds are
-    reproducible.
-  - pr1 / pr12 / merge differ from base only at bytes 176–207 (the ELF SHA-256 that esptool embeds at 0xB0) and in
-    the last 33 bytes (the image checksum and digest).
-  - The ELFs differ only in `.debug_info`, `.debug_str` and `.symtab`, which carry the debug records of the two
-    unreferenced functions.
-- Commands: `cmp -l`, `readelf -S -W`, `nm -C`. Recorded in `NOTES.md`.
+- **The images are identical in code and data, but not byte-identical** (v3, audit F3; raw outputs in
+  `safeboot-proof.txt`, produced by `scripts/ci/safeboot_proof.sh`):
+  - sha256 of `safeboot.bin` / `safeboot-s3.bin` and the ELFs: base = pr2 = pr3, and pr1 = pr12 = merge.
+  - `cmp -l` base vs pr1 and base vs merge: the only differing 0-based byte ranges are **176–207** (the ELF SHA-256
+    that esptool embeds at 0xB0) and the **last 33 bytes** (image checksum + digest). Full `cmp -l` output included.
+  - `objcopy --dump-section` of EVERY ELF section, base vs pr1/merge: every section with contents that is loaded into
+    the image is identical (`.iram0.*`, `.dram0.data`, `.flash.text`, `.flash.rodata`, `.flash.appdesc`, `.rtc.*`,
+    …). The sections that differ are only `.debug_abbrev`, `.debug_aranges`, `.debug_info`, `.debug_loclists` and
+    `.debug_str`. (v2 named only three of them; corrected.)
+  - `.symtab` cannot be dumped, so it is compared via `readelf -sW` with section names resolved: all symbols in
+    non-debug sections are identical (7 037 on esp32, 8 418 on S3). The differing symbols (88 / 90) are all located
+    IN `.debug_info` (LTO `<file>_cpp_<hash>` markers whose values shift with it).
+  - `nm -C` of the LTO object `esp32_flash.cpp.o`: `save_msgid()` + `save_position()` + `save_settings()` on
+    pr1/pr12/merge, only `save_settings()` on base/pr2/pr3; none of them is in any linked safeboot ELF.
 
 ## Item 8 — `t5_epaper` (the 33rd, commented out upstream): pre-existing failure, not testable
 
@@ -314,11 +377,20 @@ The audit input is now this report **plus** the pinned bundle it links. Both are
 with no build containers running and a 1-min load average of 2.6–7.6 (logged per step). The earlier runs made under
 full build load (23:05–23:25 local) are discarded.
 
+- **Queue-level `rc=` values are NOT a gate** (v3, audit F7). The queue summaries `idle/queueA.out`, `idle/queueB.out`
+  and `sites/idle-run.out` print `rc=` from the preceding `$(date)` instead of the harness, so they show `rc=0` even
+  for the intended stock FAILs. Fixed in `run-idle.sh` / `run-sites-idle.sh` for future runs; the pinned queue files
+  keep the old values. Every verdict here is read from the individual logs' PASS/FAIL/RESULT lines.
+- `sites/results-idle.md` (the per-site table) had a stale "UNDER LOAD" header left over from the first, loaded run.
+  It is regenerated with this run's provenance (v3, audit F6).
+
 **QEMU and images:**
 - QEMU binary `/home/makro/claude/qemu-cache-pr/b-up/qemu-system-xtensa`: sha256 `18afb66166c9830a…`, version
   9.2.2 (v9.2.2-126-gfebae182e1), stock Espressif, read-only.
 - Images: meshcom-qemu-raspi `113ff40b` overlay + the tree, env `qemu-headless-extradio-gpsd`
-  (`qemu/build-image-ci2.sh`, `qemu/build-one.sh`). The sha256 of every image is in `qemu/idle/manifest.txt`.
+  (`qemu/build-image-ci2.sh`, `qemu/build-one.sh`). Image hashes: `evidence/qemu/images/manifest-sha256.txt` is the run-start manifest and records only 16-hex-char
+  SHA-256 **prefixes**; `evidence/qemu/images/manifest-sha256-full.txt` (v3, audit F5) has the full SHA-256 of every
+  image and of the QEMU binary. All 25 run-start prefixes match. The per-image build logs also carry the full hash.
 - Network: user-net `host=10.0.2.5` + `guestfwd` 10.0.2.2:7000 → a local sink, so no image could reach host port 7000.
 - **These are the first QEMU proofs on the exact posted PR commits.** The earlier r6–r9 proofs used the pre-rebase
   heads.
@@ -339,7 +411,7 @@ PR1/PR2 rows on the merge therefore run in that configuration; the discriminatin
 | **PR2 setcall** (`proof.py setcall`, short images) | 6/7: **FAIL** "same callsign again (no-op): no reboot" | pr2: **7/7 PASS** | 7/7 PASS | PASS | `idle/proof-setcall-{base,pr2,merge}-short.log` |
 | **PR3a net console on a non-WiFi IP network** (`qemu-netconsole.py`, Ethernet mode) | base-eth: network up, **console never answers** (180 s) | pr3-all: answers after 4 s, 0 panics | merge: answers after 4 s | PASS | `idle/qemu-netconsole-{base-eth,pr3-all,merge-plain}.log` |
 | **PR3d `DISABLE_BLE`** (`qemu-measure.py`; QEMU has no BT controller) | base-noble: `assert failed: esp_bt_controller_init`; **base-noble-flag: the same assert** (stock ignores the flag) | pr3 with the flag: `[BLE ]...disabled (DISABLE_BLE)`, no BLE init, no assert; without it (drop3, drop3-batt): the assert | same as pr3 | PASS | `idle/qemu-measure-*.log`, `qemu-m-idle-*/` |
-| **PR3c `DISABLE_BATTERY`** | base-nobatt and **base-nobatt-flag**: boot hangs in the unguarded battery path (no network, no console, no panic); the flag is ignored | pr3 with only `DISABLE_BLE` (drop3-ble): the same hang; with both flags (all): boots, `BATT 0.00 V … 0 %`, console after 20 s | same as pr3 | PASS | same |
+| **PR3c `DISABLE_BATTERY`** | base-nobatt and **base-nobatt-flag**: setup completes (`CLIENT STARTED`) and OpenETH obtains an IP (`GOT_IP` 10.0.2.15), but the main loop then stalls in the unguarded battery read before the net console is serviced; no panic; the flag is ignored | pr3 with only `DISABLE_BLE` (drop3-ble): the same stall; with both flags (all): runs, `BATT 0.00 V … 0 %`, console after 20 s | same as pr3 | PASS | same |
 
 ① **merge p1, first run:** 6/7. "boot 2 (no GPS) starts from the saved fix" failed on the `--pos` console reply
 (5 s window). The same run's NVS after boot 2 holds `node_lat=48.0`, and its UART prints `...LAT: 48.0000 N`, so the

@@ -1,0 +1,7 @@
+# SELF-TEST: real changes, the checker must say STRICT-DIFF
+pr1 E22-DevKitC src/loop_functions.cpp.o base .text._Z11sendMessagePciPKcPj
+pr1 E22-DevKitC src/loop_functions.cpp.o base .text._Z15sendDisplayTextR11aprsMessagesa
+pr1 wiscore_rak4631 src/loop_functions.cpp.o base .text._Z15sendDisplayTextR11aprsMessagesa
+pr2 wiscore_rak4631 src/command_functions.cpp.o base .text._Z13commandActionPcb
+pr3 T-ETH-ELITE_1262 src/net_console.cpp.o base .text._Z14loopNetConsolev
+pr1 t_deck src/t-deck/tdeck_main.cpp.o base .text._ZL11keypad_readP15_lv_indev_drv_tP15lv_indev_data_t

@@ -1,0 +1,7 @@
+# layout_audit.py: 6 cases: STRICT-DIFF 6
+STRICT-DIFF        pr1          vs base   E22-DevKitC                    src/loop_functions.cpp.o .text._Z11sendMessagePciPKcPj instruction stream differs (1166 vs 1166 kept instructions); literal pool differs
+STRICT-DIFF        pr1          vs base   E22-DevKitC                    src/loop_functions.cpp.o .text._Z15sendDisplayTextR11aprsMessagesa instruction stream differs (855 vs 860 kept instructions); literal pool differs
+STRICT-DIFF        pr1          vs base   wiscore_rak4631                src/loop_functions.cpp.o .text._Z15sendDisplayTextR11aprsMessagesa instruction stream differs (878 vs 881 kept instructions)
+STRICT-DIFF        pr2          vs base   wiscore_rak4631                src/command_functions.cpp.o .text._Z13commandActionPcb instruction stream differs (8625 vs 8635 kept instructions)
+STRICT-DIFF        pr3          vs base   T-ETH-ELITE_1262               src/net_console.cpp.o .text._Z14loopNetConsolev instruction stream differs (218 vs 223 kept instructions); literal pool differs
+STRICT-DIFF        pr1          vs base   t_deck                         src/t-deck/tdeck_main.cpp.o .text._ZL11keypad_readP15_lv_indev_drv_tP15lv_indev_data_t instruction stream differs (1031 vs 1071 kept instructions); literal pool differs

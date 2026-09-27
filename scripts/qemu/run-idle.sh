@@ -7,8 +7,8 @@ export QEMU=/home/makro/claude/qemu-cache-pr/b-up/qemu-system-xtensa RELAY=/home
 { echo "# idle QEMU run $(date -u +%FT%TZ) on $(hostname)"; echo "QEMU $QEMU sha256 $(sha256sum < $QEMU | cut -c1-16) $($QEMU --version | head -1)"
   for f in flash-*.bin; do echo "$f $(sha256sum < $f | cut -c1-16)"; done; } > $EQ/manifest.txt
 busy() { ps -eo args | grep -c '[a]5-pio\|[a]5-ci\|[a]5-det'; }
-pp() { m=$1; shift; for t in "$@"; do rm -rf $EQ/proof-$t; WORK=$EQ/proof-$t python3 proof.py $m flash-$t.bin > $EQ/proof-$m-$t.log 2>&1; echo "$(date -u +%T) proof $m $t rc=$? load=$(cut -d' ' -f1 /proc/loadavg)"; done; }
-sc() { s=$1; shift; for t in "$@"; do python3 $s flash-$t.bin idle-$t > $EQ/${s%.py}-$t.log 2>&1; echo "$(date -u +%T) $s $t rc=$? load=$(cut -d' ' -f1 /proc/loadavg)"; done; }
+pp() { m=$1; shift; for t in "$@"; do rm -rf $EQ/proof-$t; WORK=$EQ/proof-$t python3 proof.py $m flash-$t.bin > $EQ/proof-$m-$t.log 2>&1; rc=$?; echo "$(date -u +%T) proof $m $t rc=$rc load=$(cut -d' ' -f1 /proc/loadavg)"; done; }
+sc() { s=$1; shift; for t in "$@"; do python3 $s flash-$t.bin idle-$t > $EQ/${s%.py}-$t.log 2>&1; rc=$?; echo "$(date -u +%T) $s $t rc=$rc load=$(cut -d' ' -f1 /proc/loadavg)"; done; }
 # queue A (PR1 + PR2 rows)          queue B (PR3 rows)
 ( pp p1 base-plain pr1-plain merge-plain
   sc qemu-xml.py base-xml pr1-xml merge-xml

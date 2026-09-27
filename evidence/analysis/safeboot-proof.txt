@@ -1,0 +1,665 @@
+################ esp32-safeboot
+## sha256 of safeboot.bin / safeboot.elf per tree
+base e42d5b8a25dacd16937c6357283fbc71e98020bae5f29a48b610ad4214f0262b bin  972982f1ebb0e9a28483c975d4011f0309efd545f36066814362326ab5a5ba3c elf
+pr1 eb80bc44db1b0b1dfefe9a4927fb708f4f4a8e7d14abffbc14463d6fd207ef2b bin  7289cf95606a52265deba32e781111b2dd478ba73697bc8a41325ec5530e9b6f elf
+pr2 e42d5b8a25dacd16937c6357283fbc71e98020bae5f29a48b610ad4214f0262b bin  972982f1ebb0e9a28483c975d4011f0309efd545f36066814362326ab5a5ba3c elf
+pr3 e42d5b8a25dacd16937c6357283fbc71e98020bae5f29a48b610ad4214f0262b bin  972982f1ebb0e9a28483c975d4011f0309efd545f36066814362326ab5a5ba3c elf
+pr12 eb80bc44db1b0b1dfefe9a4927fb708f4f4a8e7d14abffbc14463d6fd207ef2b bin  7289cf95606a52265deba32e781111b2dd478ba73697bc8a41325ec5530e9b6f elf
+merge eb80bc44db1b0b1dfefe9a4927fb708f4f4a8e7d14abffbc14463d6fd207ef2b bin  7289cf95606a52265deba32e781111b2dd478ba73697bc8a41325ec5530e9b6f elf
+## $ cmp -l base/safeboot.bin pr1/safeboot.bin   (byte offset 1-based, octal old, octal new)
+   177 227 162
+   178  51 211
+   179 202 317
+   180 361 225
+   181 353 140
+   182 260 152
+   183 351 122
+   184 242  46
+   185 204 135
+   186 203 353
+   187 311 243
+   188 165  56
+   189 324 170
+   190   1  21
+   191  37  21
+   192   3 262
+   193  11 335
+   194 357 107
+   195 325 213
+   196 105 247
+   197 363  66
+   198 140 227
+   199 146 274
+   200 201 212
+   201 103 101
+   202 142  62
+   203  62 136
+   204 152 305
+   205 265 123
+   206 245  16
+   207 272 233
+   208  74 157
+716096  42  56
+716097 140 352
+716098 302  63
+716099  74 160
+716100 354  64
+716101 364  32
+716102 251 143
+716103  46  31
+716104 167  46
+716105 372 256
+716106  30 374
+716107 253  25
+716108 174 170
+716109 377 162
+716110  16 106
+716111 232  44
+716112 114 274
+716113   1 374
+716114  55 157
+716115 154 352
+716116 310 260
+716117 110  55
+716118 307 111
+716119 243 140
+716120 314 164
+716121 302 132
+716122 323  53
+716123 271  20
+716124  64  32
+716125 270 134
+716126  55   5
+716127  35 206
+716128 107 134
+## differing 0-based byte ranges; image size 716128
+176-207
+716095-716127
+## $ xtensa-esp32-elf-readelf -S -W base/safeboot.elf  vs  pr1/safeboot.elf  (diff of the section tables)
+1c1
+< There are 41 section headers, starting at offset 0x81b398:
+---
+> There are 41 section headers, starting at offset 0x81b410:
+29,45c29,45
+<   [24] .debug_info       PROGBITS        00000000 0b5ef8 432e89 00      0   0  1
+<   [25] .debug_abbrev     PROGBITS        00000000 4e8d81 0382f2 00      0   0  1
+<   [26] .debug_line       PROGBITS        00000000 521073 0e4b34 00      0   0  1
+<   [27] .debug_frame      PROGBITS        00000000 605ba8 00e7d0 00      0   0  4
+<   [28] .debug_str        PROGBITS        00000000 614378 12b738 01  MS  0   0  1
+<   [29] .debug_loc        PROGBITS        00000000 73fab0 00521f 00      0   0  1
+<   [30] .debug_ranges     PROGBITS        00000000 744ccf 0009b0 00      0   0  1
+<   [31] .debug_line_str   PROGBITS        00000000 74567f 0046dd 01  MS  0   0  1
+<   [32] .debug_loclists   PROGBITS        00000000 749d5c 075421 00      0   0  1
+<   [33] .debug_rnglists   PROGBITS        00000000 7bf17d 00d46b 00      0   0  1
+<   [34] .comment          PROGBITS        00000000 7cc5e8 0000cf 01  MS  0   0  1
+<   [35] .xtensa.info      NOTE            00000000 7cc6b7 000038 00      0   0  1
+<   [36] .xt.prop          PROGBITS        00000000 7cc6ef 000b40 00      0   0  1
+<   [37] .xt.lit           PROGBITS        00000000 7cd22f 000050 00      0   0  1
+<   [38] .symtab           SYMTAB          00000000 7cd280 029d40 10     39 5939  4
+<   [39] .strtab           STRTAB          00000000 7f6fc0 0241cb 00      0   0  1
+<   [40] .shstrtab         STRTAB          00000000 81b18b 00020d 00      0   0  1
+---
+>   [24] .debug_info       PROGBITS        00000000 0b5ef8 432ea3 00      0   0  1
+>   [25] .debug_abbrev     PROGBITS        00000000 4e8d9b 0382f2 00      0   0  1
+>   [26] .debug_line       PROGBITS        00000000 52108d 0e4b34 00      0   0  1
+>   [27] .debug_frame      PROGBITS        00000000 605bc4 00e7d0 00      0   0  4
+>   [28] .debug_str        PROGBITS        00000000 614394 12b774 01  MS  0   0  1
+>   [29] .debug_loc        PROGBITS        00000000 73fb08 00521f 00      0   0  1
+>   [30] .debug_ranges     PROGBITS        00000000 744d27 0009b0 00      0   0  1
+>   [31] .debug_line_str   PROGBITS        00000000 7456d7 0046dd 01  MS  0   0  1
+>   [32] .debug_loclists   PROGBITS        00000000 749db4 075421 00      0   0  1
+>   [33] .debug_rnglists   PROGBITS        00000000 7bf1d5 00d46b 00      0   0  1
+>   [34] .comment          PROGBITS        00000000 7cc640 0000cf 01  MS  0   0  1
+>   [35] .xtensa.info      NOTE            00000000 7cc70f 000038 00      0   0  1
+>   [36] .xt.prop          PROGBITS        00000000 7cc747 000b40 00      0   0  1
+>   [37] .xt.lit           PROGBITS        00000000 7cd287 000050 00      0   0  1
+>   [38] .symtab           SYMTAB          00000000 7cd2d8 029d60 10     39 5941  4
+>   [39] .strtab           STRTAB          00000000 7f7038 0241cb 00      0   0  1
+>   [40] .shstrtab         STRTAB          00000000 81b203 00020d 00      0   0  1
+## per-section CONTENT comparison (objcopy --dump-section, every section incl. non-ALLOC debug sections), base vs pr1
+  same     .rtc.text (0 bytes)
+  same     .rtc.dummy (0 bytes)
+  same     .rtc.force_fast (0 bytes)
+  same     .rtc_noinit (0 bytes)
+  same     .rtc.force_slow (0 bytes)
+  NO-CONTENT .rtc_fast_reserved (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .rtc_slow_reserved (NOBITS or empty: NA / NA bytes)
+  same     .iram0.vectors (1024 bytes)
+  same     .iram0.text (63547 bytes)
+  same     .dram0.data (66820 bytes)
+  same     .ext_ram_noinit (0 bytes)
+  NO-CONTENT .noinit (NOBITS or empty: NA / NA bytes)
+  same     .ext_ram.bss (0 bytes)
+  NO-CONTENT .dram0.bss (NOBITS or empty: NA / NA bytes)
+  same     .flash.appdesc (256 bytes)
+  same     .flash.rodata (30512 bytes)
+  NO-CONTENT .flash.rodata_noload (NOBITS or empty: NA / NA bytes)
+  same     .flash.text (553856 bytes)
+  NO-CONTENT .iram0.text_end (NOBITS or empty: NA / NA bytes)
+  same     .iram0.data (0 bytes)
+  same     .iram0.bss (0 bytes)
+  same     .dram0.heap_start (0 bytes)
+  DIFFERS  .debug_aranges (19288 vs 19288 bytes)
+  DIFFERS  .debug_info (4402825 vs 4402851 bytes)
+  DIFFERS  .debug_abbrev (230130 vs 230130 bytes)
+  same     .debug_line (936756 bytes)
+  same     .debug_frame (59344 bytes)
+  DIFFERS  .debug_str (1226552 vs 1226612 bytes)
+  same     .debug_loc (21023 bytes)
+  same     .debug_ranges (2480 bytes)
+  same     .debug_line_str (18141 bytes)
+  DIFFERS  .debug_loclists (480289 vs 480289 bytes)
+  same     .debug_rnglists (54379 bytes)
+  same     .comment (207 bytes)
+  same     .xtensa.info (56 bytes)
+  same     .xt.prop (2880 bytes)
+  same     .xt.lit (80 bytes)
+  NO-CONTENT .symtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .strtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .shstrtab (NOBITS or empty: NA / NA bytes)
+## $ cmp -l base/safeboot.bin merge/safeboot.bin   (byte offset 1-based, octal old, octal new)
+   177 227 162
+   178  51 211
+   179 202 317
+   180 361 225
+   181 353 140
+   182 260 152
+   183 351 122
+   184 242  46
+   185 204 135
+   186 203 353
+   187 311 243
+   188 165  56
+   189 324 170
+   190   1  21
+   191  37  21
+   192   3 262
+   193  11 335
+   194 357 107
+   195 325 213
+   196 105 247
+   197 363  66
+   198 140 227
+   199 146 274
+   200 201 212
+   201 103 101
+   202 142  62
+   203  62 136
+   204 152 305
+   205 265 123
+   206 245  16
+   207 272 233
+   208  74 157
+716096  42  56
+716097 140 352
+716098 302  63
+716099  74 160
+716100 354  64
+716101 364  32
+716102 251 143
+716103  46  31
+716104 167  46
+716105 372 256
+716106  30 374
+716107 253  25
+716108 174 170
+716109 377 162
+716110  16 106
+716111 232  44
+716112 114 274
+716113   1 374
+716114  55 157
+716115 154 352
+716116 310 260
+716117 110  55
+716118 307 111
+716119 243 140
+716120 314 164
+716121 302 132
+716122 323  53
+716123 271  20
+716124  64  32
+716125 270 134
+716126  55   5
+716127  35 206
+716128 107 134
+## differing 0-based byte ranges; image size 716128
+176-207
+716095-716127
+## $ xtensa-esp32-elf-readelf -S -W base/safeboot.elf  vs  merge/safeboot.elf  (diff of the section tables)
+1c1
+< There are 41 section headers, starting at offset 0x81b398:
+---
+> There are 41 section headers, starting at offset 0x81b410:
+29,45c29,45
+<   [24] .debug_info       PROGBITS        00000000 0b5ef8 432e89 00      0   0  1
+<   [25] .debug_abbrev     PROGBITS        00000000 4e8d81 0382f2 00      0   0  1
+<   [26] .debug_line       PROGBITS        00000000 521073 0e4b34 00      0   0  1
+<   [27] .debug_frame      PROGBITS        00000000 605ba8 00e7d0 00      0   0  4
+<   [28] .debug_str        PROGBITS        00000000 614378 12b738 01  MS  0   0  1
+<   [29] .debug_loc        PROGBITS        00000000 73fab0 00521f 00      0   0  1
+<   [30] .debug_ranges     PROGBITS        00000000 744ccf 0009b0 00      0   0  1
+<   [31] .debug_line_str   PROGBITS        00000000 74567f 0046dd 01  MS  0   0  1
+<   [32] .debug_loclists   PROGBITS        00000000 749d5c 075421 00      0   0  1
+<   [33] .debug_rnglists   PROGBITS        00000000 7bf17d 00d46b 00      0   0  1
+<   [34] .comment          PROGBITS        00000000 7cc5e8 0000cf 01  MS  0   0  1
+<   [35] .xtensa.info      NOTE            00000000 7cc6b7 000038 00      0   0  1
+<   [36] .xt.prop          PROGBITS        00000000 7cc6ef 000b40 00      0   0  1
+<   [37] .xt.lit           PROGBITS        00000000 7cd22f 000050 00      0   0  1
+<   [38] .symtab           SYMTAB          00000000 7cd280 029d40 10     39 5939  4
+<   [39] .strtab           STRTAB          00000000 7f6fc0 0241cb 00      0   0  1
+<   [40] .shstrtab         STRTAB          00000000 81b18b 00020d 00      0   0  1
+---
+>   [24] .debug_info       PROGBITS        00000000 0b5ef8 432ea3 00      0   0  1
+>   [25] .debug_abbrev     PROGBITS        00000000 4e8d9b 0382f2 00      0   0  1
+>   [26] .debug_line       PROGBITS        00000000 52108d 0e4b34 00      0   0  1
+>   [27] .debug_frame      PROGBITS        00000000 605bc4 00e7d0 00      0   0  4
+>   [28] .debug_str        PROGBITS        00000000 614394 12b774 01  MS  0   0  1
+>   [29] .debug_loc        PROGBITS        00000000 73fb08 00521f 00      0   0  1
+>   [30] .debug_ranges     PROGBITS        00000000 744d27 0009b0 00      0   0  1
+>   [31] .debug_line_str   PROGBITS        00000000 7456d7 0046dd 01  MS  0   0  1
+>   [32] .debug_loclists   PROGBITS        00000000 749db4 075421 00      0   0  1
+>   [33] .debug_rnglists   PROGBITS        00000000 7bf1d5 00d46b 00      0   0  1
+>   [34] .comment          PROGBITS        00000000 7cc640 0000cf 01  MS  0   0  1
+>   [35] .xtensa.info      NOTE            00000000 7cc70f 000038 00      0   0  1
+>   [36] .xt.prop          PROGBITS        00000000 7cc747 000b40 00      0   0  1
+>   [37] .xt.lit           PROGBITS        00000000 7cd287 000050 00      0   0  1
+>   [38] .symtab           SYMTAB          00000000 7cd2d8 029d60 10     39 5941  4
+>   [39] .strtab           STRTAB          00000000 7f7038 0241cb 00      0   0  1
+>   [40] .shstrtab         STRTAB          00000000 81b203 00020d 00      0   0  1
+## per-section CONTENT comparison (objcopy --dump-section, every section incl. non-ALLOC debug sections), base vs merge
+  same     .rtc.text (0 bytes)
+  same     .rtc.dummy (0 bytes)
+  same     .rtc.force_fast (0 bytes)
+  same     .rtc_noinit (0 bytes)
+  same     .rtc.force_slow (0 bytes)
+  NO-CONTENT .rtc_fast_reserved (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .rtc_slow_reserved (NOBITS or empty: NA / NA bytes)
+  same     .iram0.vectors (1024 bytes)
+  same     .iram0.text (63547 bytes)
+  same     .dram0.data (66820 bytes)
+  same     .ext_ram_noinit (0 bytes)
+  NO-CONTENT .noinit (NOBITS or empty: NA / NA bytes)
+  same     .ext_ram.bss (0 bytes)
+  NO-CONTENT .dram0.bss (NOBITS or empty: NA / NA bytes)
+  same     .flash.appdesc (256 bytes)
+  same     .flash.rodata (30512 bytes)
+  NO-CONTENT .flash.rodata_noload (NOBITS or empty: NA / NA bytes)
+  same     .flash.text (553856 bytes)
+  NO-CONTENT .iram0.text_end (NOBITS or empty: NA / NA bytes)
+  same     .iram0.data (0 bytes)
+  same     .iram0.bss (0 bytes)
+  same     .dram0.heap_start (0 bytes)
+  DIFFERS  .debug_aranges (19288 vs 19288 bytes)
+  DIFFERS  .debug_info (4402825 vs 4402851 bytes)
+  DIFFERS  .debug_abbrev (230130 vs 230130 bytes)
+  same     .debug_line (936756 bytes)
+  same     .debug_frame (59344 bytes)
+  DIFFERS  .debug_str (1226552 vs 1226612 bytes)
+  same     .debug_loc (21023 bytes)
+  same     .debug_ranges (2480 bytes)
+  same     .debug_line_str (18141 bytes)
+  DIFFERS  .debug_loclists (480289 vs 480289 bytes)
+  same     .debug_rnglists (54379 bytes)
+  same     .comment (207 bytes)
+  same     .xtensa.info (56 bytes)
+  same     .xt.prop (2880 bytes)
+  same     .xt.lit (80 bytes)
+  NO-CONTENT .symtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .strtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .shstrtab (NOBITS or empty: NA / NA bytes)
+## $ nm -C .pio/build/esp32-safeboot/src/esp32/esp32_flash.cpp.o | grep save_  (LTO object, per tree)
+# base
+00000000 T save_settings()
+# pr1
+00000000 T save_msgid()
+00000000 T save_position()
+00000000 T save_settings()
+# pr2
+00000000 T save_settings()
+# pr3
+00000000 T save_settings()
+# pr12
+00000000 T save_msgid()
+00000000 T save_position()
+00000000 T save_settings()
+# merge
+00000000 T save_msgid()
+00000000 T save_position()
+00000000 T save_settings()
+## $ nm -C safeboot.elf | grep save_  (linked image, per tree; empty = not linked in)
+# base: 0 matching symbols
+# pr1: 0 matching symbols
+# merge: 0 matching symbols
+################ esp32-S3-safeboot
+## sha256 of safeboot-s3.bin / safeboot-s3.elf per tree
+base a700b2351e6b72299189a50cc5107fbc8b0cddec509125e8ff7a578a16da42af bin  c21b36c11fca24f46f1c78a6e687d36a767010698c8a3d89b3cddcc72239799b elf
+pr1 e10d664c370a15b20d730e161e9adce7fb1d25856fc41bcb488303e4a07f5f92 bin  db61f52fb96d7e7102ee863d8e8b6fd3efbbbe8de58124243614ffe3d26962ad elf
+pr2 a700b2351e6b72299189a50cc5107fbc8b0cddec509125e8ff7a578a16da42af bin  c21b36c11fca24f46f1c78a6e687d36a767010698c8a3d89b3cddcc72239799b elf
+pr3 a700b2351e6b72299189a50cc5107fbc8b0cddec509125e8ff7a578a16da42af bin  c21b36c11fca24f46f1c78a6e687d36a767010698c8a3d89b3cddcc72239799b elf
+pr12 e10d664c370a15b20d730e161e9adce7fb1d25856fc41bcb488303e4a07f5f92 bin  db61f52fb96d7e7102ee863d8e8b6fd3efbbbe8de58124243614ffe3d26962ad elf
+merge e10d664c370a15b20d730e161e9adce7fb1d25856fc41bcb488303e4a07f5f92 bin  db61f52fb96d7e7102ee863d8e8b6fd3efbbbe8de58124243614ffe3d26962ad elf
+## $ cmp -l base/safeboot-s3.bin pr1/safeboot-s3.bin   (byte offset 1-based, octal old, octal new)
+   177 302 333
+   178  33 141
+   179  66 365
+   180 301  57
+   181  37 271
+   182 312 155
+   183  44 176
+   184 364 161
+   185 157   2
+   186  34 356
+   187 170 206
+   188 246  75
+   189 346 216
+   190 207 213
+   191 323 157
+   192 152 323
+   193 166 357
+   194 160 273
+   195  20 276
+   196 151 215
+   197 214 345
+   198 212 201
+   199  75  44
+   200 211  44
+   201 263  66
+   202 315  24
+   203 334 377
+   204 307 343
+   205  42 322
+   206  71 151
+   207 171 142
+   208 233 255
+676976 224 207
+676977 365 146
+676978 204 311
+676979   2 266
+676980 356  55
+676981  10 242
+676982 273 326
+676983 275 115
+676984 366 261
+676985 375  25
+676986 126 301
+676987 260 214
+676988  67  33
+676989 170 317
+676990 307 243
+676991 236 317
+676992 345 276
+676993 356 345
+676994 266 255
+676995 117 232
+676996 352 113
+676997 315 327
+676998 102 176
+676999 371  42
+677000  50 371
+677001 122 337
+677002 160 261
+677003 200 315
+677004 100 110
+677005 204   6
+677006 253 110
+677007 220 212
+677008 332  20
+## differing 0-based byte ranges; image size 677008
+176-207
+676975-677007
+## $ xtensa-esp32s3-elf-readelf -S -W base/safeboot-s3.elf  vs  pr1/safeboot-s3.elf  (diff of the section tables)
+1c1
+< There are 38 section headers, starting at offset 0x7fe54c:
+---
+> There are 38 section headers, starting at offset 0x7fe5c0:
+28,42c28,42
+<   [23] .debug_info       PROGBITS        00000000 0b4b4c 423a5a 00      0   0  1
+<   [24] .debug_abbrev     PROGBITS        00000000 4d85a6 034444 00      0   0  1
+<   [25] .debug_line       PROGBITS        00000000 50c9ea 0d7648 00      0   0  1
+<   [26] .debug_frame      PROGBITS        00000000 5e4034 00d5b0 00      0   0  4
+<   [27] .debug_str        PROGBITS        00000000 5f15e4 12a930 01  MS  0   0  1
+<   [28] .debug_line_str   PROGBITS        00000000 71bf14 003f4f 01  MS  0   0  1
+<   [29] .debug_loclists   PROGBITS        00000000 71fe63 0745a1 00      0   0  1
+<   [30] .debug_rnglists   PROGBITS        00000000 794404 00d3a5 00      0   0  1
+<   [31] .comment          PROGBITS        00000000 7a17a9 0000b5 01  MS  0   0  1
+<   [32] .xtensa.info      NOTE            00000000 7a185e 000038 00      0   0  1
+<   [33] .xt.prop          PROGBITS        00000000 7a1896 000b34 00      0   0  1
+<   [34] .xt.lit           PROGBITS        00000000 7a23ca 000050 00      0   0  1
+<   [35] .symtab           SYMTAB          00000000 7a241c 02f7c0 10     36 5943  4
+<   [36] .strtab           STRTAB          00000000 7d1bdc 02c78c 00      0   0  1
+<   [37] .shstrtab         STRTAB          00000000 7fe368 0001e4 00      0   0  1
+---
+>   [23] .debug_info       PROGBITS        00000000 0b4b4c 423a74 00      0   0  1
+>   [24] .debug_abbrev     PROGBITS        00000000 4d85c0 034444 00      0   0  1
+>   [25] .debug_line       PROGBITS        00000000 50ca04 0d7648 00      0   0  1
+>   [26] .debug_frame      PROGBITS        00000000 5e404c 00d5b0 00      0   0  4
+>   [27] .debug_str        PROGBITS        00000000 5f15fc 12a96c 01  MS  0   0  1
+>   [28] .debug_line_str   PROGBITS        00000000 71bf68 003f4f 01  MS  0   0  1
+>   [29] .debug_loclists   PROGBITS        00000000 71feb7 0745a1 00      0   0  1
+>   [30] .debug_rnglists   PROGBITS        00000000 794458 00d3a5 00      0   0  1
+>   [31] .comment          PROGBITS        00000000 7a17fd 0000b5 01  MS  0   0  1
+>   [32] .xtensa.info      NOTE            00000000 7a18b2 000038 00      0   0  1
+>   [33] .xt.prop          PROGBITS        00000000 7a18ea 000b34 00      0   0  1
+>   [34] .xt.lit           PROGBITS        00000000 7a241e 000050 00      0   0  1
+>   [35] .symtab           SYMTAB          00000000 7a2470 02f7e0 10     36 5945  4
+>   [36] .strtab           STRTAB          00000000 7d1c50 02c78c 00      0   0  1
+>   [37] .shstrtab         STRTAB          00000000 7fe3dc 0001e4 00      0   0  1
+## per-section CONTENT comparison (objcopy --dump-section, every section incl. non-ALLOC debug sections), base vs pr1
+  same     .rtc.text (0 bytes)
+  same     .rtc.force_fast (0 bytes)
+  same     .rtc_noinit (0 bytes)
+  same     .rtc.force_slow (0 bytes)
+  NO-CONTENT .rtc_reserved (NOBITS or empty: NA / NA bytes)
+  same     .iram0.vectors (1024 bytes)
+  same     .iram0.text (50335 bytes)
+  NO-CONTENT .dram0.dummy (NOBITS or empty: NA / NA bytes)
+  same     .dram0.data (63340 bytes)
+  NO-CONTENT .noinit (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .dram0.bss (NOBITS or empty: NA / NA bytes)
+  same     .flash.text (530940 bytes)
+  NO-CONTENT .flash_rodata_dummy (NOBITS or empty: NA / NA bytes)
+  same     .flash.appdesc (256 bytes)
+  same     .flash.rodata (31000 bytes)
+  NO-CONTENT .flash.rodata_noload (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .ext_ram.dummy (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .iram0.text_end (NOBITS or empty: NA / NA bytes)
+  same     .iram0.data (0 bytes)
+  same     .iram0.bss (0 bytes)
+  same     .dram0.heap_start (0 bytes)
+  DIFFERS  .debug_aranges (16688 vs 16688 bytes)
+  DIFFERS  .debug_info (4340314 vs 4340340 bytes)
+  DIFFERS  .debug_abbrev (214084 vs 214084 bytes)
+  same     .debug_line (882248 bytes)
+  same     .debug_frame (54704 bytes)
+  DIFFERS  .debug_str (1222960 vs 1223020 bytes)
+  same     .debug_line_str (16207 bytes)
+  DIFFERS  .debug_loclists (476577 vs 476577 bytes)
+  same     .debug_rnglists (54181 bytes)
+  same     .comment (181 bytes)
+  same     .xtensa.info (56 bytes)
+  same     .xt.prop (2868 bytes)
+  same     .xt.lit (80 bytes)
+  NO-CONTENT .symtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .strtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .shstrtab (NOBITS or empty: NA / NA bytes)
+## $ cmp -l base/safeboot-s3.bin merge/safeboot-s3.bin   (byte offset 1-based, octal old, octal new)
+   177 302 333
+   178  33 141
+   179  66 365
+   180 301  57
+   181  37 271
+   182 312 155
+   183  44 176
+   184 364 161
+   185 157   2
+   186  34 356
+   187 170 206
+   188 246  75
+   189 346 216
+   190 207 213
+   191 323 157
+   192 152 323
+   193 166 357
+   194 160 273
+   195  20 276
+   196 151 215
+   197 214 345
+   198 212 201
+   199  75  44
+   200 211  44
+   201 263  66
+   202 315  24
+   203 334 377
+   204 307 343
+   205  42 322
+   206  71 151
+   207 171 142
+   208 233 255
+676976 224 207
+676977 365 146
+676978 204 311
+676979   2 266
+676980 356  55
+676981  10 242
+676982 273 326
+676983 275 115
+676984 366 261
+676985 375  25
+676986 126 301
+676987 260 214
+676988  67  33
+676989 170 317
+676990 307 243
+676991 236 317
+676992 345 276
+676993 356 345
+676994 266 255
+676995 117 232
+676996 352 113
+676997 315 327
+676998 102 176
+676999 371  42
+677000  50 371
+677001 122 337
+677002 160 261
+677003 200 315
+677004 100 110
+677005 204   6
+677006 253 110
+677007 220 212
+677008 332  20
+## differing 0-based byte ranges; image size 677008
+176-207
+676975-677007
+## $ xtensa-esp32s3-elf-readelf -S -W base/safeboot-s3.elf  vs  merge/safeboot-s3.elf  (diff of the section tables)
+1c1
+< There are 38 section headers, starting at offset 0x7fe54c:
+---
+> There are 38 section headers, starting at offset 0x7fe5c0:
+28,42c28,42
+<   [23] .debug_info       PROGBITS        00000000 0b4b4c 423a5a 00      0   0  1
+<   [24] .debug_abbrev     PROGBITS        00000000 4d85a6 034444 00      0   0  1
+<   [25] .debug_line       PROGBITS        00000000 50c9ea 0d7648 00      0   0  1
+<   [26] .debug_frame      PROGBITS        00000000 5e4034 00d5b0 00      0   0  4
+<   [27] .debug_str        PROGBITS        00000000 5f15e4 12a930 01  MS  0   0  1
+<   [28] .debug_line_str   PROGBITS        00000000 71bf14 003f4f 01  MS  0   0  1
+<   [29] .debug_loclists   PROGBITS        00000000 71fe63 0745a1 00      0   0  1
+<   [30] .debug_rnglists   PROGBITS        00000000 794404 00d3a5 00      0   0  1
+<   [31] .comment          PROGBITS        00000000 7a17a9 0000b5 01  MS  0   0  1
+<   [32] .xtensa.info      NOTE            00000000 7a185e 000038 00      0   0  1
+<   [33] .xt.prop          PROGBITS        00000000 7a1896 000b34 00      0   0  1
+<   [34] .xt.lit           PROGBITS        00000000 7a23ca 000050 00      0   0  1
+<   [35] .symtab           SYMTAB          00000000 7a241c 02f7c0 10     36 5943  4
+<   [36] .strtab           STRTAB          00000000 7d1bdc 02c78c 00      0   0  1
+<   [37] .shstrtab         STRTAB          00000000 7fe368 0001e4 00      0   0  1
+---
+>   [23] .debug_info       PROGBITS        00000000 0b4b4c 423a74 00      0   0  1
+>   [24] .debug_abbrev     PROGBITS        00000000 4d85c0 034444 00      0   0  1
+>   [25] .debug_line       PROGBITS        00000000 50ca04 0d7648 00      0   0  1
+>   [26] .debug_frame      PROGBITS        00000000 5e404c 00d5b0 00      0   0  4
+>   [27] .debug_str        PROGBITS        00000000 5f15fc 12a96c 01  MS  0   0  1
+>   [28] .debug_line_str   PROGBITS        00000000 71bf68 003f4f 01  MS  0   0  1
+>   [29] .debug_loclists   PROGBITS        00000000 71feb7 0745a1 00      0   0  1
+>   [30] .debug_rnglists   PROGBITS        00000000 794458 00d3a5 00      0   0  1
+>   [31] .comment          PROGBITS        00000000 7a17fd 0000b5 01  MS  0   0  1
+>   [32] .xtensa.info      NOTE            00000000 7a18b2 000038 00      0   0  1
+>   [33] .xt.prop          PROGBITS        00000000 7a18ea 000b34 00      0   0  1
+>   [34] .xt.lit           PROGBITS        00000000 7a241e 000050 00      0   0  1
+>   [35] .symtab           SYMTAB          00000000 7a2470 02f7e0 10     36 5945  4
+>   [36] .strtab           STRTAB          00000000 7d1c50 02c78c 00      0   0  1
+>   [37] .shstrtab         STRTAB          00000000 7fe3dc 0001e4 00      0   0  1
+## per-section CONTENT comparison (objcopy --dump-section, every section incl. non-ALLOC debug sections), base vs merge
+  same     .rtc.text (0 bytes)
+  same     .rtc.force_fast (0 bytes)
+  same     .rtc_noinit (0 bytes)
+  same     .rtc.force_slow (0 bytes)
+  NO-CONTENT .rtc_reserved (NOBITS or empty: NA / NA bytes)
+  same     .iram0.vectors (1024 bytes)
+  same     .iram0.text (50335 bytes)
+  NO-CONTENT .dram0.dummy (NOBITS or empty: NA / NA bytes)
+  same     .dram0.data (63340 bytes)
+  NO-CONTENT .noinit (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .dram0.bss (NOBITS or empty: NA / NA bytes)
+  same     .flash.text (530940 bytes)
+  NO-CONTENT .flash_rodata_dummy (NOBITS or empty: NA / NA bytes)
+  same     .flash.appdesc (256 bytes)
+  same     .flash.rodata (31000 bytes)
+  NO-CONTENT .flash.rodata_noload (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .ext_ram.dummy (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .iram0.text_end (NOBITS or empty: NA / NA bytes)
+  same     .iram0.data (0 bytes)
+  same     .iram0.bss (0 bytes)
+  same     .dram0.heap_start (0 bytes)
+  DIFFERS  .debug_aranges (16688 vs 16688 bytes)
+  DIFFERS  .debug_info (4340314 vs 4340340 bytes)
+  DIFFERS  .debug_abbrev (214084 vs 214084 bytes)
+  same     .debug_line (882248 bytes)
+  same     .debug_frame (54704 bytes)
+  DIFFERS  .debug_str (1222960 vs 1223020 bytes)
+  same     .debug_line_str (16207 bytes)
+  DIFFERS  .debug_loclists (476577 vs 476577 bytes)
+  same     .debug_rnglists (54181 bytes)
+  same     .comment (181 bytes)
+  same     .xtensa.info (56 bytes)
+  same     .xt.prop (2868 bytes)
+  same     .xt.lit (80 bytes)
+  NO-CONTENT .symtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .strtab (NOBITS or empty: NA / NA bytes)
+  NO-CONTENT .shstrtab (NOBITS or empty: NA / NA bytes)
+## $ nm -C .pio/build/esp32-S3-safeboot/src/esp32/esp32_flash.cpp.o | grep save_  (LTO object, per tree)
+# base
+00000000 T save_settings()
+# pr1
+00000000 T save_msgid()
+00000000 T save_position()
+00000000 T save_settings()
+# pr2
+00000000 T save_settings()
+# pr3
+00000000 T save_settings()
+# pr12
+00000000 T save_msgid()
+00000000 T save_position()
+00000000 T save_settings()
+# merge
+00000000 T save_msgid()
+00000000 T save_position()
+00000000 T save_settings()
+## $ nm -C safeboot-s3.elf | grep save_  (linked image, per tree; empty = not linked in)
+# base: 0 matching symbols
+# pr1: 0 matching symbols
+# merge: 0 matching symbols
+################ symbol-table comparison (.symtab cannot be dumped): readelf -sW, symbols grouped by their section
+## esp32-safeboot base vs pr1
+  symbols in NON-debug sections (value, size, type, bind, name): base 7037, other 7037, identical: True
+  differing symbols located IN debug sections: {'.debug_info': 88}
+## esp32-safeboot base vs merge
+  symbols in NON-debug sections (value, size, type, bind, name): base 7037, other 7037, identical: True
+  differing symbols located IN debug sections: {'.debug_info': 88}
+## esp32-S3-safeboot base vs pr1
+  symbols in NON-debug sections (value, size, type, bind, name): base 8418, other 8418, identical: True
+  differing symbols located IN debug sections: {'.debug_info': 90}
+## esp32-S3-safeboot base vs merge
+  symbols in NON-debug sections (value, size, type, bind, name): base 8418, other 8418, identical: True
+  differing symbols located IN debug sections: {'.debug_info': 90}

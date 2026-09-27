@@ -1,0 +1,10 @@
+merge-fble vs merge ttgo_tbeam_supreme esp32loop: relaxation at instruction 2680:
+   before: bnez a4, @I2682 R_XTENSA_SLOT0_OP @I2682  |  j @I1943 R_XTENSA_SLOT0_OP @I1943
+   after : beqz a4, @I1943 R_XTENSA_SLOT0_OP @I1943
+   all other 3483 instructions identical after ordinal remap: True
+   literal pool identical (content-canonical): True
+pr3-fble vs pr3 ttgo_tbeam_supreme esp32loop: relaxation at instruction 2680:
+   before: bnez a4, @I2682 R_XTENSA_SLOT0_OP @I2682  |  j @I1943 R_XTENSA_SLOT0_OP @I1943
+   after : beqz a4, @I1943 R_XTENSA_SLOT0_OP @I1943
+   all other 3483 instructions identical after ordinal remap: True
+   literal pool identical (content-canonical): True

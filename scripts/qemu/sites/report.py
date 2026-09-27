@@ -6,7 +6,9 @@ EV = "/home/makro/claude/meshcom-prs-evidence/all-envs/qemu/sites"
 COLS = {}
 for a in sys.argv[1:]:
     c, ts = a.split("="); COLS[c] = [t for t in ts.split(",") if os.path.exists(f"{EV}/{t}/results.json")]
+IDLE = None  # set below from the tags
 RAW = {t: json.load(open(f"{EV}/{t}/results.json")) for ts in COLS.values() for t in ts}
+IDLE = all(t.startswith('idle-') for ts in COLS.values() for t in ts)
 R, SRC = {}, {}
 for c, ts in COLS.items():
     R[c], SRC[c] = {}, {}
@@ -51,7 +53,7 @@ def cell(t, site):
            f"latitude set {a['lat_set']}, NVS node_lat {a['nvs_before']['node_lat']} -> {a['nvs_after']['node_lat']} "
            f"(**{'FLUSHED' if a['flushed'] else 'not flushed'}**); max loop gap "
            f"{'n/a (xml image, no INSTRUMENT)' if SRC[t][site].endswith('-xml') else str(a['max_gap_ms']) + ' ms'}; "
-           f"load {a['load'][0]} (under load); window {'clean' if clean(a) else 'NOT clean'}; attempts {n}; "
+           f"load {a['load'][0]}{'' if IDLE else ' (under load)'}; window {'clean' if clean(a) else 'NOT clean'}; attempts {n}; "
            f"log `{SRC[t][site]}/`")
     return txt, a
 
@@ -80,10 +82,14 @@ out = ["# PR1 per-site QEMU proof (save_settings -> save_msgid at the nine TX si
        "(stock blocks at the save; threshold 250 ms, so 0 = no gap line at all).",
        "- Clean window: latitude not in NVS before the trigger, and no other new TX in the window (retransmissions of "
        "older frames, which run no send function and do not touch the counter, are allowed).", "",
-       "**All results are UNDER LOAD (provisional)**: the PC ran parallel CI compiles and, for the instr runs, three "
-       "QEMUs at once (1-min load average 40..111, given per window). The FLUSH discriminator does not depend on timing; "
-       "the loop-gap column does (stock gaps of 3.6..25 s instead of the ~2 s expected on an idle PC). Per the handler's "
-       "rule a FAIL or odd timing must be re-run on an idle PC before it counts; there is no FAIL here.", "",
+       (("**Run provenance: the counting run on the idle PC** (`run-sites-idle.sh`, `idle-run.out`): no build containers, "
+         "the six jobs sequential (one QEMU at a time), 2026-09-26 about 23:19 (start) to 00:10:44 UTC (SITES-IDLE-DONE); the 1-min load average is given per "
+         "window. The FLUSH discriminator does not depend on timing; the loop-gap column does.")
+        if all(t.startswith('idle-') for ts in COLS.values() for t in ts) else
+        ("**All results are UNDER LOAD (provisional)**: the PC ran parallel CI compiles and, for the instr runs, three "
+         "QEMUs at once (1-min load average 40..111, given per window). The FLUSH discriminator does not depend on timing; "
+         "the loop-gap column does (stock gaps of 3.6..25 s instead of the ~2 s expected on an idle PC). Per the handler's "
+         "rule a FAIL or odd timing must be re-run on an idle PC before it counts; there is no FAIL here.")), "",
        "Columns: stock = base (cf215b5d) images, pr1 = PR1-only images, merge = all three PRs (Ethernet mode via "
        "testhack-eth). The *-instr images (INSTRUMENT_ENABLED) carry eight sites; sendTelemetry is reachable only on the "
        "*-xml TEST-ONLY images (see Triggers), which have no INSTRUMENT, hence no gap data for it.", ""]
