@@ -1,9 +1,10 @@
 name: MeshCom CI
 
-on: 
+on:
   push:
-    tags:
-    - '*'
+    branches:
+    - 'agent5-ci/**'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -96,48 +97,47 @@ jobs:
       mv .pio/build/t_echo/firmware.zip .pio/build/t_echo/t_echo.zip &
       mv .pio/build/esp32-S3-safeboot/bootloader.bin .pio/build/esp32-S3-safeboot/bootloader-s3.bin"
 
-    - uses: ncipollo/release-action@v1
-      with:
-        allowUpdates: true
-        removeArtifacts: true
-        replacesArtifacts: true
-        artifacts: ".pio/build/E22_1262-DevKitC/E22_1262-DevKitC.bin,
-        .pio/build/E22-DevKitC/E22-DevKitC.bin,
-        .pio/build/t_deck/t_deck.bin,
-        .pio/build/t_deck_plus/t_deck_plus.bin,
-        .pio/build/t_deck_pro/t_deck_pro.bin,
-        .pio/build/E22_XML-DevKitC/E22_XML-DevKitC.bin,
-        .pio/build/E22_1262_S3-DevKitC-1-N16R8/E22_1262_S3-DevKitC-1-N16R8.bin,
-        .pio/build/E22_1268_S3-DevKitC-1-N16R8/E22_1268_S3-DevKitC-1-N16R8.bin,
-        .pio/build/heltec_wifi_lora_32_V2/heltec_wifi_lora_32_V2.bin,
-        .pio/build/heltec_wifi_lora_32_V3/heltec_wifi_lora_32_V3.bin,
-        .pio/build/heltec_wifi_lora_32_V4/heltec_wifi_lora_32_V4.bin,
-        .pio/build/heltec_wireless_stick/heltec_wireless_stick.bin,
-        .pio/build/heltec_wireless_tracker/heltec_wireless_tracker.bin,
-        .pio/build/ttgo-lora32-v21/ttgo-lora32-v21.bin,
-        .pio/build/ttgo_tbeam/ttgo_tbeam.bin,
-        .pio/build/ttgo_tbeam_SX1262/ttgo_tbeam_SX1262.bin,
-        .pio/build/ttgo_tbeam_SX1268/ttgo_tbeam_SX1268.bin,
-        .pio/build/ttgo_tbeam_supreme/ttgo_tbeam_supreme.bin,
-        .pio/build/vision-master-e290/vision-master-e290.bin,
-        .pio/build/vision-master-e213/vision-master-e213.bin,
-        .pio/build/esp32-loraprs-e22/esp32-loraprs-e22.bin,
-        .pio/build/esp32-loraprs-ra01/esp32-loraprs-ra01.bin,
-        .pio/build/wireless-paper/wireless-paper.bin,
-        .pio/build/LilyGo_T-Beam-1W/T-Beam-1W.bin,
-        .pio/build/LilyGo_T3_S3_V1_3/T3_S3_V13.bin,
-        .pio/build/LilyGo_T_Connect_Pro/t_connect_pro.bin,
-        .pio/build/wiscore_rak4631/wiscore_rak4631.zip,
-        .pio/build/wiscore_rak4631/wiscore_rak4631.uf2,
-        .pio/build/heltec_t114/heltec_t114.zip,
-        .pio/build/heltec_t114/heltec_t114.uf2,
-        .pio/build/t_echo/t_echo.zip,
-        .pio/build/t_echo/t_echo.uf2,
-        .pio/build/esp32-S3-safeboot/safeboot-s3.bin,
-        .pio/build/esp32-safeboot/safeboot.bin,
-        .pio/build/esp32-S3-safeboot/bootloader-s3.bin,
-        .pio/build/esp32-safeboot/bootloader.bin,
-        .pio/build/esp32-safeboot/partitions.bin,
-        otadata.bin"
-
-        bodyFile: "release.md"
+    # agent5-ci (build proof only): instead of creating a Release, check that every release artifact exists
+    - name: Check release artifacts
+      run: |
+        missing=0
+        if [ -f ".pio/build/E22_1262-DevKitC/E22_1262-DevKitC.bin" ]; then echo "OK      .pio/build/E22_1262-DevKitC/E22_1262-DevKitC.bin"; else echo "MISSING .pio/build/E22_1262-DevKitC/E22_1262-DevKitC.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/E22-DevKitC/E22-DevKitC.bin" ]; then echo "OK      .pio/build/E22-DevKitC/E22-DevKitC.bin"; else echo "MISSING .pio/build/E22-DevKitC/E22-DevKitC.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/t_deck/t_deck.bin" ]; then echo "OK      .pio/build/t_deck/t_deck.bin"; else echo "MISSING .pio/build/t_deck/t_deck.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/t_deck_plus/t_deck_plus.bin" ]; then echo "OK      .pio/build/t_deck_plus/t_deck_plus.bin"; else echo "MISSING .pio/build/t_deck_plus/t_deck_plus.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/t_deck_pro/t_deck_pro.bin" ]; then echo "OK      .pio/build/t_deck_pro/t_deck_pro.bin"; else echo "MISSING .pio/build/t_deck_pro/t_deck_pro.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/E22_XML-DevKitC/E22_XML-DevKitC.bin" ]; then echo "OK      .pio/build/E22_XML-DevKitC/E22_XML-DevKitC.bin"; else echo "MISSING .pio/build/E22_XML-DevKitC/E22_XML-DevKitC.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/E22_1262_S3-DevKitC-1-N16R8/E22_1262_S3-DevKitC-1-N16R8.bin" ]; then echo "OK      .pio/build/E22_1262_S3-DevKitC-1-N16R8/E22_1262_S3-DevKitC-1-N16R8.bin"; else echo "MISSING .pio/build/E22_1262_S3-DevKitC-1-N16R8/E22_1262_S3-DevKitC-1-N16R8.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/E22_1268_S3-DevKitC-1-N16R8/E22_1268_S3-DevKitC-1-N16R8.bin" ]; then echo "OK      .pio/build/E22_1268_S3-DevKitC-1-N16R8/E22_1268_S3-DevKitC-1-N16R8.bin"; else echo "MISSING .pio/build/E22_1268_S3-DevKitC-1-N16R8/E22_1268_S3-DevKitC-1-N16R8.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/heltec_wifi_lora_32_V2/heltec_wifi_lora_32_V2.bin" ]; then echo "OK      .pio/build/heltec_wifi_lora_32_V2/heltec_wifi_lora_32_V2.bin"; else echo "MISSING .pio/build/heltec_wifi_lora_32_V2/heltec_wifi_lora_32_V2.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/heltec_wifi_lora_32_V3/heltec_wifi_lora_32_V3.bin" ]; then echo "OK      .pio/build/heltec_wifi_lora_32_V3/heltec_wifi_lora_32_V3.bin"; else echo "MISSING .pio/build/heltec_wifi_lora_32_V3/heltec_wifi_lora_32_V3.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/heltec_wifi_lora_32_V4/heltec_wifi_lora_32_V4.bin" ]; then echo "OK      .pio/build/heltec_wifi_lora_32_V4/heltec_wifi_lora_32_V4.bin"; else echo "MISSING .pio/build/heltec_wifi_lora_32_V4/heltec_wifi_lora_32_V4.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/heltec_wireless_stick/heltec_wireless_stick.bin" ]; then echo "OK      .pio/build/heltec_wireless_stick/heltec_wireless_stick.bin"; else echo "MISSING .pio/build/heltec_wireless_stick/heltec_wireless_stick.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/heltec_wireless_tracker/heltec_wireless_tracker.bin" ]; then echo "OK      .pio/build/heltec_wireless_tracker/heltec_wireless_tracker.bin"; else echo "MISSING .pio/build/heltec_wireless_tracker/heltec_wireless_tracker.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/ttgo-lora32-v21/ttgo-lora32-v21.bin" ]; then echo "OK      .pio/build/ttgo-lora32-v21/ttgo-lora32-v21.bin"; else echo "MISSING .pio/build/ttgo-lora32-v21/ttgo-lora32-v21.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/ttgo_tbeam/ttgo_tbeam.bin" ]; then echo "OK      .pio/build/ttgo_tbeam/ttgo_tbeam.bin"; else echo "MISSING .pio/build/ttgo_tbeam/ttgo_tbeam.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/ttgo_tbeam_SX1262/ttgo_tbeam_SX1262.bin" ]; then echo "OK      .pio/build/ttgo_tbeam_SX1262/ttgo_tbeam_SX1262.bin"; else echo "MISSING .pio/build/ttgo_tbeam_SX1262/ttgo_tbeam_SX1262.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/ttgo_tbeam_SX1268/ttgo_tbeam_SX1268.bin" ]; then echo "OK      .pio/build/ttgo_tbeam_SX1268/ttgo_tbeam_SX1268.bin"; else echo "MISSING .pio/build/ttgo_tbeam_SX1268/ttgo_tbeam_SX1268.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/ttgo_tbeam_supreme/ttgo_tbeam_supreme.bin" ]; then echo "OK      .pio/build/ttgo_tbeam_supreme/ttgo_tbeam_supreme.bin"; else echo "MISSING .pio/build/ttgo_tbeam_supreme/ttgo_tbeam_supreme.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/vision-master-e290/vision-master-e290.bin" ]; then echo "OK      .pio/build/vision-master-e290/vision-master-e290.bin"; else echo "MISSING .pio/build/vision-master-e290/vision-master-e290.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/vision-master-e213/vision-master-e213.bin" ]; then echo "OK      .pio/build/vision-master-e213/vision-master-e213.bin"; else echo "MISSING .pio/build/vision-master-e213/vision-master-e213.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/esp32-loraprs-e22/esp32-loraprs-e22.bin" ]; then echo "OK      .pio/build/esp32-loraprs-e22/esp32-loraprs-e22.bin"; else echo "MISSING .pio/build/esp32-loraprs-e22/esp32-loraprs-e22.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/esp32-loraprs-ra01/esp32-loraprs-ra01.bin" ]; then echo "OK      .pio/build/esp32-loraprs-ra01/esp32-loraprs-ra01.bin"; else echo "MISSING .pio/build/esp32-loraprs-ra01/esp32-loraprs-ra01.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/wireless-paper/wireless-paper.bin" ]; then echo "OK      .pio/build/wireless-paper/wireless-paper.bin"; else echo "MISSING .pio/build/wireless-paper/wireless-paper.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/LilyGo_T-Beam-1W/T-Beam-1W.bin" ]; then echo "OK      .pio/build/LilyGo_T-Beam-1W/T-Beam-1W.bin"; else echo "MISSING .pio/build/LilyGo_T-Beam-1W/T-Beam-1W.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/LilyGo_T3_S3_V1_3/T3_S3_V13.bin" ]; then echo "OK      .pio/build/LilyGo_T3_S3_V1_3/T3_S3_V13.bin"; else echo "MISSING .pio/build/LilyGo_T3_S3_V1_3/T3_S3_V13.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/LilyGo_T_Connect_Pro/t_connect_pro.bin" ]; then echo "OK      .pio/build/LilyGo_T_Connect_Pro/t_connect_pro.bin"; else echo "MISSING .pio/build/LilyGo_T_Connect_Pro/t_connect_pro.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/wiscore_rak4631/wiscore_rak4631.zip" ]; then echo "OK      .pio/build/wiscore_rak4631/wiscore_rak4631.zip"; else echo "MISSING .pio/build/wiscore_rak4631/wiscore_rak4631.zip"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/wiscore_rak4631/wiscore_rak4631.uf2" ]; then echo "OK      .pio/build/wiscore_rak4631/wiscore_rak4631.uf2"; else echo "MISSING .pio/build/wiscore_rak4631/wiscore_rak4631.uf2"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/heltec_t114/heltec_t114.zip" ]; then echo "OK      .pio/build/heltec_t114/heltec_t114.zip"; else echo "MISSING .pio/build/heltec_t114/heltec_t114.zip"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/heltec_t114/heltec_t114.uf2" ]; then echo "OK      .pio/build/heltec_t114/heltec_t114.uf2"; else echo "MISSING .pio/build/heltec_t114/heltec_t114.uf2"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/t_echo/t_echo.zip" ]; then echo "OK      .pio/build/t_echo/t_echo.zip"; else echo "MISSING .pio/build/t_echo/t_echo.zip"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/t_echo/t_echo.uf2" ]; then echo "OK      .pio/build/t_echo/t_echo.uf2"; else echo "MISSING .pio/build/t_echo/t_echo.uf2"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/esp32-S3-safeboot/safeboot-s3.bin" ]; then echo "OK      .pio/build/esp32-S3-safeboot/safeboot-s3.bin"; else echo "MISSING .pio/build/esp32-S3-safeboot/safeboot-s3.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/esp32-safeboot/safeboot.bin" ]; then echo "OK      .pio/build/esp32-safeboot/safeboot.bin"; else echo "MISSING .pio/build/esp32-safeboot/safeboot.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/esp32-S3-safeboot/bootloader-s3.bin" ]; then echo "OK      .pio/build/esp32-S3-safeboot/bootloader-s3.bin"; else echo "MISSING .pio/build/esp32-S3-safeboot/bootloader-s3.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/esp32-safeboot/bootloader.bin" ]; then echo "OK      .pio/build/esp32-safeboot/bootloader.bin"; else echo "MISSING .pio/build/esp32-safeboot/bootloader.bin"; missing=$((missing+1)); fi
+        if [ -f ".pio/build/esp32-safeboot/partitions.bin" ]; then echo "OK      .pio/build/esp32-safeboot/partitions.bin"; else echo "MISSING .pio/build/esp32-safeboot/partitions.bin"; missing=$((missing+1)); fi
+        if [ -f "otadata.bin" ]; then echo "OK      otadata.bin"; else echo "MISSING otadata.bin"; missing=$((missing+1)); fi
+        echo "artifact check missing=$missing"
+        test $missing -eq 0
